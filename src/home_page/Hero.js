@@ -22,14 +22,14 @@ function Hero() {
                                 </div>
                                 <div className="row">
                                     <div className="col-lg-7">
-                                        <input className="col-lg-6 col-sm-8 form-control form-control-lg" type="text" placeholder="Escribe cómo quieres que sea tu página"/>
+                                        <input className="col-md-6 col-sm-6 form-control form-control-lg mt-2" type="text" placeholder="Escribe cómo quieres que sea tu página"/>
                                     </div>
-                                    <div className="col-lg-1 col-sm-2 mt-1">
-                                        <box-icon name="info-circle" size="md"></box-icon>
+                                    <div className="col-md-1 col-sm mt-1">
+                                        <i class='bx bx-info-circle bx-md bxs-like bx-tada-hover grey icon-box-hp mt-2'></i>
                                     </div>
                                 </div>
                                 <div className="row">
-                                        <button type="button" className="btn btn-outline-primary col-lg-2 mt-5 offset-5">Crear</button>
+                                        <button type="button" className="btn btn-outline-primary col-md-2 mt-5 offset-md-5">Crear</button>
                                 </div>
                             </div>
                             <div className="hero-img col-lg">
