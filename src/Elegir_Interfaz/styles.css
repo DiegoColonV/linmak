@@ -1,0 +1,188 @@
+
+.int-box{
+    margin-bottom: 7em;
+}
+
+/*
+    Estilos para el titulo "Elige una interfaz"
+*/
+.choose-int{
+    margin:3em 0 1vh;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/*
+    Estilos para la caja en la que está contenido el texto anterior
+*/
+/* Contenedor completo del texto */
+.prev-text{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0.5em 0 2vh;
+    border: #f1f1f1;
+    border-style: solid;
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px #f1f1f1;
+}
+
+/* Titulo del contenedor */
+.prev-title{
+    text-align: left;
+    color: rgb(71, 71, 71);
+    font-size: 15px;
+    padding-left: 1vh;
+    font-style: italic;
+}
+
+/* Texto anterior */
+.prev-desc{
+    color: black;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Estilos de la sección de previsualización */
+.preview{
+    width: 80%;
+    margin: 2vh auto 0;
+    padding: 1vh 1vh;
+    border-radius: 10px;
+}
+
+/* Cada card de visualización */
+.preview-component{
+    width: 31%;
+    border-style: none;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 5px 1.5% 5px .82%;
+    padding-bottom: 1vh;
+    background-color: #f1f1f1;
+    padding: 5px 15px;
+    transition: all ease-in-out .3s;
+}
+
+/* Texto de opción por encima de la imagen */
+.preview-title{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 1vh;
+}
+
+/* Imagen previsualizada */
+.preview-img{
+    width: 100%;
+    height: 200px;
+    margin-bottom: 1vh;
+    border-radius: 10px;
+}
+
+/* Al pasar el mouse sobre la card */
+.preview-component:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+    border-style: solid;
+    border-color: green;
+}
+
+/*
+    Estilos del apartado de nuevo texto
+*/
+/* Contenedor de los componentes */
+.new-text{
+    margin-top: 1vh;
+    margin-left: 10%;
+    width: 80%;
+}
+
+/* Cuadro de texto */
+.input-new-text{
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
+    padding: 5px 5px;
+    border-style: solid;
+    border-color: #f1f1f1;
+    box-shadow: 2px 0 3px #f1f1f0;
+}
+
+/* Botón de envío */
+.input-new-button{
+    margin-top: 1vh;
+    width: 120px;
+    height: 50px;
+    float: right;
+    border-radius: 10px;
+    background-color: white;
+    border-style: solid;
+    border-color: rgb(1, 1, 1,0.2);
+    transition: all ease-in-out 0.3s;
+}
+
+.input-new-button.false{
+    color: rgb(1, 1, 1,0.2);
+    cursor: default;
+}
+
+.input-new-button.true{
+    color: black;
+    cursor: pointer;
+    border-color: black;
+}
+
+/* Al pasar el mouse sobre el botón */
+.input-new-button.true:hover{
+    background-color: green;
+    border-style: none;
+    color: white;
+}
+
+.input-new-button.false:hover{
+    transition: none;
+    background-color: white;
+    color: rgb(1, 1, 1,0.2);
+    border-style: solid;
+}
+
+.preview-component.active{
+    border-color: blue;
+    border-style: solid;
+}
+
+.preview-component.unactive{
+    cursor: default;
+    transform: none;
+    transition:none;
+    border-style: none;
+    opacity: 0.5;
+}
+
+.preview-component.active:hover{
+    transition: all ease-in-out 0.3s;
+    transform:none;
+}
+
+.preview-icons{
+    margin-right: 1vh;
+    color: #919191;
+}
+
+.preview-icons.active{
+    color: black;
+    transition: all ease-in-out 0.3s;
+}
+
+.preview-icon{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 1vh;
+    float:right;
+}
+
+.preview-icons.active .preview-icon{
+    cursor: pointer;
+}
