@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import Header from './home_page/Header';
-import Footer from './home_page/Footer';
-import Conocenos from './home_page/Conocenos';
+import Header from './Componentes Generales/Header';
+import Footer from './Componentes Generales/Footer';
+import Conocenos from './Conocenos/Conocenos';
 import HomePage from './home_page/home_page';
 import ElegirInterfaz from './Elegir_Interfaz/ElegirInterfaz';
 
