@@ -5,13 +5,14 @@ import Footer from './Componentes Generales/Footer';
 import Conocenos from './Conocenos/Conocenos';
 import HomePage from './home_page/home_page';
 import ElegirInterfaz from './Elegir_Interfaz/ElegirInterfaz';
+import PerfilUsuario from './Perfil Usuario/PerfilUsuario';
 
 function App() {
   return (
     <div>
       {/* ======= Header ======= */}
       <Header />
-      <ElegirInterfaz />
+      <PerfilUsuario />
       {/* ======= Footer ======= */}
       <Footer />
     </div>
