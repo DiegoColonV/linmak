@@ -6,13 +6,20 @@ import Conocenos from './Conocenos/Conocenos';
 import HomePage from './home_page/home_page';
 import ElegirInterfaz from './Elegir_Interfaz/ElegirInterfaz';
 import PerfilUsuario from './Perfil Usuario/PerfilUsuario';
+import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
     <div>
       {/* ======= Header ======= */}
       <Header />
-      <PerfilUsuario />
+      <Router>
+        <Routes>
+          <Route exact path="/elegir" element={<ElegirInterfaz />}/>
+          <Route exact path="/" element={<HomePage />}/>
+
+        </Routes>
+      </Router>
       {/* ======= Footer ======= */}
       <Footer />
     </div>
