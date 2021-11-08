@@ -5,43 +5,32 @@ function Footer (){
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-3 col-md-6 footer-contact">
-                            <h3>Appland</h3>
+                            <h3>linmak</h3>
                             <p>
-                                A108 Adam Street <br />
-                                New York, NY 535022<br />
-                                United States <br /><br />
-                                <strong>Phone:</strong> +1 5589 55488 55<br />
+                                Unidad Profesional Adolfo López Mateos <br />
+                                Ciudad de México<br />
+                                México<br /><br />
+                                <strong>Teléfono:</strong> 55 555555<br />
                                 <strong>Email:</strong> info@example.com<br />
                             </p>
                         </div>
-                        <div className="col-lg-3 col-md-6 footer-links">
-                            <h4>Useful Links</h4>
+                        <div className="col-lg-3 col-md-6 footer-links offset-lg-3">
+                            <h4>Explorar</h4>
                             <ul>
-                                <li><i className="bx bx-chevron-right" /> <a href="#">Home</a></li>
-                                <li><i className="bx bx-chevron-right" /> <a href="#">About us</a></li>
-                                <li><i className="bx bx-chevron-right" /> <a href="#">Services</a></li>
-                                <li><i className="bx bx-chevron-right" /> <a href="#">Terms of service</a></li>
-                                <li><i className="bx bx-chevron-right" /> <a href="#">Privacy policy</a></li>
+                                <li><i className="bx bx-chevron-right" /> <a href="#">Crear interfaz</a></li>
+                                <li><i className="bx bx-chevron-right" /> <a href="#">Conócenos</a></li>
+                                <li><i className="bx bx-chevron-right" /> <a href="#">Perfíl</a></li>
+                                <li><i className="bx bx-chevron-right" /> <a href="#">Iniciar sesión</a></li>
+                                <li><i className="bx bx-chevron-right" /> <a href="#">Registrarse</a></li>
                             </ul>
                         </div>
                         <div className="col-lg-3 col-md-6 footer-links">
-                            <h4>Our Services</h4>
-                            <ul>
-                                <li><i className="bx bx-chevron-right" /> <a href="#">Web Design</a></li>
-                                <li><i className="bx bx-chevron-right" /> <a href="#">Web Development</a></li>
-                                <li><i className="bx bx-chevron-right" /> <a href="#">Product Management</a></li>
-                                <li><i className="bx bx-chevron-right" /> <a href="#">Marketing</a></li>
-                                <li><i className="bx bx-chevron-right" /> <a href="#">Graphic Design</a></li>
-                            </ul>
-                        </div>
-                        <div className="col-lg-3 col-md-6 footer-links">
-                            <h4>Our Social Networks</h4>
-                            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+                            <h4>Nuestras redes</h4>
+                            <p>Siguenos en nuestras redes para estar al tanto de todas las novedades de la página</p>
                             <div className="social-links mt-3">
                                 <a href="#" className="twitter"><i className="bx bxl-twitter" /></a>
                                 <a href="#" className="facebook"><i className="bx bxl-facebook" /></a>
                                 <a href="#" className="instagram"><i className="bx bxl-instagram" /></a>
-                                <a href="#" className="google-plus"><i className="bx bxl-skype" /></a>
                                 <a href="#" className="linkedin"><i className="bx bxl-linkedin" /></a>
                             </div>
                         </div>
@@ -50,7 +39,7 @@ function Footer (){
             </div>
             <div className="container py-4">
                 <div className="copyright">
-                    © Copyright <strong><span>Appland</span></strong>. All Rights Reserved
+                    © Copyright <strong><span>linmak</span></strong>. All Rights Reserved
                 </div>
                 <div className="credits">
                     {/* All the links in the footer should remain intact. */}

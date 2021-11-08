@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Hero() {
     return (
         <div>
@@ -29,7 +31,7 @@ function Hero() {
                                     </div>
                                 </div>
                                 <div className="row">
-                                        <button type="button" className="btn btn-outline-primary col-md-2 mt-5 offset-md-5">Crear</button>
+                                        <Link to="/elegir"><button type="button" className="btn btn-outline-primary col-md-2 mt-5 offset-md-5">Crear</button></Link>
                                 </div>
                             </div>
                             <div className="hero-img col-lg">

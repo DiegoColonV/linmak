@@ -63,7 +63,7 @@ function HomePage() {
                             <p>Cada que crees una interfaz, puedes modificarla sólamente escribiendo los cambios que deseas.</p>
                         </div>
                         <div className="row ">
-                            <div className="image col-md-2 d-flex align-items-stretch justify-content-center offset-1" data-aos="fade-right" data-aos-delay={25}>
+                            <div className="image col-md-2 d-flex align-items-stretch justify-content-center offset-md-1" data-aos="fade-right" data-aos-delay={25}>
                                 <img src="img/homepage/int.png" className="img-fluid" alt="" />
                             </div>
                             <div className="col-md-2 mt-5 d-flex align-items-stretch justify-content-center" data-aos="fade-right" data-aos-delay={25}>
@@ -93,48 +93,48 @@ function HomePage() {
                     </div>
                 </section>{/* Fin sección editar/}
                 {/* ======= Sección precios ======= */}
-                <section id="pricing" className="pricing">
+                <section id="precios" className="pricing">
                     <div className="container">
                         <div className="section-title">
-                            <h2>Precios</h2>
+                            <h2>Precios (MXN)</h2>
                             <p>Mejora tu cuenta para acceder a increíbles funciones</p>
                         </div>
                         <div className="row no-gutters">
                             <div className="col-lg-4 box" data-aos="fade-right">
-                                <h3>Free</h3>
-                                <h4>$0<span>per month</span></h4>
+                                <h3>Que noob</h3>
+                                <h4>Gratis</h4>
                                 <ul>
-                                    <li><i className="bx bx-check" /> Quam adipiscing vitae proin</li>
-                                    <li><i className="bx bx-check" /> Nec feugiat nisl pretium</li>
-                                    <li><i className="bx bx-check" /> Nulla at volutpat diam uteera</li>
-                                    <li className="na"><i className="bx bx-x" /> <span>Pharetra massa massa ultricies</span></li>
-                                    <li className="na"><i className="bx bx-x" /> <span>Massa ultricies mi quis hendrerit</span></li>
+                                    <li><i className="bx bx-check" /> Crea interfaces ilimitadas</li>
+                                    <li><i className="bx bx-check" /> Visualiza en pantalla completa</li>
+                                    <li><i className="bx bx-check" /> Guarda hasta 3 interfaces</li>
+                                    <li className="na"><i className="bx bx-x" /> Crea colecciones ilimitadas</li>
+                                    <li className="na"><i className="bx bx-x" /> Descarga el código creado</li>
                                 </ul>
-                                <a href="#" className="get-started-btn">Get Started</a>
+                                <a href="#" className="get-started-btn">Empieza a crear</a>
                             </div>
                             <div className="col-lg-4 box featured" data-aos="fade-up">
-                                <h3>Business</h3>
-                                <h4>$29<span>per month</span></h4>
+                                <h3>Que pro</h3>
+                                <h4>$49<span>mensual</span></h4>
                                 <ul>
-                                    <li><i className="bx bx-check" /> Quam adipiscing vitae proin</li>
-                                    <li><i className="bx bx-check" /> Nec feugiat nisl pretium</li>
-                                    <li><i className="bx bx-check" /> Nulla at volutpat diam uteera</li>
-                                    <li><i className="bx bx-check" /> Pharetra massa massa ultricies</li>
-                                    <li><i className="bx bx-check" /> Massa ultricies mi quis hendrerit</li>
+                                    <li><i className="bx bx-check" /> Crea interfaces ilimitadas</li>
+                                    <li><i className="bx bx-check" /> Visualiza en pantalla completa</li>
+                                    <li><i className="bx bx-check" /> Guarda hasta 10 interfaces</li>
+                                    <li><i className="bx bx-check" /> Crea colecciones ilimitadas</li>
+                                    <li className="na"><i className="bx bx-x" /> Descarga el código creado</li>
                                 </ul>
-                                <a href="#" className="get-started-btn">Get Started</a>
+                                <a href="#" className="get-started-btn">Empieza a crear</a>
                             </div>
                             <div className="col-lg-4 box" data-aos="fade-left">
-                                <h3>Developer</h3>
-                                <h4>$49<span>per month</span></h4>
+                                <h3>Que mega pro</h3>
+                                <h4>$99<span>mensual</span></h4>
                                 <ul>
-                                    <li><i className="bx bx-check" /> Quam adipiscing vitae proin</li>
-                                    <li><i className="bx bx-check" /> Nec feugiat nisl pretium</li>
-                                    <li><i className="bx bx-check" /> Nulla at volutpat diam uteera</li>
-                                    <li><i className="bx bx-check" /> Pharetra massa massa ultricies</li>
-                                    <li><i className="bx bx-check" /> Massa ultricies mi quis hendrerit</li>
+                                    <li><i className="bx bx-check" /> Crea interfaces ilimitadas</li>
+                                    <li><i className="bx bx-check" /> Visualiza en pantalla completa</li>
+                                    <li><i className="bx bx-check" /> Guarda interfaces ilimitadas</li>
+                                    <li><i className="bx bx-check" /> Crea colecciones ilimitadas</li>
+                                    <li><i className="bx bx-check" /> Descarga el código creado</li>
                                 </ul>
-                                <a href="#" className="get-started-btn">Get Started</a>
+                                <a href="#" className="get-started-btn">Empieza a crear</a>
                             </div>
                         </div>
                     </div>
