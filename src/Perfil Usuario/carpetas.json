@@ -1,0 +1,32 @@
+[
+    {
+        "nombre": "Proyecto 1",
+        "paginas" : [
+            {
+                "nombre" : "principal",
+                "index":0
+            },
+            {
+                "nombre" : "secundaria 1",
+                "index":1
+            },
+            {
+                "nombre" : "secundaria 2",
+                "index":2
+            }
+        ]
+    },
+    {
+        "nombre": "Proyecto 2",
+        "paginas": [
+            {
+                "nombre" : "principal",
+                "index":3
+            },
+            {
+                "nombre" : "secundaria 1",
+                "index":4
+            }
+        ]
+    }
+]
