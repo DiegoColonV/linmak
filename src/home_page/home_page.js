@@ -1,5 +1,6 @@
 import "../App.css";
 import Hero from "./Hero";
+import {Link} from 'react-router-dom';
 
 function HomePage() {
     return (
@@ -110,7 +111,7 @@ function HomePage() {
                                     <li className="na"><i className="bx bx-x" /> Crea colecciones ilimitadas</li>
                                     <li className="na"><i className="bx bx-x" /> Descarga el código creado</li>
                                 </ul>
-                                <a href="#" className="get-started-btn">Empieza a crear</a>
+                                <Link to="/" className="get-started-btn">Empieza a crear</Link>
                             </div>
                             <div className="col-lg-4 box featured" data-aos="fade-up">
                                 <h3>Que pro</h3>
@@ -122,7 +123,7 @@ function HomePage() {
                                     <li><i className="bx bx-check" /> Crea colecciones ilimitadas</li>
                                     <li className="na"><i className="bx bx-x" /> Descarga el código creado</li>
                                 </ul>
-                                <a href="#" className="get-started-btn">Empieza a crear</a>
+                                <Link to="/" className="get-started-btn">Empieza a crear</Link>
                             </div>
                             <div className="col-lg-4 box" data-aos="fade-left">
                                 <h3>Que mega pro</h3>
@@ -134,7 +135,7 @@ function HomePage() {
                                     <li><i className="bx bx-check" /> Crea colecciones ilimitadas</li>
                                     <li><i className="bx bx-check" /> Descarga el código creado</li>
                                 </ul>
-                                <a href="#" className="get-started-btn">Empieza a crear</a>
+                                <Link to="/" className="get-started-btn">Empieza a crear</Link>
                             </div>
                         </div>
                     </div>
