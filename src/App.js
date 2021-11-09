@@ -6,10 +6,13 @@ import Conocenos from './Conocenos/Conocenos';
 import HomePage from './home_page/home_page';
 import ElegirInterfaz from './Elegir_Interfaz/ElegirInterfaz';
 import PerfilUsuario from './Perfil Usuario/PerfilUsuario';
-import { Route, Routes, Link ,BrowserRouter as Router } from 'react-router-dom';
+import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+import Login from './LoginRegistro/Login';
+import Registro from './LoginRegistro/Registro';
+import LoginRegistro from './LoginRegistro/LoginRegistro';
 
 function App() {
-  return (
+    return (
     <div>
       {/* ======= Header ======= */}
       <Router>
