@@ -18,7 +18,10 @@ function App() {
       <Header />
       <Router>
         <Routes>
-          <Route exact path="/elegir" element={<ElegirInterfaz />}/>
+          <Route path="/elegir" element={<ElegirInterfaz />}/>
+          <Route path="/conocenos" element={<Conocenos />}/>
+          <Route path="/loginreg" element={<LoginRegistro />}/>
+          <Route path="/perfil" element={<PerfilUsuario />}/>
           <Route exact path="/" element={<HomePage />}/>
 
         </Routes>

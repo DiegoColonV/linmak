@@ -11,7 +11,7 @@ function Registro() {
                         <div className="row mt-2">
                             <form>
                                 <div className="form-group">
-                                    <label for="correo">Correo Eléctronico</label>
+                                    <label for="correo">Correo ElectrÃ³nico</label>
                                     <input type="email" className="form-control" id="correo" placeholder="Email" />
                                 </div>
                                 <div className="form-group mt-4">
@@ -19,12 +19,12 @@ function Registro() {
                                     <input type="text" className="form-control" id="usuario" placeholder="Nombre de usuario" />
                                 </div>
                                 <div className="form-group mt-4">
-                                    <label for="contraseña">Contraseña</label>
-                                    <input type="password" className="form-control" id="contraseña" placeholder="Contraseña" />
+                                    <label for="contraseÃ±a">ContraseÃ±a</label>
+                                    <input type="password" className="form-control" id="contraseÃ±a" placeholder="ContraseÃ±a" />
                                 </div>
                                 <div className="form-group mt-4">
-                                    <label for="rcontraseña">Repetir contraseña</label>
-                                    <input type="password" className="form-control" id="rcontraseña" placeholder="Repetir contraseña" />
+                                    <label for="rcontraseÃ±a">Repetir contraseÃ±a</label>
+                                    <input type="password" className="form-control" id="rcontraseÃ±a" placeholder="Repetir contraseÃ±a" />
                                 </div>
                                 <button type="submit" className="btn btn-outline-primary col-md-12 col-xs-18 mt-5">Registrarse</button>
                             </form>

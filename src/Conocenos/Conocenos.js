@@ -27,14 +27,14 @@ function Conocenos() {
                 </section>
                 <section className="queEs">
                     <div className="container">
-                        <h1 className="title text-center"> ¿Qué es Linmak? </h1>
+                        <h1 className="title text-center"> Â¿QuÃ© es Linmak? </h1>
                         <p className="mt-5 text">
                             El nombre de Linmak es un juego de palabras, viene de Language Interface Maker. El proyecto de Linmak nace con la idea de
-                            facilitar la creación de interfaces web, y creemos que no hay forma más fácil de crear una interfaz que describirla con tus
+                            facilitar la creaciÃ³n de interfaces web, y creemos que no hay forma mÃ¡s fÃ¡cil de crear una interfaz que describirla con tus
                             propias palabras. <br/> <br/>
                             Con ayuda del Procesamiento de Lenguaje Natural somos capaces de crear una interfaz a partir de una frase, y de seguirla modificando
-                            con palabras. También nos aseguramos que todas las interfaces creadas cumplan con los requirimientos de Usabilidad y UX/UI, porque como programadores
-                            y usuarios conocemos la importancia de estos y la diferencia que marcan en las páginas web. <br /> <br />
+                            con palabras. TambiÃ©n nos aseguramos que todas las interfaces creadas cumplan con los requirimientos de Usabilidad y UX/UI, porque como programadores
+                            y usuarios conocemos la importancia de estos y la diferencia que marcan en las pÃ¡ginas web. <br /> <br />
                             Queremos enfocar este proyecto para que sea una herramienta de utilidad entre desarrolladores web y potenciales clientes. 
 
                         </p>
@@ -75,7 +75,7 @@ function Conocenos() {
                                         <img className="img-fluid" src="img/1.jpg" alt="..." />
                                     </div>
                                     <div className="portfolio-caption">
-                                        <div className="portfolio-caption-heading">Páginas creadas</div>
+                                        <div className="portfolio-caption-heading">PÃ¡ginas creadas</div>
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +101,7 @@ function Conocenos() {
                                         <img className="img-fluid" src="img/2.jpg" alt="..." />
                                     </div>
                                     <div className="portfolio-caption">
-                                        <div className="portfolio-caption-heading">Lineas de código</div>
+                                        <div className="portfolio-caption-heading">Lineas de cÃ³digo</div>
                                     </div>
                                 </div>
                             </div>
@@ -131,21 +131,21 @@ function Conocenos() {
                                 <div className="col-lg-4">
                                     <div className=" row team-member">
                                         <img className="mx-auto rounded-circle" src="img/user.png" alt="..." />
-                                            <h4>Diego Colón</h4>
+                                            <h4>Diego ColÃ³n</h4>
                                         <p className="text-muted">Lead Designer</p>
                                         </div>
                                     </div>
                                 <div className="col-lg-4">
                                     <div className=" row team-member">
                                     <img className="mx-auto rounded-circle" src="img/user.png" alt="..." />
-                                            <h4>Jesús García</h4>
+                                            <h4>JesÃºs GarcÃ­a</h4>
                                         <p className="text-muted">Lead Marketer</p>
                                         </div>
                                     </div>
                                 <div className="col-lg-4">
                                     <div className="row team-member">
                                         <img className="mx-auto rounded-circle" src="img/user.png" alt="..." />
-                                            <h4>Yaxiri Vázquez</h4>
+                                            <h4>Yaxiri VÃ¡zquez</h4>
                                         <p className="text-muted">Lead Developer</p>
                                     </div>
                                 </div>

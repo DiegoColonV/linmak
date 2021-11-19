@@ -101,7 +101,7 @@ function HomePage() {
                         </div>
                         <div className="row no-gutters">
                             <div className="col-lg-4 box" data-aos="fade-right">
-                                <h3>Que noob</h3>
+                                <h3>Plan inicial</h3>
                                 <h4>Gratis</h4>
                                 <ul>
                                     <li><i className="bx bx-check" /> Crea interfaces ilimitadas</li>
@@ -113,7 +113,7 @@ function HomePage() {
                                 <a href="#" className="get-started-btn">Empieza a crear</a>
                             </div>
                             <div className="col-lg-4 box featured" data-aos="fade-up">
-                                <h3>Que pro</h3>
+                                <h3>Plan avanzado</h3>
                                 <h4>$49<span>mensual</span></h4>
                                 <ul>
                                     <li><i className="bx bx-check" /> Crea interfaces ilimitadas</li>
@@ -125,7 +125,7 @@ function HomePage() {
                                 <a href="#" className="get-started-btn">Empieza a crear</a>
                             </div>
                             <div className="col-lg-4 box" data-aos="fade-left">
-                                <h3>Que mega pro</h3>
+                                <h3>Plan linmak</h3>
                                 <h4>$99<span>mensual</span></h4>
                                 <ul>
                                     <li><i className="bx bx-check" /> Crea interfaces ilimitadas</li>

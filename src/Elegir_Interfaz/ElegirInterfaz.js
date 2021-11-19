@@ -22,7 +22,7 @@ class ElegirInterfaz extends React.Component{
                 <div className="choose-int">
                     Elige una interfaz
                 </div>
-                <TextoAnterior text="Una interfaz bien bonita jeje apoco no?" />
+                <TextoAnterior text="Página minimalista con imagenes y colores azules" />
                 <Previsualizacion />
                 <NuevoTexto />
             </div>
