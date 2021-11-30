@@ -7,11 +7,11 @@
                 "index":0
             },
             {
-                "nombre" : "secundaria 1",
+                "nombre" : "carrito",
                 "index":1
             },
             {
-                "nombre" : "secundaria 2",
+                "nombre" : "contacto",
                 "index":2
             }
         ]
@@ -24,7 +24,7 @@
                 "index":3
             },
             {
-                "nombre" : "secundaria 1",
+                "nombre" : "conocenos",
                 "index":4
             }
         ]

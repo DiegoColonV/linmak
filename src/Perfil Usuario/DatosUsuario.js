@@ -14,7 +14,7 @@ class DatosUsuario extends React.Component{
                 </div>
                 <div className="profile-card-body">
                     <p>Correo electrónico: example@example.com</p>
-                    <p>Tipo de cuenta: ¡Qué pro!</p>
+                    <p>Tipo de plan: Plan Linmak </p>
                     <hr></hr>
                 </div>
             </div>

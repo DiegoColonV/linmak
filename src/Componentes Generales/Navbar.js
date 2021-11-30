@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import {Link } from "react-router-dom";
 
 
 
@@ -6,10 +6,10 @@ function Navbar (){
     return(
         <nav id="navbar" className="navbar">
             <ul>
-            <li><a href="/" className="nav-link active float-left">Crear interfaz</a></li>
-            <li><a href="/conocenos" className="nav-link">Conócenos</a></li>
-            <li><a href="/loginreg" className="nav-link">Iniciar sesión</a></li>
-            <li><a href="/perfil" className="getstarted" >Registrarse</a></li>
+            <li><Link to="/" className="nav-link active float-left">Crear interfaz</Link></li>
+            <li><Link to="/conocenos" className="nav-link">Conócenos</Link></li>
+            <li><Link to="/perfil" className="nav-link">Iniciar sesión</Link></li>
+            <li><Link to="/loginreg" className="getstarted" >Registrarse</Link></li>
             </ul>
         </nav>
     );

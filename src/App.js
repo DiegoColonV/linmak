@@ -15,15 +15,14 @@ function App() {
     return (
     <div>
       {/* ======= Header ======= */}
-      <Header />
       <Router>
+        <Header />
         <Routes>
-          <Route path="/elegir" element={<ElegirInterfaz />}/>
-          <Route path="/conocenos" element={<Conocenos />}/>
-          <Route path="/loginreg" element={<LoginRegistro />}/>
-          <Route path="/perfil" element={<PerfilUsuario />}/>
           <Route exact path="/" element={<HomePage />}/>
-
+          <Route exact path="/elegir" element={<ElegirInterfaz />}/>
+          <Route exact path="/conocenos" element={<Conocenos />} />
+          <Route exact path="/perfil" element={<PerfilUsuario />} />
+          <Route exact path="/loginreg" element={<LoginRegistro />} />
         </Routes>
       </Router>
       {/* ======= Footer ======= */}

@@ -1,7 +1,7 @@
 import React from "react";
-import prueba1 from "./img/prueba 1.jpg";
-import prueba2 from "./img/prueba 2.jpg";
-import prueba3 from "./img/prueba 3.jpg";
+import prueba1 from "./img/prueba 1.png";
+import prueba2 from "./img/prueba 2.png";
+import prueba3 from "./img/prueba 3.png";
 
 /* 
     Clase que muestra las previsualizaciones de una interfaz
