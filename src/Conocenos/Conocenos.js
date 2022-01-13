@@ -1,5 +1,3 @@
-import "./estilos.css";
-
 function Conocenos() {
     return (
         <div>
@@ -20,7 +18,7 @@ function Conocenos() {
                     <div>
                         <div className="section-images">
                             <div id="cImagen" className="img-fluid img-thumbnail" alt="Responsive image">
-                                <img src="img/img-compu1.png" className="img-fluid" alt="" />
+                                <img src="img/conocenos/img-compu1.png" className="img-fluid" alt="" />
                             </div>
                         </div>
                     </div>
@@ -72,7 +70,7 @@ function Conocenos() {
                                         <div className=" portfolio-link portfolio-hover">
                                             <div className="portfolio-hover-content"><p className="nums">200</p></div>
                                         </div>
-                                        <img className="img-fluid" src="img/1.jpg" alt="..." />
+                                        <img className="img-fluid" src="img/conocenos/1.jpg" alt="..." />
                                     </div>
                                     <div className="portfolio-caption">
                                         <div className="portfolio-caption-heading">Páginas creadas</div>
@@ -85,7 +83,7 @@ function Conocenos() {
                                         <div className="portfolio-hover">
                                             <div className="portfolio-hover-content"><p className="nums">100</p></div>
                                         </div>
-                                        <img className="img-fluid" src="img/3.jpg" alt="..." />
+                                        <img className="img-fluid" src="img/conocenos/3.jpg" alt="..." />
                                     </div>
                                     <div className="portfolio-caption">
                                         <div className="portfolio-caption-heading">Usuarios</div>
@@ -98,7 +96,7 @@ function Conocenos() {
                                         <div className="portfolio-hover">
                                             <div className="portfolio-hover-content"><p className="nums">3000</p></div>
                                         </div>
-                                        <img className="img-fluid" src="img/2.jpg" alt="..." />
+                                        <img className="img-fluid" src="img/conocenos/2.jpg" alt="..." />
                                     </div>
                                     <div className="portfolio-caption">
                                         <div className="portfolio-caption-heading">Lineas de código</div>
@@ -111,7 +109,7 @@ function Conocenos() {
                                         <div className="portfolio-hover">
                                             <div className="portfolio-hover-content"><p className="nums">+600</p></div>
                                         </div>
-                                        <img className="img-fluid" src="img/4.jpg" alt="..." />
+                                        <img className="img-fluid" src="img/conocenos/4.jpg" alt="..." />
                                     </div>
                                     <div className="portfolio-caption">
                                         <div className="portfolio-caption-heading">Elementos</div>
@@ -130,21 +128,21 @@ function Conocenos() {
                             <div className="row mt-5">
                                 <div className="col-lg-4">
                                     <div className=" row team-member">
-                                        <img className="mx-auto rounded-circle" src="img/user.png" alt="..." />
+                                        <img className="mx-auto rounded-circle" src="img/conocenos/user.png" alt="..." />
                                             <h4>Diego Colón</h4>
                                         <p className="text-muted">Lead Designer</p>
                                         </div>
                                     </div>
                                 <div className="col-lg-4">
                                     <div className=" row team-member">
-                                    <img className="mx-auto rounded-circle" src="img/user.png" alt="..." />
+                                    <img className="mx-auto rounded-circle" src="img/conocenos/user.png" alt="..." />
                                             <h4>Jesús García</h4>
                                         <p className="text-muted">Lead Marketer</p>
                                         </div>
                                     </div>
                                 <div className="col-lg-4">
                                     <div className="row team-member">
-                                        <img className="mx-auto rounded-circle" src="img/user.png" alt="..." />
+                                        <img className="mx-auto rounded-circle" src="img/conocenos/user.png" alt="..." />
                                             <h4>Yaxiri Vázquez</h4>
                                         <p className="text-muted">Lead Developer</p>
                                     </div>

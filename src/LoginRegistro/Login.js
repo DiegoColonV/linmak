@@ -1,5 +1,3 @@
-import "./stilos.css";
-
 function Login() {
     return (
         <div>

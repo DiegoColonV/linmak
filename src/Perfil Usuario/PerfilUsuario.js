@@ -1,7 +1,6 @@
 import React from "react";
 import Carpetas from "./Carpetas";
 import DatosUsuario from "./DatosUsuario";
-import './styles.css'
 /* 
     Clase para mostrar el Perfil del usuario
     En esta clase se muestran los siguientes componentes:

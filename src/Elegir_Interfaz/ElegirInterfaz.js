@@ -1,7 +1,6 @@
 import React from "react";
 import NuevoTexto from "./NuevoTexto";
 import Previsualizacion from "./Previsualizacion";
-import "./styles.css";
 import TextoAnterior from "./TextoAnterior";
 
 /* 

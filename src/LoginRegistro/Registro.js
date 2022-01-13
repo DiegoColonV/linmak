@@ -1,5 +1,4 @@
 import React from "react";
-import "./stilos.css";
 
 function Registro() {
     return (

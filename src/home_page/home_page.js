@@ -51,7 +51,7 @@ function HomePage() {
                                 </div>
                             </div>
                             <div className="image col-xl-5 d-flex align-items-stretch justify-content-center order-1 order-lg-2" data-aos="fade-left" data-aos-delay={100}>
-                                <img src="img/homepage/gifejemplo.gif" className="img-fluid" alt="" />
+                                <img src="\img\general\User-Interface-User-Experience.gif" className="img-fluid" alt="" />
                             </div>
                         </div>
                     </div>
