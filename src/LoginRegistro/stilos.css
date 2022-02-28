@@ -1,0 +1,39 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Raleway', sans-serif;
+}
+body {
+	font-family: 'Open Sans', sans-serif;
+	color: #585a61;
+}
+#formLogin {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	padding: 140px 0 100px 0;
+}
+
+#formLogin h1 {
+	margin: 0 0 10px 0;
+	font-size: 30px;
+	font-weight: 500;
+	line-height: 56px;
+	color: #5777ba;
+	font-family: 'Poppins', sans-serif;
+}
+
+#formLogin p {
+	font-size: 16px;
+	font-weight: 500;
+	color: #5777ba;
+	font-family: 'Poppins', sans-serif;
+}
+
+#formLogin label {
+	color: #515f7d;
+	font-size: 15px;
+}

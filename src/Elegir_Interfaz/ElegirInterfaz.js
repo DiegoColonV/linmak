@@ -1,7 +1,8 @@
-import React from "react";
-import NuevoTexto from "./NuevoTexto";
-import Previsualizacion from "./Previsualizacion";
-import TextoAnterior from "./TextoAnterior";
+import React from 'react';
+import NuevoTexto from './NuevoTexto';
+import Previsualizacion from './Previsualizacion';
+import TextoAnterior from './TextoAnterior';
+import './styles.css';
 
 /* 
     CLASE ElegirInterfaz
@@ -14,19 +15,16 @@ import TextoAnterior from "./TextoAnterior";
         * Botón para utilizar el nuevo texto ingresado
 */
 
-class ElegirInterfaz extends React.Component{
-    render(){
-        return(
-            <div className="container int-box">
-                <div className="choose-int">
-                    Elige una interfaz
-                </div>
-                <TextoAnterior text="Página minimalista con colores azules" />
-                <Previsualizacion />
-                <NuevoTexto />
-            </div>
-        );
-    }
-
+class ElegirInterfaz extends React.Component {
+	render() {
+		return (
+			<div className='container int-box'>
+				<div className='choose-int'>Elige una interfaz</div>
+				<TextoAnterior text='Página minimalista con colores azules' />
+				<Previsualizacion />
+				<NuevoTexto />
+			</div>
+		);
+	}
 }
 export default ElegirInterfaz;

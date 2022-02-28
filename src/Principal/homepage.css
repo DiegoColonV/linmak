@@ -1,0 +1,29 @@
+.icon-box-hp {
+	font-size: 48px;
+	color: #5777ba;
+}
+
+.editar {
+	background-color: #f2f5fa;
+}
+
+.btn-create {
+	background-color: #5777ba;
+	border-width: 0;
+	width: 100%;
+}
+
+.btn-create:hover {
+	background-color: #748ec6;
+}
+
+.icon-create {
+	font-size: 50px;
+	margin-top: auto;
+	/* color: #ffaab5; */
+	color: #5777ba;
+}
+
+.img-hp-mockup {
+	width: 100%;
+}

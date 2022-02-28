@@ -1,6 +1,8 @@
-import React from "react";
-import Carpetas from "./Carpetas";
-import DatosUsuario from "./DatosUsuario";
+import React from 'react';
+import Carpetas from './Carpetas';
+import DatosUsuario from './DatosUsuario';
+import './styles.css';
+
 /* 
     Clase para mostrar el Perfil del usuario
     En esta clase se muestran los siguientes componentes:
@@ -10,15 +12,15 @@ import DatosUsuario from "./DatosUsuario";
     
 */
 
-class PerfilUsuario extends React.Component{
-    render(){
-        return(
-            <div className="container profile">
-                <DatosUsuario />
-                <Carpetas />
-            </div>
-        );
-    }
+class PerfilUsuario extends React.Component {
+	render() {
+		return (
+			<div className='container profile'>
+				<DatosUsuario />
+				<Carpetas />
+			</div>
+		);
+	}
 }
 
 export default PerfilUsuario;

@@ -1,0 +1,25 @@
+#create {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	padding: 80px 0 100px 0;
+}
+
+.breadcrumb-link {
+	color: #47536e;
+	text-decoration: none;
+}
+
+.breadcrumb-link.active {
+	color: #5777ba;
+	font-weight: 600;
+}
+
+.breadcrumb-item::before {
+	content: '≫ ' !important;
+}
+
+.progress-bar {
+	background-color: #ffaab5;
+	/* background-color: #fbdee2; */
+}
