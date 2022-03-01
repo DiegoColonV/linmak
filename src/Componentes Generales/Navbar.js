@@ -5,7 +5,7 @@ function Navbar() {
 	return (
 		<nav id='navbar' className='navbar navbar-expand-lg'>
 			<button
-				class='navbar-toggler'
+				className='navbar-toggler'
 				type='button'
 				data-toggle='collapse'
 				data-target='#navbarTogglerDemo01'
@@ -15,7 +15,7 @@ function Navbar() {
 			>
 				<i className='bx bx-menu' />
 			</button>
-			<div class='collapse navbar-collapse' id='navbarTogglerDemo01'>
+			<div className='collapse navbar-collapse' id='navbarTogglerDemo01'>
 				<ul className='navbar-nav mr-auto mt-2 mt-lg-0'>
 					<li>
 						<NavLink to='/' className='nav-link float-left'>

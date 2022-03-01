@@ -2,7 +2,7 @@ import { ActionTypes } from '../constants/action-types';
 
 const initialState = {
 	txt_int: {
-		categoria: null,
+		categoria: 0,
 		ambito: null,
 		estilo: null,
 		color: null,
@@ -16,28 +16,22 @@ export const txtIntReducer = (state = initialState, action) => {
 			return {
 				...state,
 				txt_int: {
+					...state.txt_int,
 					categoria: action.payload,
-					ambito: state.ambito,
-					estilo: state.estilo,
-					color: state.color,
-					fuente: state.fuente,
 				},
 			};
 		case ActionTypes.TXT_INT_ADD_AMBITO:
 			return {
 				...state,
-				session: {
-					categoria: state.categoria,
+				txt_int: {
+					...state.txt_int,
 					ambito: action.payload,
-					estilo: state.estilo,
-					color: state.color,
-					fuente: state.fuente,
 				},
 			};
 		case ActionTypes.TXT_INT_ADD_ESTILO:
 			return {
 				...state,
-				session: {
+				txt_int: {
 					categoria: state.categoria,
 					ambito: state.ambito,
 					estilo: action.payload,
@@ -48,7 +42,7 @@ export const txtIntReducer = (state = initialState, action) => {
 		case ActionTypes.TXT_INT_ADD_COLOR:
 			return {
 				...state,
-				session: {
+				txt_int: {
 					categoria: state.categoria,
 					ambito: state.ambito,
 					estilo: state.estilo,
@@ -59,7 +53,7 @@ export const txtIntReducer = (state = initialState, action) => {
 		case ActionTypes.TXT_INT_ADD_FUENTE:
 			return {
 				...state,
-				session: {
+				txt_int: {
 					categoria: state.categoria,
 					ambito: state.ambito,
 					estilo: state.estilo,
