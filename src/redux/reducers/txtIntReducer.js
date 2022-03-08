@@ -3,10 +3,10 @@ import { ActionTypes } from '../constants/action-types';
 const initialState = {
 	txt_int: {
 		categoria: 0,
-		ambito: null,
-		estilo: null,
-		color: null,
-		fuente: null,
+		ambito: '',
+		estilo: '',
+		color: '',
+		fuente: '',
 	},
 };
 
@@ -32,32 +32,23 @@ export const txtIntReducer = (state = initialState, action) => {
 			return {
 				...state,
 				txt_int: {
-					categoria: state.categoria,
-					ambito: state.ambito,
+					...state.txt_int,
 					estilo: action.payload,
-					color: state.color,
-					fuente: state.fuente,
 				},
 			};
 		case ActionTypes.TXT_INT_ADD_COLOR:
 			return {
 				...state,
 				txt_int: {
-					categoria: state.categoria,
-					ambito: state.ambito,
-					estilo: state.estilo,
+					...state.txt_int,
 					color: action.payload,
-					fuente: state.fuente,
 				},
 			};
 		case ActionTypes.TXT_INT_ADD_FUENTE:
 			return {
 				...state,
 				txt_int: {
-					categoria: state.categoria,
-					ambito: state.ambito,
-					estilo: state.estilo,
-					color: state.color,
+					...state.txt_int,
 					fuente: action.payload,
 				},
 			};

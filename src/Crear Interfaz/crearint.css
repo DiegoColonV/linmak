@@ -41,6 +41,7 @@
 	color: #009cd7;
 	font-weight: bold;
 	border-color: #009cd7;
+	z-index: 2;
 }
 
 .left-button-create:hover {
@@ -133,4 +134,14 @@
 .profile-card-5 .btn-primary {
 	background-color: #4e5e30;
 	border-color: #4e5e30;
+}
+
+.option-ambit {
+	font-size: 20px;
+	color: #47536e;
+}
+
+.card-ambit {
+	font-size: 30px;
+	color: #0069a0;
 }

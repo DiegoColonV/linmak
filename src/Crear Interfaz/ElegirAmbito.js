@@ -4,22 +4,51 @@ import { setUIProgress } from '../redux/actions/uiActions';
 import { addAmbito } from '../redux/actions/txtIntActions';
 import { useState } from 'react';
 
-const dummyExample = [
-	{ text: 'Negocios', img: '/img/ejemplos/business.png' },
-	{ text: 'Construcción', img: '/img/ejemplos/const.png' },
-	{ text: 'Educación', img: '/img/ejemplos/education.png' },
-	{ text: 'Comida', img: '/img/ejemplos/food.png' },
-	{ text: 'Marketing', img: '/img/ejemplos/marketing.jpg' },
-	{ text: 'Salud', img: '/img/ejemplos/med.png' },
-	{ text: 'Tecnología', img: '/img/ejemplos/tech.png' },
+const dummyAmbitos = [
+	{
+		id: -1,
+		text: ' Elige el ámbito o enfoque...',
+		icon: <i className='bx bxs-left-arrow-alt'></i>,
+	},
+	{ id: 0, text: 'Negocios', icon: <i className='bx bxs-business'></i> },
+	{
+		id: 1,
+		text: 'Bienes Raíces',
+		icon: <i className='bx bx-building-house'></i>,
+	},
+	{
+		id: 2,
+		text: 'Educación',
+		icon: <i className='bx bxs-graduation'></i>,
+	},
+	{ id: 3, text: 'Comida', icon: <i className='bx bx-food-menu'></i> },
+	{ id: 4, text: 'Publicidad', icon: <i className='bx bx-news'></i> },
+	{ id: 5, text: 'Entretenimiento', icon: <i className='bx bx-headphone'></i> },
+	{ id: 6, text: 'Tecnología', icon: <i className='bx bx-chip'></i> },
+	{ id: 7, text: 'Salud', icon: <i className='bx bx-heart'></i> },
+	{ id: 8, text: 'Freelance', icon: <i className='bx bx-coffee'></i> },
 ];
+
+dummyAmbitos.sort((a, b) => {
+	let fa = a.text.toLowerCase(),
+		fb = b.text.toLowerCase();
+
+	if (fa < fb) {
+		return -1;
+	}
+	if (fa > fb) {
+		return 1;
+	}
+	return 0;
+});
 
 const ElegirAmbito = () => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	const amb = useSelector((state) => state.objTxtInt.txt_int.ambito);
-	const [indexImg, setIndexImg] = useState([0, 1, 2]);
-	const [text, setText] = useState('');
+	const [selectedAmb, setSelectedAmb] = useState(dummyAmbitos[0]);
+	const [otroDisabled, setOtroDisabled] = useState(true);
+	const [textOtro, setTextOtro] = useState('');
 
 	const handleStep = (step, path) => {
 		dispatch(setUIProgress(step));
@@ -28,38 +57,36 @@ const ElegirAmbito = () => {
 
 	const handleAmbitSave = () => {
 		handleStep(2, '/crear/estilo');
-		if (text !== '') {
-			dispatch(addAmbito(text));
+		if (selectedAmb.id !== -1) {
+			if (selectedAmb.id === -2) {
+				if (textOtro !== '') {
+					dispatch(addAmbito(textOtro.trim()));
+				}
+			} else dispatch(addAmbito(selectedAmb.text));
 		}
 	};
 
-	const handleInput = (event) => {
-		setText(event.target.value.trim());
+	const handleInputOtro = (event) => {
+		setTextOtro(event.target.value);
 	};
 
-	const get3rands = () => {
-		let arr = [];
-		arr[0] = Math.floor(Math.random() * dummyExample.length);
-		while (true) {
-			arr[1] = Math.floor(Math.random() * dummyExample.length);
-			if (arr[1] !== arr[0]) {
-				break;
-			}
+	const handleSelectAmbit = (event) => {
+		if (parseInt(event.target.value) !== -2) {
+			setSelectedAmb(
+				dummyAmbitos.find((obj) => obj.id === parseInt(event.target.value))
+			);
+			setOtroDisabled(true);
+		} else {
+			setSelectedAmb({ id: -2, text: 'Otro' });
+			setOtroDisabled(false);
 		}
-		while (true) {
-			arr[2] = Math.floor(Math.random() * dummyExample.length);
-			if (arr[2] !== arr[0] && arr[2] !== arr[1]) {
-				break;
-			}
-		}
-		setIndexImg(arr);
 	};
 
 	return (
 		<>
 			<div className='row mt-5 mb-3'>
 				<h1 className='section-title'>
-					Escribe el ámbito o enfoque
+					Elige el ámbito o enfoque
 					<a
 						className='rounded-circle info-btn-create'
 						data-toggle='collapse'
@@ -77,7 +104,7 @@ const ElegirAmbito = () => {
 						id='collapseExample'
 					>
 						<div className='card card-body'>
-							Escribe a qué te dedicas tú o tu empresa, qué comercializa o la
+							Elige a qué te dedicas tú o tu empresa, qué comercializa o la
 							indistria a la que pertenece.
 						</div>
 					</div>
@@ -102,81 +129,47 @@ const ElegirAmbito = () => {
 				</div>
 				<div className='col-10'>
 					<div className='row d-flex justify-content-center mb-5'>
-						<div className='col-md-6 col-xs-12'>
-							<input
-								type='text'
-								className='form-control form-control-lg'
-								value={text}
-								placeholder='Escribe a qué te dedicas tú o tu empresa'
-								onChange={handleInput}
-							></input>
-							<small id='txtHelp' className='form-text text-muted'>
-								Texto guardado: {amb}
-							</small>
-						</div>
-					</div>
-					<div className='row mt-5'>
-						<div className='row'>
-							<div className='col-2 offset-lg-2 mt-auto mb-auto'>
-								<h3>Ejemplos:</h3>
-							</div>
-							<div className='col'>
-								<a
-									role='button'
-									className='btn rounded-circle info-btn-create'
-									onClick={get3rands}
-								>
-									<i className='bx bx-revision icon-info-create'></i>
-								</a>
-							</div>
-						</div>
-						<div className='row d-flex justify-content-center align-middle'>
-							<div className='col-md-3 col-xs-10 mt-4'>
-								<div className='card profile-card-5'>
-									<div className='card-img-block'>
-										<img
-											className='card-img-top'
-											src={dummyExample[indexImg[0]].img}
-											alt='Card image cap'
-										/>
-									</div>
-									<div className='card-body pt-0'>
-										<h5 className='card-title'>
-											<i>"{dummyExample[indexImg[0]].text}"</i>
-										</h5>
-									</div>
+						<div className='col-md-8 col-xs-12'>
+							<div className='row'>
+								<div className='col-md-10 col-xs-12'>
+									<select
+										defaultValue={-1}
+										className='selectpicker border-0 px-4 py-4 rounded shadow-sm option-ambit w-100'
+										aria-label='Elegir ámbito'
+										onChange={handleSelectAmbit}
+									>
+										{dummyAmbitos.map((ambito) => (
+											<option key={ambito.id} value={ambito.id}>
+												{ambito.text}
+											</option>
+										))}
+										<option value={-2}>OTRO</option>
+									</select>
 								</div>
+								{otroDisabled && (
+									<div
+										className='card col-2 rounded shadow-sm border-0  d-flex justify-content-center'
+										hidden={otroDisabled}
+									>
+										<div className='card-body mx-auto card-ambit'>
+											{selectedAmb.icon}
+										</div>
+									</div>
+								)}
+								<small id='txtHelp' className='form-text text-muted'>
+									{amb !== '' ? `Texto guardado: ${amb}` : ''}
+								</small>
 							</div>
-							<div className='col-md-3 col-xs-10 mt-4'>
-								<div className='card profile-card-5'>
-									<div className='card-img-block'>
-										<img
-											className='card-img-top'
-											src={dummyExample[indexImg[1]].img}
-											alt='Card image cap'
-										/>
-									</div>
-									<div className='card-body pt-0'>
-										<h5 className='card-title'>
-											<i>"{dummyExample[indexImg[1]].text}"</i>
-										</h5>
-									</div>
-								</div>
-							</div>
-							<div className='col-md-3 col-xs-10 mt-4'>
-								<div className='card profile-card-5'>
-									<div className='card-img-block'>
-										<img
-											className='card-img-top'
-											src={dummyExample[indexImg[2]].img}
-											alt='Card image cap'
-										/>
-									</div>
-									<div className='card-body pt-0'>
-										<h5 className='card-title'>
-											<i>"{dummyExample[indexImg[2]].text}"</i>
-										</h5>
-									</div>
+							<div className='row mb-5 mt-5'>
+								<div className='col-10'>
+									<input
+										type='text'
+										className='form-control-lg border-0 shadow-sm w-100'
+										placeholder='Otro...'
+										disabled={otroDisabled}
+										value={textOtro}
+										onChange={handleInputOtro}
+									></input>
 								</div>
 							</div>
 						</div>
