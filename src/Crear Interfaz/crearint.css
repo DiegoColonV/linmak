@@ -1,8 +1,7 @@
 #create {
 	width: 100%;
-	position: relative;
-	overflow: hidden;
 	padding: 80px 0 100px 0;
+	min-height: 100vh;
 }
 
 .breadcrumb-link {
@@ -83,7 +82,7 @@
 
 .container-create {
 	background-color: #f8f8f8;
-	height: 100vh;
+	height: 100%;
 }
 
 .cat-active {
@@ -102,6 +101,10 @@
 	border-color: white;
 	background-color: #009cd7;
 }
+
+
+
+
 
 /*Profile Card 5*/
 .profile-card-5 {
@@ -144,4 +147,28 @@
 .card-ambit {
 	font-size: 30px;
 	color: #0069a0;
+}
+
+.create_img_example{
+	max-width: 90%;
+}
+
+.create_font_container{
+	text-align: center;
+}
+
+.create-help-text-container{
+	text-align: left;
+}
+
+.h-120px{
+	height: 120px;
+}
+
+.create-font-rangenumbers{
+	color: #dee2e6;
+}
+.create-font-rangenumbers_active{
+	font-weight: bold;
+	color: #009cd7;
 }

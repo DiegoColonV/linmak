@@ -30,21 +30,17 @@ function CrearInt() {
 				</div>
 			</header>
 			<section id='create' className='container-create'>
-				<div className='row mt-5 ms-5'>
-					Cat: {obj.categoria}, Ambito: {obj.ambito}, Estilo: {obj.estilo},
-					Color: {obj.color}, Fuente: {obj.fuente}
-				</div>
-				<div className='container mt-3'>
-					<div className='row mt-4'>
+				{/* <div className='row mt-5 ms-5'>
+					Cat: {obj.categoria}, Ambito: {obj.ambito}, Estilo: {obj.estilo}, Color: {obj.color}, Fuente: {JSON.stringify(obj.fuente)}
+				</div> */}
+				<br />
+				<div className='container position-relative'>
+					<div className='row'>
 						<Outlet />
 					</div>
-					<div className='row mt-5 fixed-bottom mb-5'>
+					<div className='row fixed-bottom mb-5'>
 						<div className='progress'>
-							<div
-								className='progress-bar'
-								role='progressbar'
-								style={{ width: `${(step * 100) / 5}%` }}
-							></div>
+							<div className='progress-bar' role='progressbar' style={{ width: `${(step * 100) / 5}%` }}></div>
 						</div>
 					</div>
 				</div>

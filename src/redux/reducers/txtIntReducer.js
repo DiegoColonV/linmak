@@ -6,7 +6,7 @@ const initialState = {
 		ambito: '',
 		estilo: '',
 		color: '',
-		fuente: '',
+		fuente: null,
 	},
 };
 
