@@ -11,8 +11,33 @@ import ElegirColor from './Crear Interfaz/ElegirColor';
 import ElegirFuente from './Crear Interfaz/ElegirFuente';
 import ElegirCategoria from './Crear Interfaz/ElegirCategoria';
 import Main from './Componentes Generales/Main';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { userLogin } from './redux/actions/userActions';
 
 function App() {
+	const dispatch = useDispatch();
+	const getUserData = async () => {
+		let tokenlocal = localStorage.getItem('token');
+		const requestOptions = {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${tokenlocal}` },
+		}
+		const data = await fetch("http://25.59.209.228:5000/getuser", requestOptions)
+		const dataJson = await data.json()
+		console.log(dataJson)
+		console.log(tokenlocal)
+
+		if (dataJson.status == 200) {
+			const userData = {
+				...dataJson.data,
+				token: tokenlocal,
+				autenticado: true
+			}
+			dispatch(userLogin(userData))
+		}
+	}
+	useEffect(() => { getUserData() }, [])
 	return (
 		<div>
 			<Routes>

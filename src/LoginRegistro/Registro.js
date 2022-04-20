@@ -10,19 +10,19 @@ function Registro() {
                         <div className="row mt-2">
                             <form>
                                 <div className="form-group">
-                                    <label for="correo">Correo Electrónico</label>
+                                    <label htmlFor="correo">Correo Electrónico</label>
                                     <input type="email" className="form-control" id="correo" placeholder="Email" />
                                 </div>
                                 <div className="form-group mt-4">
-                                    <label for="usuario">Nombre de usuario</label>
+                                    <label htmlFor="usuario">Nombre de usuario</label>
                                     <input type="text" className="form-control" id="usuario" placeholder="Nombre de usuario" />
                                 </div>
                                 <div className="form-group mt-4">
-                                    <label for="contraseña">Contraseña</label>
+                                    <label htmlFor="contraseña">Contraseña</label>
                                     <input type="password" className="form-control" id="contraseña" placeholder="Contraseña" />
                                 </div>
                                 <div className="form-group mt-4">
-                                    <label for="rcontraseña">Repetir contraseña</label>
+                                    <label htmlFor="rcontraseña">Repetir contraseña</label>
                                     <input type="password" className="form-control" id="rcontraseña" placeholder="Repetir contraseña" />
                                 </div>
                                 <button type="submit" className="btn btn-outline-primary col-md-12 col-xs-18 mt-5">Registrarse</button>

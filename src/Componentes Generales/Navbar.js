@@ -1,7 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import './estilos_comp_generales.css';
+import { useSelector } from 'react-redux';
 
 function Navbar() {
+	const user = useSelector((state) => state.usrData);
+
 	return (
 		<nav id='navbar' className='navbar navbar-expand-lg'>
 			<button
@@ -27,6 +30,7 @@ function Navbar() {
 							Conócenos
 						</NavLink>
 					</li>
+					{!user.autenticado ? <>
 					<li>
 						<NavLink to='/loginreg' className='nav-link'>
 							Iniciar Sesión
@@ -37,6 +41,7 @@ function Navbar() {
 							Registrarse
 						</NavLink>
 					</li>
+					</> :null }
 				</ul>
 			</div>
 		</nav>
