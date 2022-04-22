@@ -14,6 +14,9 @@ import Main from './Componentes Generales/Main';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { userLogin } from './redux/actions/userActions';
+import EditarInt from './Editar Interfaz/EditarInt';
+import EditarEstr from './Editar Interfaz/EditarEstr';
+import EditarElem from './Editar Interfaz/EditarElem';
 
 function App() {
 	const dispatch = useDispatch();
@@ -21,23 +24,23 @@ function App() {
 		let tokenlocal = localStorage.getItem('token');
 		const requestOptions = {
 			method: 'POST',
-			headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${tokenlocal}` },
-		}
-		const data = await fetch("http://25.59.209.228:5000/getuser", requestOptions)
-		const dataJson = await data.json()
-		console.log(dataJson)
-		console.log(tokenlocal)
+			headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${tokenlocal}` },
+		};
+		const data = await fetch('http://25.59.209.228:5000/getuser', requestOptions);
+		const dataJson = await data.json();
+		console.log(dataJson);
+		console.log(tokenlocal);
 
 		if (dataJson.status == 200) {
 			const userData = {
 				...dataJson.data,
 				token: tokenlocal,
-				autenticado: true
-			}
-			dispatch(userLogin(userData))
+				autenticado: true,
+			};
+			dispatch(userLogin(userData));
 		}
-	}
-	useEffect(() => { getUserData() }, [])
+	};
+	//useEffect(() => { getUserData() }, [])
 	return (
 		<div>
 			<Routes>
@@ -54,6 +57,10 @@ function App() {
 					<Route path='estilo' element={<ElegirEstilo />} />
 					<Route path='color' element={<ElegirColor />} />
 					<Route path='fuente' element={<ElegirFuente />} />
+				</Route>
+				<Route path='/editar' element={<EditarInt />}>
+					<Route path='estructura' element={<EditarEstr />} />
+					<Route path='elementos' element={<EditarElem />} />
 				</Route>
 			</Routes>
 		</div>

@@ -25,20 +25,20 @@ class Previsualizacion extends React.Component{
     }
 
     render(){
-        return(
-            <div className="preview">
-                <div className="preview-comps">
-                    <PrevItem number="1" isSelected={this.isSelected} selectable={this.state.itemSelected}/>
-                    <PrevItem number="2" isSelected={this.isSelected} selectable={this.state.itemSelected}/>
-                    <PrevItem number="3" isSelected={this.isSelected} selectable={this.state.itemSelected}/>
-                </div>
-                <div className={"preview-icons "+(this.state.selected?"active":"")}>
-                    <i class='bx bx-download preview-icon bx-md'></i>
-                    <i class='bx bx-show preview-icon bx-md'></i>
-                    <i class='bx bx-save preview-icon bx-md' ></i>
-                </div>
-            </div>
-        );
+        return (
+					<div className='preview'>
+						<div className='preview-comps'>
+							<PrevItem number='1' isSelected={this.isSelected} selectable={this.state.itemSelected} />
+							<PrevItem number='2' isSelected={this.isSelected} selectable={this.state.itemSelected} />
+							<PrevItem number='3' isSelected={this.isSelected} selectable={this.state.itemSelected} />
+						</div>
+						<div className={'preview-icons ' + (this.state.selected ? 'active' : '')}>
+							<i className='bx bx-download preview-icon bx-md'></i>
+							<i className='bx bx-show preview-icon bx-md'></i>
+							<i className='bx bx-save preview-icon bx-md'></i>
+						</div>
+					</div>
+				);
     }
 }
 

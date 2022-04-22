@@ -21,7 +21,7 @@ function Navbar() {
 			<div className='collapse navbar-collapse' id='navbarTogglerDemo01'>
 				<ul className='navbar-nav mr-auto mt-2 mt-lg-0'>
 					<li>
-						<NavLink to='/' className='nav-link float-left'>
+						<NavLink to='/crear/categoria' className='nav-link float-left'>
 							Crear interfaz
 						</NavLink>
 					</li>
@@ -30,18 +30,20 @@ function Navbar() {
 							Conócenos
 						</NavLink>
 					</li>
-					{!user.autenticado ? <>
-					<li>
-						<NavLink to='/loginreg' className='nav-link'>
-							Iniciar Sesión
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to='/loginreg' className='getstarted'>
-							Registrarse
-						</NavLink>
-					</li>
-					</> :null }
+					{!user.autenticado ? (
+						<>
+							<li>
+								<NavLink to='/loginreg' className='nav-link'>
+									Iniciar Sesión
+								</NavLink>
+							</li>
+							<li>
+								<NavLink to='/loginreg' className='getstarted'>
+									Registrarse
+								</NavLink>
+							</li>
+						</>
+					) : null}
 				</ul>
 			</div>
 		</nav>

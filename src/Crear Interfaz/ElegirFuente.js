@@ -114,7 +114,7 @@ const ElegirEstilo = () => {
 					</div>
 					<div className='row d-flex justify-content-center mb-5'>
 						<div className='col-md-4 col-xs-12'>
-							<label for='espaciado' className='form-label'>
+							<label htmlFor='espaciado' className='form-label'>
 								<h4>
 									<b>Espaciado</b>
 								</h4>
@@ -128,7 +128,7 @@ const ElegirEstilo = () => {
 						</div>
 						<div className='col-md-1' />
 						<div className='col-md-4 col-xs-12'>
-							<label for='tamano' className='form-label'>
+							<label htmlFor='tamano' className='form-label'>
 								<h4>
 									<b>Tamaño</b>
 								</h4>
@@ -144,7 +144,7 @@ const ElegirEstilo = () => {
 
 					<div className='row d-flex justify-content-center mb-5'>
 						<div className='col-md-4 col-xs-12'>
-							<label for='grosor' className='form-label'>
+							<label htmlFor='grosor' className='form-label'>
 								<h4>
 									<b>Grosor</b>
 								</h4>
@@ -158,7 +158,7 @@ const ElegirEstilo = () => {
 						</div>
 						<div className='col-md-1' />
 						<div className='col-md-4 col-xs-12'>
-							<label for='forma' className='form-label'>
+							<label htmlFor='forma' className='form-label'>
 								<h4>
 									<b>Forma</b>
 								</h4>

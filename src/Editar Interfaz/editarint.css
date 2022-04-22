@@ -1,0 +1,111 @@
+#edit{
+    overflow-x: hidden;
+    height: calc(100vh - 76px);
+}
+
+.vista-previa{
+    background: lightgray;
+    height: calc(100vh - 76px);;
+}
+
+.tabs{
+    border-color: #f8f8f8 !important;
+    font-size: 18px;
+}
+
+.nav-link.tab{
+    width: 200px;
+    color: black;
+    cursor: pointer;
+    border-bottom-width: 0px;
+}
+.nav-link.tab.active{
+    width: 200px;
+    color: #5777ba;
+    background-color: #f8f8f8;
+    cursor: pointer;
+}
+
+#header .logo h1 {
+	font-size: 30px;
+	margin: 0;
+	line-height: 1;
+	font-weight: 400;
+	letter-spacing: 2px;
+}
+#header .logo h1 a,
+#header .logo h1 a:hover {
+	color: #5777ba;
+	text-decoration: none;
+}
+#header .logo img {
+	margin: 0;
+	max-height: 40px;
+}
+
+.edit-estr-container .top-part{
+    padding: 40px 50px;
+}
+
+.edit-estr-container .top-part .radio-container{
+    margin-top: 20px;
+    
+}
+
+.label-radio-edit{
+    font-size: 22px;
+}
+.label-radio-edit-active{
+    font-weight: 600;
+    font-size: 22px;
+    color: #009cd7;
+}
+
+.form-check-input.radio{
+    width: 22px;
+    height: 22px;
+    border: 2px solid #009cd7;
+}
+
+.form-check-input.radio:checked{
+    background: #009cd7;
+}
+
+.btn-edit-list{
+    height: 50px;
+    border: 1px solid #009cd7;
+    color: #009cd7;
+    font-weight: 600;
+}
+.btn-edit-list:hover{
+    color: #0069a0;
+    border-color: #0069a0;
+}
+
+.btn-edit-add{
+    height: 50px;
+    color: white;
+    font-weight: 600;
+    background-color: #009cd7;
+}
+.btn-edit-add:hover{
+    color: white;
+    background-color: #0069a0;
+}
+
+.btn-edit-save{
+    height: 50px;
+    color: white;
+    font-weight: 600;
+    background-color: #5777ba;
+}
+.btn-edit-save:hover{
+    color: white;
+    background-color: #405d9b;
+}
+
+.btns-edit-container{
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
