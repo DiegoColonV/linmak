@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import EditAmbit from './Estructura/EditAmbit';
 import EditCat from './Estructura/EditCat';
+import EditStyle from './Estructura/EditStyle';
 
 const EditarEstr = () => {
 	const [selected, setSelected] = useState('radio-categoria');
@@ -19,8 +21,8 @@ const EditarEstr = () => {
 			{
 				{
 					'radio-categoria': <EditCat />,
-					'radio-ambito': <h1>ambito</h1>,
-					'radio-estilo': <h1>estilo</h1>,
+					'radio-ambito': <EditAmbit />,
+					'radio-estilo': <EditStyle />,
 				}[selected]
 			}
 		</div>

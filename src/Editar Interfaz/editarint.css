@@ -76,10 +76,11 @@
     border: 1px solid #009cd7;
     color: #009cd7;
     font-weight: 600;
+
 }
 .btn-edit-list:hover{
     color: #0069a0;
-    border-color: #0069a0;
+    border-color: #242526;
 }
 
 .btn-edit-add{
@@ -108,4 +109,29 @@
     bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.alert-edit-save{
+    width: 445px;
+    bottom: 130px;
+    left: 248px;
+    transform: translateX(-50%);
+}
+
+.section-title-edit{
+    color:#5777ba;
+    font-weight: 500;
+    text-align: center;
+}
+
+.unit-change-container{
+    font-size: 20px;
+    font-weight: 500;
+    color: #405d9b;
+}
+
+.unit-change-container .bx-trash{
+    font-size: 22px;
+    color: darkred;
+    cursor: pointer
 }

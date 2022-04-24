@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import BottomButtons from '../BottomButtons';
+import BottomButtons from '../components/BottomButtons';
 
 const EditCat = () => {
 	const [textChange, setTextChange] = useState('');
@@ -10,6 +10,7 @@ const EditCat = () => {
 
 	return (
 		<>
+			<h1 className='section-title-edit mt-5'>CATEGORÍA</h1>
 			<div className='row mt-5'>
 				<div className='col-md-2 col-sm-5 offset-md-1'>
 					<button

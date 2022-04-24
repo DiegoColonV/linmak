@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import EditButtons from './Elementos/EditButtons';
 
 const EditarElem = () => {
 	const [selected, setSelected] = useState('radio-colores');
@@ -8,7 +9,7 @@ const EditarElem = () => {
 	};
 
 	return (
-		<div className='edit-estr-container'>
+		<div className='edit-estr-container position-relative h-100'>
 			<div className='row top-part' onChange={handleRadio}>
 				<RadioCustom text={'Colores'} id={'radio-colores'} selected={selected} />
 				<RadioCustom text={'Fuente'} id={'radio-fuente'} selected={selected} />
@@ -17,7 +18,12 @@ const EditarElem = () => {
 				<RadioCustom text={'Footer'} id={'radio-footer'} selected={selected} />
 				<RadioCustom text={'Cuadros de texto'} id={'radio-text'} selected={selected} />
 			</div>
-			{selected}
+			<hr />
+			{
+				{
+					'radio-botones': <EditButtons />,
+				}[selected]
+			}
 		</div>
 	);
 };

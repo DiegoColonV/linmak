@@ -22,42 +22,42 @@ export const editIntReducer = (state = initialState, action) => {
 		case ActionTypes.EDIT_INT_AMBIT:
 			return {
 				...state,
-				ambit: action.payload,
+				ambit: [...state.ambit, action.payload],
 			};
 		case ActionTypes.EDIT_INT_STYLE:
 			return {
 				...state,
-				style: action.payload,
+				style: [...state.style, action.payload],
 			};
 		case ActionTypes.EDIT_INT_COLOR:
 			return {
 				...state,
-				color: action.payload,
+				color: [...state.color, action.payload],
 			};
 		case ActionTypes.EDIT_INT_FONT:
 			return {
 				...state,
-				font: action.payload,
+				font: [...state.font, action.payload],
 			};
 		case ActionTypes.EDIT_INT_BTNS:
 			return {
 				...state,
-				buttons: action.payload,
+				buttons: [...state.buttons, action.payload],
 			};
 		case ActionTypes.EDIT_INT_NAV:
 			return {
 				...state,
-				navbar: action.payload,
+				navbar: [...state.navbar, action.payload],
 			};
 		case ActionTypes.EDIT_INT_FOOT:
 			return {
 				...state,
-				footer: action.payload,
+				footer: [...state.footer, action.payload],
 			};
 		case ActionTypes.EDIT_INT_TF:
 			return {
 				...state,
-				textfield: action.payload,
+				textfield: [...state.textfield, action.payload],
 			};
 		case ActionTypes.EDIT_DELETE_ITEM_CAT:
 			return {

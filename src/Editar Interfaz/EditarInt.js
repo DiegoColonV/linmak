@@ -1,6 +1,6 @@
 import { Link, Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import NavEditInt from './NavEditInt';
+import NavEditInt from './components/NavEditInt';
 import './editarint.css';
 import { useState } from 'react';
 
