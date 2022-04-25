@@ -1,6 +1,5 @@
 #edit{
     overflow-x: hidden;
-    height: calc(100vh - 76px);
 }
 
 .vista-previa{
@@ -45,6 +44,7 @@
 
 .edit-estr-container .top-part{
     padding: 40px 50px;
+    margin: 0px;
 }
 
 .edit-estr-container .top-part .radio-container{
@@ -120,8 +120,9 @@
 
 .section-title-edit{
     color:#5777ba;
-    font-weight: 500;
+    font-weight: 600;
     text-align: center;
+    font-size: 30px;
 }
 
 .unit-change-container{
@@ -134,4 +135,66 @@
     font-size: 22px;
     color: darkred;
     cursor: pointer
+}
+
+.btn-autocomplete{
+    width: 100%;
+    height: 48px;
+    background-color: #5777ba;
+    color: white;
+    box-shadow: none;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    font-size: 25px;
+}
+
+.btn-autocomplete:hover{
+    opacity: .8;
+    color: white;
+}
+
+.input-autocomplete{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.picker-trigger-container{
+    background: white;
+    
+    padding: 10px;
+    width: 80px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.picker-container{
+    margin-top: 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+.picker-container button{
+    display: inline;
+    width: 30px;
+    height: 20px;
+    border: 1px solid lightgray
+}
+
+.edit-color-indicator{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.color-switch h5{
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.color-switch .switch-component{
+    font-size: 20px;
+    text-align: center;
 }

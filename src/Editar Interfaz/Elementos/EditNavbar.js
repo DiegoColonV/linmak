@@ -1,24 +1,68 @@
 import { useState } from 'react';
-import BottomButtons from '../BottomButtons';
+import Autocomplete from '../components/Autocomplete';
+import BottomButtons from '../components/BottomButtons';
 
-const EditStyle = () => {
+const options = [
+	{
+		text: 'Con topbar',
+		id: 'elem-navbar-topbar',
+	},
+	{
+		text: 'Sin topbar',
+		id: 'elem-navbar-topbar',
+	},
+	{
+		text: 'Chica',
+		id: 'elem-navbar-size',
+	},
+	{
+		text: 'Mediana',
+		id: 'elem-navbar-size',
+	},
+	{
+		text: 'Grande',
+		id: 'elem-navbar-size',
+	},
+	{
+		text: 'Contenido a la izquierda',
+		id: 'elem-navbar-content',
+	},
+	{
+		text: 'Contenido a la derecha',
+		id: 'elem-navbar-content',
+	},
+	{
+		text: 'Fija',
+		id: 'elem-navbar-position',
+	},
+	{
+		text: 'Estática',
+		id: 'elem-navbar-position',
+	},
+];
+
+const EditNavbar = () => {
 	const [text, setText] = useState('');
+	const [idChange, setIdChange] = useState('');
 
-	const handleInput = (event) => {
-		setText(event.target.value);
+	const handleAutocomplete = (obj) => {
+		if (obj !== null) {
+			setText(obj.text);
+			setIdChange(obj.id);
+		} else setText('');
 	};
 
 	return (
 		<>
-			<h1 className='section-title-edit mt-5'>ESTILO</h1>
+			<h1 className='section-title-edit mt-5'>BARRA DE NAVEGACIÓN</h1>
 			<div className='row d-flex justify-content-center mt-5'>
 				<div className='col-8'>
-					<input type='text' className='form-control form-control-lg' value={text} placeholder='Escribe el estilo que quieres que tenga tu página' onChange={handleInput}></input>
+					<Autocomplete handleAutocomplete={handleAutocomplete} arr={options} />
 				</div>
 			</div>
-			<BottomButtons cat_change='style' id_change='estr_stylet' text_change={text.trim()} />
+			<BottomButtons cat_change='navbar' id_change={idChange} text_change={text} />
 		</>
 	);
 };
 
-export default EditStyle;
+export default EditNavbar;

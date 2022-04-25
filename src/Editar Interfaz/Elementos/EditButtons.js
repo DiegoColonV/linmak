@@ -2,14 +2,14 @@ import { useState } from 'react';
 import Autocomplete from '../components/Autocomplete';
 import BottomButtons from '../components/BottomButtons';
 
-const buttonsOptions = [
+const options = [
 	{
 		text: 'Rellenos',
-		id: 'elem-buttons-filled',
+		id: 'elem-buttons-fill',
 	},
 	{
 		text: 'Contorneados',
-		id: 'elem-buttons-outlined',
+		id: 'elem-buttons-fill',
 	},
 	{
 		text: 'Ovalados',
@@ -17,27 +17,31 @@ const buttonsOptions = [
 	},
 	{
 		text: 'Borde cuadrado',
-		id: 'elem-buttons-border-square',
+		id: 'elem-buttons-border',
 	},
 	{
 		text: 'Borde redondeado',
-		id: 'elem-buttons-border-rounded',
+		id: 'elem-buttons-border',
 	},
 	{
 		text: 'Con elevación',
-		id: 'elem-buttons-elevation-yes',
+		id: 'elem-buttons-elevation',
 	},
 	{
 		text: 'Sin elevación',
-		id: 'elem-buttons-elevation-no',
+		id: 'elem-buttons-elevation',
 	},
 ];
 
 const EditButtons = () => {
 	const [text, setText] = useState('');
+	const [idChange, setIdChange] = useState('');
 
-	const handleInput = (event) => {
-		setText(event.target.value);
+	const handleAutocomplete = (obj) => {
+		if (obj !== null) {
+			setText(obj.text);
+			setIdChange(obj.id);
+		} else setText('');
 	};
 
 	return (
@@ -45,10 +49,10 @@ const EditButtons = () => {
 			<h1 className='section-title-edit mt-5'>BOTONES</h1>
 			<div className='row d-flex justify-content-center mt-5'>
 				<div className='col-8'>
-					<Autocomplete />
+					<Autocomplete handleAutocomplete={handleAutocomplete} arr={options} />
 				</div>
 			</div>
-			<BottomButtons cat_change='buttons' id_change='elem_buttons' text_change={text.trim()} />
+			<BottomButtons cat_change='buttons' id_change={idChange} text_change={text} />
 		</>
 	);
 };

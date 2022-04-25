@@ -48,9 +48,8 @@ const BottomButtons = ({ cat_change, id_change, text_change }) => {
 					dispatch(actions.addEditStyle(obj));
 					break;
 				case 'color':
-					if (isRepited) {
-						dispatch(actions.deleteItemColor(id_change));
-					}
+					dispatch(actions.deleteItemColor('elem-color-text'));
+					dispatch(actions.deleteItemColor('elem-color-order'));
 					dispatch(actions.addEditColor(obj));
 					break;
 				case 'font':

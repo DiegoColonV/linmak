@@ -1,5 +1,10 @@
 import { useState } from 'react';
 import EditButtons from './Elementos/EditButtons';
+import EditColor from './Elementos/EditColor';
+import EditFont from './Elementos/EditFont';
+import EditFooter from './Elementos/EditFooter';
+import EditNavbar from './Elementos/EditNavbar';
+import EditTextfield from './Elementos/EditTextfield';
 
 const EditarElem = () => {
 	const [selected, setSelected] = useState('radio-colores');
@@ -21,7 +26,12 @@ const EditarElem = () => {
 			<hr />
 			{
 				{
+					'radio-colores': <EditColor />,
+					'radio-fuente': <EditFont />,
 					'radio-botones': <EditButtons />,
+					'radio-navbar': <EditNavbar />,
+					'radio-footer': <EditFooter />,
+					'radio-text': <EditTextfield />,
 				}[selected]
 			}
 		</div>

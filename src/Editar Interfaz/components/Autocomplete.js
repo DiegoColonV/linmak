@@ -1,42 +1,49 @@
 import Downshift from 'downshift';
 
-const items = [{ value: 'apple' }, { value: 'pear' }, { value: 'orange' }, { value: 'grape' }, { value: 'banana' }];
-
-const Autocomplete = () => {
+const Autocomplete = ({ arr, handleAutocomplete }) => {
 	return (
-		<Downshift onChange={(selection) => alert(selection ? `You selected ${selection.value}` : 'Selection Cleared')} itemToString={(item) => (item ? item.value : '')}>
-			{({ getInputProps, getItemProps, getMenuProps, getLabelProps, getToggleButtonProps, inputValue, highlightedIndex, selectedItem, isOpen }) => (
-				// style={comboboxStyles}
-				<div>
-					<label {...getLabelProps()}>Enter a fruit:</label>
-					<input {...getInputProps()} />
-					<button {...getToggleButtonProps()} aria-label={'toggle menu'}>
-						&#8595;
-					</button>
-					{/* style={menuStyles} */}
-					<ul {...getMenuProps()}>
-						{isOpen &&
-							items
-								.filter((item) => !inputValue || item.value.includes(inputValue))
-								.map((item, index) => (
-									<li
-										{...getItemProps({
-											key: `${item.value}${index}`,
-											item,
-											index,
-											style: {
-												backgroundColor: highlightedIndex === index ? 'lightgray' : 'white',
-												fontWeight: selectedItem === item ? 'bold' : 'normal',
-											},
-										})}
-									>
-										{item.value}
-									</li>
-								))}
-					</ul>
-				</div>
-			)}
-		</Downshift>
+		<div style={{}}>
+			<Downshift onChange={(selection) => handleAutocomplete(selection ? selection : null)} itemToString={(item) => (item ? item.text : '')}>
+				{({ getInputProps, getItemProps, getMenuProps, getLabelProps, getToggleButtonProps, inputValue, highlightedIndex, selectedItem, isOpen }) => (
+					// style={comboboxStyles}
+					<div>
+						<div className='row'>
+							<div className='col-10 p-0'>
+								<input className='form-control form-control-lg input-autocomplete' {...getInputProps()} />
+							</div>
+							<div className='col -2 p-0'>
+								<button className='btn btn-autocomplete' {...getToggleButtonProps()} aria-label={'toggle menu'}>
+									<i className='bx bx-chevron-down'></i>
+								</button>
+							</div>
+						</div>
+
+						{/* style={menuStyles} */}
+						<ul className='list-group w-100' {...getMenuProps()}>
+							{isOpen &&
+								arr
+									.filter((item) => !inputValue || item.text.toLowerCase().includes(inputValue.toLowerCase()))
+									.map((item, index) => (
+										<li
+											className='list-group-item'
+											{...getItemProps({
+												key: `${item.text}${index}`,
+												item,
+												index,
+												style: {
+													backgroundColor: highlightedIndex === index ? 'lightgray' : 'white',
+													fontWeight: selectedItem === item ? 'bold' : 'normal',
+												},
+											})}
+										>
+											{item.text}
+										</li>
+									))}
+						</ul>
+					</div>
+				)}
+			</Downshift>
+		</div>
 	);
 };
 
