@@ -3,10 +3,10 @@ import { Form } from 'react-bootstrap';
 import BottomButtons from '../components/BottomButtons';
 
 const dummyColores = {
-	first: '#E9EFC0',
-	second: '#B4E197',
-	third: '#83BD75',
-	fourth: '#4E944F',
+	first: 'tomato',
+	second: 'black',
+	third: '#F7E2E2',
+	fourth: 'lightgrey',
 };
 
 const EditColor = () => {

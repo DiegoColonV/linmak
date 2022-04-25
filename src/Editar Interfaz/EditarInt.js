@@ -27,7 +27,10 @@ function EditarInt() {
 			</header>
 			<section id='edit' className='container-create'>
 				<div className='row'>
-					<div className='col-5 vista-previa'></div>
+					<div className='col-5 vista-previa p-0'>
+						{/* <img style={{ width: '100%' }} src='/img/preview/prev.png' /> */}
+						<iframe src='/int creada/index.html' style={{ width: '166.6%', height: '166.6%', transform: 'scale(0.6)', transformOrigin: '0 0' }}></iframe>
+					</div>
 					<div className='col-7'>
 						<Outlet />
 					</div>
