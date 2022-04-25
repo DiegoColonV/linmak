@@ -40,7 +40,7 @@ function App() {
 			dispatch(userLogin(userData));
 		}
 	};
-	//useEffect(() => { getUserData() }, [])
+	useEffect(() => { getUserData() }, [])
 	return (
 		<div>
 			<Routes>

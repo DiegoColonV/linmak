@@ -1,10 +1,15 @@
 import { NavLink } from 'react-router-dom';
 import './estilos_comp_generales.css';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { userLogout } from '../redux/actions/userActions';
 
 function Navbar() {
+	const dispatch = useDispatch();
 	const user = useSelector((state) => state.usrData);
-
+	const salir = () => {
+		dispatch(userLogout())
+		localStorage.setItem('token', "log_in_init");
+	}
 	return (
 		<nav id='navbar' className='navbar navbar-expand-lg'>
 			<button
@@ -43,7 +48,26 @@ function Navbar() {
 								</NavLink>
 							</li>
 						</>
-					) : null}
+					) :
+						<>
+							<li>
+								<NavLink to='/' className='nav-link'>
+									<i className='bx bxs-user icono-usuario-login'></i>
+								</NavLink>
+							</li>
+							<li>
+								<div className="dropdown">
+									<button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										
+									</button>
+									<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+										<button className="dropdown-item" onClick={ salir }>Cerrar sesión</button>
+									</div>
+								</div>
+							</li>
+						</>
+						
+					}
 				</ul>
 			</div>
 		</nav>

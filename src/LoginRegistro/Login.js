@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { userLogin, userLogout } from '../redux/actions/userActions';
+import { userLogin } from '../redux/actions/userActions';
 import { useNavigate } from "react-router-dom";
 function Login() {
     const dispatch = useDispatch();
@@ -7,10 +7,14 @@ function Login() {
     const navigate = useNavigate();
     const loginn = async (e) => {
         e.preventDefault();
+        var email = document.getElementById("lcorreo").value;
+        var password = document.getElementById("lcontrasena").value;
+        console.log(email)
+        console.log(password)
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${obj.token}`},
-            body: JSON.stringify({ correo: 'jesgarv@gmail.com', password: '123456' })
+            body: JSON.stringify({ correo: email, password: password })
         }
         const data = await fetch("http://25.59.209.228:5000/login", requestOptions)
         const dataJson = await data.json()
@@ -25,13 +29,7 @@ function Login() {
             dispatch(userLogin(userData))
             localStorage.setItem('token', dataJson.token);
             navigate("/")
-            console.log(obj)
         }
-    }
-    const prueba = () => {
-        dispatch(userLogout())
-        localStorage.setItem('token', "log_in_init");
-        console.log(obj)
     }
     return (
         <div>
@@ -41,21 +39,20 @@ function Login() {
                         <h1 className="row">Inicia sesión</h1>
                         <div className="row mt-2">
                             <form>
-                                <div className="form-group">
+                                <div className="form-group" >
                                     <label htmlFor="correo">Correo Electrónico</label>
-                                    <input type="email" className="form-control" id="correo" placeholder="Email" />
+                                    <input type="email" className="form-control" id="lcorreo" name ="lcorreo" placeholder="Email" />
                                 </div>
                                 <div className="form-group mt-4">
                                     <label htmlFor="contraseña">Contraseña</label>
-                                    <input type="password" className="form-control" id="contrase�a" placeholder="Contraseña" />
+                                    <input type="password" className="form-control" id="lcontrasena" name="lcontrasena"placeholder="Contraseña" />
                                 </div>
                                 <button type="submit" onClick={loginn} className="btn btn-outline-primary col-md-12 col-xs-18 mt-5">Ingresar</button>
-                                <button type="button" onClick={prueba} className="btn btn-outline-primary col-md-12 col-xs-18 mt-5">salir</button>
                             </form>
-                            <div className="form-group mt-4">
+                            {/* <div className="form-group mt-4">
                                 <p className="text-center"> o </p>
-                                <button className='bx bxl-google bx-s icon-box-hp mt-3 btn btn-outline-secondary col-md-12 col-xs-18'> Ingresa con google </button>
-                            </div>
+                                <button className='bx bxl-google bx-s icon-box-hp mt-3 btn btn-outline-secondary col-md-12 col-xs-18 ingresa-google'> Ingresa con google </button>
+                            </div> */}
                         </div> 
                     </div>
                 </div>

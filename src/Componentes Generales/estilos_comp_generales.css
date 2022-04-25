@@ -5,3 +5,18 @@
 .nav-link.active {
 	font-weight: 600;
 }
+
+.icono-usuario-login {
+	font-size: 30px !important;
+	padding-top: 20px;
+}
+
+#navbar {
+	box-sizing: content-box !important;
+}
+
+#dropdownMenuButton {
+	background: transparent;
+	color: #5777ba;
+	border-width: 0px;
+}
