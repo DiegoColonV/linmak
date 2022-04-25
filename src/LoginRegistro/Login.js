@@ -52,7 +52,7 @@ function Login() {
                             {/* <div className="form-group mt-4">
                                 <p className="text-center"> o </p>
                                 <button className='bx bxl-google bx-s icon-box-hp mt-3 btn btn-outline-secondary col-md-12 col-xs-18 ingresa-google'> Ingresa con google </button>
-                            </div> */}
+                            </div>*/}
                         </div> 
                     </div>
                 </div>

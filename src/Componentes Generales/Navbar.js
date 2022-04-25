@@ -51,7 +51,7 @@ function Navbar() {
 					) :
 						<>
 							<li>
-								<NavLink to='/' className='nav-link'>
+								<NavLink to='/perfil' className='nav-link'>
 									<i className='bx bxs-user icono-usuario-login'></i>
 								</NavLink>
 							</li>
