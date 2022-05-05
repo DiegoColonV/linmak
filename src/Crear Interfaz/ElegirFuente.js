@@ -15,18 +15,12 @@ const dummyExample = [
 	{ text: 'Tecnología', img: '/img/ejemplos/tech.png' },
 ];
 
-const initialObjfont = {
-	category: 1,
-	space: 2,
-	size: 2,
-	thickness: 2,
-	shape: 2,
-};
-
 const ElegirEstilo = () => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	const fue = useSelector((state) => state.objTxtInt.txt_int.fuente);
+	const obj = useSelector((state) => state.objTxtInt.txt_int);
+
 	let initialObj = {};
 
 	if (fue === null)
@@ -46,24 +40,42 @@ const ElegirEstilo = () => {
 		navigate(path);
 	};
 
-	const handleFontSave = () => {
-		dispatch(addFuente(objFont));
-	};
-
 	const handleRangeCategory = (event) => {
-		setObjFont({ ...objFont, category: parseInt(event.target.value) });
+		setObjFont({ ...objFont, category: event.target.value });
+		dispatch(addFuente({ ...objFont, category: event.target.value }));
 	};
 	const handleRangeSpace = (event) => {
 		setObjFont({ ...objFont, space: parseInt(event.target.value) });
+		dispatch(addFuente({ ...objFont, space: parseInt(event.target.value) }));
 	};
 	const handleRangeSize = (event) => {
 		setObjFont({ ...objFont, size: parseInt(event.target.value) });
+		dispatch(addFuente({ ...objFont, size: parseInt(event.target.value) }));
 	};
 	const handleRangeThickness = (event) => {
 		setObjFont({ ...objFont, thickness: parseInt(event.target.value) });
+		dispatch(addFuente({ ...objFont, thickness: parseInt(event.target.value) }));
 	};
 	const handleRangeShape = (event) => {
 		setObjFont({ ...objFont, shape: parseInt(event.target.value) });
+		dispatch(addFuente({ ...objFont, shape: parseInt(event.target.value) }));
+	};
+
+	
+	const sendObj = async () => {
+
+		const data_send = {font_object: obj.fuente, text_color: obj.color, text_style: obj.estilo, ambit: obj.ambito, category: obj.categoria + 1}
+		console.log(data_send)
+
+		const requestOptions = {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json', Authorization: `Bearer token-local` },
+			body: JSON.stringify(data_send),
+		};
+		const data = await fetch('http://25.59.209.228:5000/text/create', requestOptions);
+		const dataJson = await data.json();
+
+		console.log(dataJson)
 	};
 
 	return (
@@ -105,10 +117,10 @@ const ElegirEstilo = () => {
 								aria-label='Elegir ámbito'
 								onChange={handleRangeCategory}
 							>
-								<option value={0}>Con adorno</option>
-								<option value={1}>Sin adorno</option>
-								<option value={2}>Decorativa</option>
-								<option value={3}>Caligráfica</option>
+								<option value={'seriff'}>Con adorno</option>
+								<option value={'sans-seriff'}>Sin adorno</option>
+								<option value={'display'}>Decorativa</option>
+								<option value={'handwriting'}>Caligráfica</option>
 							</select>
 						</div>
 					</div>
@@ -173,7 +185,7 @@ const ElegirEstilo = () => {
 					</div>
 				</div>
 				<div className='col-md-1 col-xs-5 d-flex justify-content-center'>
-					<button type='button' className='btn btn-lg right-button-create' onClick={handleFontSave}>
+					<button type='button' className='btn btn-lg right-button-create' onClick={sendObj}>
 						<div className='d-flex'>
 							<p>
 								GENERAR

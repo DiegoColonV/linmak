@@ -165,7 +165,7 @@ const BottomButtons = ({ cat_change, id_change, text_change }) => {
 				<div className='offset-3 col-3'>
 					<button className='btn btn-edit-save'>
 						<i className='bx bx-save me-3'></i>
-						Guardar cambios
+						Aplicar cambios
 					</button>
 				</div>
 			</div>

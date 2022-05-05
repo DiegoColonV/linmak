@@ -6,7 +6,13 @@ const initialState = {
 		ambito: '',
 		estilo: '',
 		color: '',
-		fuente: null,
+		fuente: {
+			category: 'seriff',
+			space: 2,
+			size: 2,
+			thickness: 2,
+			shape: 2,
+		},
 	},
 };
 
