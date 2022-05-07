@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa&family=Cinzel&family=Josefin+Sans&family=Josefin+Slab&family=Jura&family=Lora&family=Montserrat&family=Noto+Serif+Display&family=Open+Sans&family=Orbitron&family=Oswald&family=Playfair+Display&family=Raleway&family=Rasa&family=Roboto+Slab&family=Texturina:opsz@12..72&display=swap');
+
 #create {
 	width: 100%;
 	padding: 80px 0 100px 0;
@@ -172,4 +174,57 @@
 .create-font-rangenumbers_active{
 	font-weight: bold;
 	color: #009cd7;
+}
+
+.select-container{
+	width: 250px;
+	height: 190px;
+	border: 2px solid lightgray;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+	margin: 15px auto;
+	border-radius: 8px;
+	padding: 10px;
+	cursor: pointer;
+	position: relative;
+}
+
+.select-container:hover{
+	border: 2px solid #5777ba;
+	box-shadow: rgba(87, 119, 186, 0.8) 0px 3px 8px;
+}
+
+.select-container.selected{
+	border: 2px solid #5777ba;
+	box-shadow: rgba(87, 119, 186, 0.8) 0px 3px 8px;
+}
+
+.select-int-titles{
+	text-align: center;
+}
+
+.select-container .segment{
+	height: 25%;
+}
+
+.select-container img{
+	width: 100%;
+	height: 100%;
+}
+
+.select-container .expand{
+	background-color: #0069a0;
+	color: #dee2e6;
+	width: 35px;
+	HEIGHT: 35px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	bottom: 3px;
+	right: 3px;
+	border-radius: 4px;
+}
+
+.select-container .expand:hover{
+	background-color: #009cd7;
 }

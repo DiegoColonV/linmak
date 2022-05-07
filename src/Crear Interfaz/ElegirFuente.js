@@ -2,18 +2,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setUIProgress } from '../redux/actions/uiActions';
 import { addFuente } from '../redux/actions/txtIntActions';
+import { addOptions, addOptionsColor, addOptionsFont, addOptionsInt } from '../redux/actions/selectedIntActions';
 import { useState } from 'react';
 import ModalFuente from './ModalFuente';
-
-const dummyExample = [
-	{ text: 'Negocios', img: '/img/ejemplos/business.png' },
-	{ text: 'Construcción', img: '/img/ejemplos/const.png' },
-	{ text: 'Educación', img: '/img/ejemplos/education.png' },
-	{ text: 'Comida', img: '/img/ejemplos/food.png' },
-	{ text: 'Marketing', img: '/img/ejemplos/marketing.jpg' },
-	{ text: 'Salud', img: '/img/ejemplos/med.png' },
-	{ text: 'Tecnología', img: '/img/ejemplos/tech.png' },
-];
 
 const ElegirEstilo = () => {
 	const dispatch = useDispatch();
@@ -61,6 +52,13 @@ const ElegirEstilo = () => {
 		dispatch(addFuente({ ...objFont, shape: parseInt(event.target.value) }));
 	};
 
+	const fillOptions = (colors, fonts, ints) =>{
+		dispatch(addOptionsColor(colors))
+		dispatch(addOptionsFont(fonts))
+		dispatch(addOptionsInt(ints))
+		navigate('/crear/elegir')
+	}
+
 	
 	const sendObj = async () => {
 
@@ -74,8 +72,9 @@ const ElegirEstilo = () => {
 		};
 		const data = await fetch('http://25.59.209.228:5000/text/create', requestOptions);
 		const dataJson = await data.json();
-
 		console.log(dataJson)
+
+		fillOptions(dataJson.colors, dataJson.fonts, dataJson.mocks)
 	};
 
 	return (
@@ -119,8 +118,8 @@ const ElegirEstilo = () => {
 							>
 								<option value={'seriff'}>Con adorno</option>
 								<option value={'sans-seriff'}>Sin adorno</option>
-								<option value={'display'}>Decorativa</option>
-								<option value={'handwriting'}>Caligráfica</option>
+								{/* <option value={'display'}>Decorativa</option>
+								<option value={'handwriting'}>Caligráfica</option> */}
 							</select>
 						</div>
 					</div>

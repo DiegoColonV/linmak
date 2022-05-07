@@ -17,6 +17,7 @@ import { userLogin } from './redux/actions/userActions';
 import EditarInt from './Editar Interfaz/EditarInt';
 import EditarEstr from './Editar Interfaz/EditarEstr';
 import EditarElem from './Editar Interfaz/EditarElem';
+import ElegirInt from './Crear Interfaz/ElegirInt';
 
 function App() {
 	const dispatch = useDispatch();
@@ -57,6 +58,7 @@ function App() {
 					<Route path='estilo' element={<ElegirEstilo />} />
 					<Route path='color' element={<ElegirColor />} />
 					<Route path='fuente' element={<ElegirFuente />} />
+					<Route path='elegir' element={<ElegirInt />} />
 				</Route>
 				<Route path='/editar' element={<EditarInt />}>
 					<Route path='estructura' element={<EditarEstr />} />

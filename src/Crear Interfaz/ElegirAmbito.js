@@ -30,13 +30,18 @@ const dummyAmbitos = [
 ];
 
 const dummyExample = [
-	{ text: 'Negocios', img: '/img/ejemplos/business.png' },
-	{ text: 'Construcción', img: '/img/ejemplos/const.png' },
-	{ text: 'Educación', img: '/img/ejemplos/education.png' },
-	{ text: 'Comida', img: '/img/ejemplos/food.png' },
-	{ text: 'Marketing', img: '/img/ejemplos/marketing.jpg' },
-	{ text: 'Salud', img: '/img/ejemplos/med.png' },
-	{ text: 'Tecnología', img: '/img/ejemplos/tech.png' },
+	{ text: 'Negocios', img: '/img/previews/navigator.png' },
+	{ text: 'Construcción', img: '/img/previews/constra.png' },
+	{ text: 'Salud', img: '/img/previews/novena.png' },
+	{ text: 'Portafolio', img: '/img/previews/kross.png' },
+	{ text: 'Publicidad', img: '/img/previews/promodise.png' },
+	{ text: 'Educación', img: '/img/previews/educenter.png' },
+	{ text: 'Eventos', img: '/img/previews/eventre.png' },
+	{ text: 'Economía', img: '/img/previews/bitbank.png' },
+	{ text: 'Comercio', img: '/img/previews/aviato.png' },
+	{ text: 'Comida', img: '/img/previews/restaurant.png' },
+	{ text: 'Entretenimiento', img: '/img/previews/brandi.png' },
+	{ text: 'Tecnología', img: '/img/previews/smallapps.png' },
 ];
 
 dummyAmbitos.sort((a, b) => {

@@ -5,13 +5,18 @@ import { addEstilo } from '../redux/actions/txtIntActions';
 import { useState } from 'react';
 
 const dummyExample = [
-	{ text: 'Creativo', img: '/img/ejemplos/estilos/creativo.png' },
-	{ text: 'Minimalista', img: '/img/ejemplos/estilos/minimalista.png' },
-	{ text: 'Profesional', img: '/img/ejemplos/estilos/profesional.png' },
-	{ text: 'Comida', img: '/img/ejemplos/food.png' },
-	{ text: 'Marketing', img: '/img/ejemplos/marketing.jpg' },
-	{ text: 'Salud', img: '/img/ejemplos/med.png' },
-	{ text: 'Tecnología', img: '/img/ejemplos/tech.png' },
+	{ text: 'Original', img: '/img/previews/navigator.png' },
+	{ text: 'Urbano', img: '/img/previews/constra.png' },
+	{ text: 'Ordenado', img: '/img/previews/novena.png' },
+	{ text: 'Colorido', img: '/img/previews/kross.png' },
+	{ text: 'Moderno', img: '/img/previews/promodise.png' },
+	{ text: 'Profesional', img: '/img/previews/educenter.png' },
+	{ text: 'Atractivo', img: '/img/previews/eventre.png' },
+	{ text: 'Formal', img: '/img/previews/bitbank.png' },
+	{ text: 'Sofisticado', img: '/img/previews/aviato.png' },
+	{ text: 'Clásico', img: '/img/previews/restaurant.png' },
+	{ text: 'Casual', img: '/img/previews/brandi.png' },
+	{ text: 'Dinámico', img: '/img/previews/smallapps.png' },
 ];
 
 const ElegirEstilo = () => {
