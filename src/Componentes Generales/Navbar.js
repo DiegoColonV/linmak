@@ -2,13 +2,16 @@ import { NavLink } from 'react-router-dom';
 import './estilos_comp_generales.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { userLogout } from '../redux/actions/userActions';
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
+	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const user = useSelector((state) => state.usrData);
 	const salir = () => {
 		dispatch(userLogout())
 		localStorage.setItem('token', "log_in_init");
+		navigate("/")
 	}
 	return (
 		<nav id='navbar' className='navbar navbar-expand-lg'>
