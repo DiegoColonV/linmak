@@ -32,6 +32,13 @@ function Registro() {
 		setRCont(e.target.value);
 	};
 
+	const limpiar = () => {
+		setUser('')
+		setMail('')
+		setCont('')
+		setRCont('')
+	}
+
 	const regg = async (e) => {
 		e.preventDefault();
 		if (regValidation()) {
@@ -44,7 +51,8 @@ function Registro() {
 			const data = await fetch('http://25.59.209.228:5000/insert/user', requestOptions);
 			const dataJson = await data.json();
 
-			console.log(dataJson);
+			console.log(dataJson)
+			limpiar()
 		} else setShowError(true);
 	};
 	return (
