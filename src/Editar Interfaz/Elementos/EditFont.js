@@ -2,27 +2,19 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import BottomButtons from '../components/BottomButtons';
 
-const EditFont = () => {
-	const [text, setText] = useState('');
+const EditFont = ({ selected }) => {
+	console.log(selected)
 
-	const fue = useSelector((state) => state.objTxtInt.txt_int.fuente);
-	let initialObj = {};
-
-	if (fue === null)
-		initialObj = {
-			category: 1,
-			space: 2,
-			size: 2,
-			thickness: 2,
-			shape: 2,
-		};
-	else initialObj = fue;
+	const initialObj = {
+		category: selected[2],
+		space: selected[3],
+		size: selected[4],
+		thickness: selected[5],
+		shape: selected[6],
+	};
 
 	const [objFont, setObjFont] = useState(initialObj);
 
-	const handleInput = (event) => {
-		setText(event.target.value);
-	};
 
 	const handleRangeCategory = (event) => {
 		setObjFont({ ...objFont, category: parseInt(event.target.value) });
@@ -46,7 +38,7 @@ const EditFont = () => {
 			<div className='row d-flex justify-content-center mt-5'>
 				<div className='col-11'>
 					<div className='row d-flex justify-content-center mb-5'>
-						<div className='col-md-9 col-xs-12'>
+						<div className='col-6'>
 							<label htmlFor='categoria' className='form-label'>
 								<h4>
 									<b>Categoría principal</b>
@@ -59,15 +51,15 @@ const EditFont = () => {
 								aria-label='Elegir ámbito'
 								onChange={handleRangeCategory}
 							>
-								<option value={0}>Con adorno</option>
-								<option value={1}>Sin adorno</option>
-								<option value={2}>Decorativa</option>
-								<option value={3}>Caligráfica</option>
+								<option value={'seriff'}>Con adorno</option>
+								<option value={'sans-seriff'}>Sin adorno</option>
+								<option value={'display'}>Decorativa</option>
+								<option value={'handwriting'}>Caligráfica</option>
 							</select>
 						</div>
 					</div>
 					<div className='row'>
-						<div className='col-md-3 col-xs-12'>
+						<div className='col-md-5 px-5 col-xs-12'>
 							<label htmlFor='espaciado' className='form-label'>
 								<h4>
 									<b>Espaciado</b>
@@ -80,7 +72,7 @@ const EditFont = () => {
 								<div className={`col-4 text-end ${objFont.space === 3 ? 'create-font-rangenumbers_active' : ''}`}>3</div>
 							</div>
 						</div>
-						<div className='col-md-3 col-xs-12'>
+						<div className='col-md-5 px-5 col-xs-12'>
 							<label htmlFor='tamano' className='form-label'>
 								<h4>
 									<b>Tamaño</b>
@@ -94,7 +86,7 @@ const EditFont = () => {
 							</div>
 						</div>
 
-						<div className='col-md-3 col-xs-12'>
+						<div className='col-md-5 px-5 col-xs-12'>
 							<label htmlFor='grosor' className='form-label'>
 								<h4>
 									<b>Grosor</b>
@@ -107,7 +99,7 @@ const EditFont = () => {
 								<div className={`col-4 text-end ${objFont.thickness === 3 ? 'create-font-rangenumbers_active' : ''}`}>3</div>
 							</div>
 						</div>
-						<div className='col-md-3 col-xs-12'>
+						<div className='col-md-5 px-5 col-xs-12'>
 							<label htmlFor='forma' className='form-label'>
 								<h4>
 									<b>Forma</b>

@@ -13,7 +13,7 @@ const EditAmbit = () => {
 			<h1 className='section-title-edit mt-5'>ÁMBITO</h1>
 
 			<div className='row d-flex justify-content-center mt-5'>
-				<div className='col-8'>
+				<div className='col-6' style={{marginTop: 58}}>
 					<input type='text' className='form-control form-control-lg' value={text} placeholder='Escribe a qué te dedicas tú o tu empresa' onChange={handleInput}></input>
 				</div>
 			</div>

@@ -29,23 +29,21 @@ function CrearInt() {
 					<NavCrearInt />
 				</div>
 			</header>
-			<section id='create' className='container-create'>
+			<div id='create' className='container-create'>
 				{/* <div className='row mt-5 ms-5'>
 					Cat: {obj.categoria}, Ambito: {obj.ambito}, Estilo: {obj.estilo}, Color: {obj.color}, Fuente: {JSON.stringify(obj.fuente)}
 				</div> */}
 				<br />
-				<div className='container position-relative'>
-					<div className='row'>
-						{/* {JSON.stringify(obj)} */}
-						<Outlet />
-					</div>
-					<div className='row fixed-bottom mb-5'>
-						<div className='progress'>
-							<div className='progress-bar' role='progressbar' style={{ width: `${(step * 100) / 5}%` }}></div>
-						</div>
+				<div className='row'>
+					{JSON.stringify(obj)}
+					<Outlet />
+				</div>
+				<div className='row fixed-bottom mb-5'>
+					<div className='progress'>
+						<div className='progress-bar' role='progressbar' style={{ width: `${(step * 100) / 5}%` }}></div>
 					</div>
 				</div>
-			</section>
+			</div>
 		</>
 	);
 }

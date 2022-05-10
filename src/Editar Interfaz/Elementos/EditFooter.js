@@ -40,7 +40,7 @@ const EditFooter = () => {
 		<>
 			<h1 className='section-title-edit mt-5'>FOOTER</h1>
 			<div className='row d-flex justify-content-center mt-5'>
-				<div className='col-8'>
+				<div className='col-6'>
 					<Autocomplete handleAutocomplete={handleAutocomplete} arr={options} />
 				</div>
 			</div>

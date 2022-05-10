@@ -7,9 +7,9 @@ const initialState = {
 		fonts: []
 	},
 	selected: {
-		color: 1,
-		int: 1,
-		font: 1,
+		color: [],
+		int: [],
+		font: [],
 	},
 };
 

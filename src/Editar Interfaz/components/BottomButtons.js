@@ -143,31 +143,25 @@ const BottomButtons = ({ cat_change, id_change, text_change }) => {
 			{showAlert && (
 				<div className='row'>
 					<div className='alert alert-success alert-edit-save position-absolute' role='alert' style={{ textAlign: 'center' }}>
-						<i className='bx bxs-down-arrow me-5'></i> ¡Cambios agregados!
+						<i className='bx bx-check'></i> ¡Cambios agregados!
 					</div>
 				</div>
 			)}
 			<ChangesModal open={modalOpen} handleCloseModal={handleCloseModal} list={list} handleDeleteChange={handleDeleteChange} />
 
-			<div className='row d-flex justify-content-center align-items-center position-absolute btns-edit-container w-100 p-4'>
-				<div className='col-3'>
-					<button className='btn btn-edit-list' onClick={handleShowList}>
-						<i className='bx bx-list-ul me-3'></i>
-						Lista de cambios
-					</button>
-				</div>
-				<div className='col-3'>
-					<button className='btn btn-edit-add position-relative' onClick={handleSaveChange}>
-						<i className='bx bx-plus-circle me-3' />
-						Agregar cambio
-					</button>
-				</div>
-				<div className='offset-3 col-3'>
-					<button className='btn btn-edit-save'>
-						<i className='bx bx-save me-3'></i>
-						Aplicar cambios
-					</button>
-				</div>
+			<div className='row d-flex justify-content-center align-items-center position-absolute btns-edit-container'>
+				<button className='btn btn-edit-add position-relative' onClick={handleSaveChange}>
+					<i className='bx bx-plus-circle me-3' />
+					Agregar
+				</button>
+				<button className='btn btn-edit-list' onClick={handleShowList}>
+					<i className='bx bx-list-ul me-3'></i>
+					Lista
+				</button>
+				<button className='btn btn-edit-save'>
+					<i className='bx bx-save me-3'></i>
+					Aplicar
+				</button>
 			</div>
 		</>
 	);

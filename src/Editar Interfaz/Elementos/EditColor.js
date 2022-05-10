@@ -2,22 +2,15 @@ import { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import BottomButtons from '../components/BottomButtons';
 
-const dummyColores = {
-	first: 'tomato',
-	second: 'black',
-	third: '#F7E2E2',
-	fourth: 'lightgrey',
-};
-
-const EditColor = () => {
+const EditColor = ({selected}) => {
 	const [text, setText] = useState('');
-	const baseObject = { ...dummyColores };
+	const baseObject = { first: selected[1], second: selected[2], third: selected[3], fourth: selected[4] };
 
 	const handleInput = (event) => {
 		setText(event.target.value);
 	};
 
-	const [objOrder, setObjOrder] = useState(dummyColores);
+	const [objOrder, setObjOrder] = useState(baseObject);
 	const [showPickerArr, setShowPickerArr] = useState([false, false, false, false]);
 
 	const handleSelectOrder = (place, hex, picker) => {
@@ -122,7 +115,7 @@ const EditColor = () => {
 						</div>
 					</div>
 				) : (
-					<div className='col-8 mt-5'>
+					<div className='col-6 mt-5'>
 						<input
 							type='text'
 							className='form-control form-control-lg'

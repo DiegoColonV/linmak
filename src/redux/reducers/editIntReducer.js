@@ -10,6 +10,7 @@ const initialState = {
 	navbar: [],
 	footer: [],
 	textfield: [],
+	link: ''
 };
 
 export const editIntReducer = (state = initialState, action) => {
@@ -104,6 +105,11 @@ export const editIntReducer = (state = initialState, action) => {
 				...state,
 				textfield: state.textfield.filter((item, index) => item.id_change !== action.payload),
 			};
+		case ActionTypes.EDIT_ADD_LINK:
+			return {
+				...state,
+				link: action.payload
+			}
 		default:
 			return state;
 	}

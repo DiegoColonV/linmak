@@ -21,23 +21,23 @@ export const addOptionsFont = (arr) => {
 	};
 };
 
-export const selectColor = (id) => {
+export const selectColor = (arr) => {
 	return {
 		type: ActionTypes.INT_SELECT_COLOR,
-		payload: id,
+		payload: arr,
 	};
 };
 
-export const selectInt = (id) => {
+export const selectInt = (arr) => {
 	return {
 		type: ActionTypes.INT_SELECT_INT,
-		payload: id,
+		payload: arr,
 	};
 };
 
-export const selectFont = (id) => {
+export const selectFont = (arr) => {
 	return {
 		type: ActionTypes.INT_SELECT_FONT,
-		payload: id,
+		payload: arr,
 	};
 };

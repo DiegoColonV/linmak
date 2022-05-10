@@ -43,7 +43,7 @@ function App() {
 	};
 	 useEffect(() => { getUserData() }, [])
 	return (
-		<div>
+		<>
 			<Routes>
 				<Route path='/' element={<Main />}>
 					<Route path='' element={<HomePage />} />
@@ -65,7 +65,7 @@ function App() {
 					<Route path='elementos' element={<EditarElem />} />
 				</Route>
 			</Routes>
-		</div>
+		</>
 	);
 }
 

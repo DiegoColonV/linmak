@@ -6,7 +6,7 @@ const ChangesModal = ({ open, handleCloseModal, list, handleDeleteChange }) => {
 	const componentsArr = () => {
 		let components = [];
 		for (const key in list) {
-			if (list[key].length > 0) components.push(<Change key={key} cat={key} arr={list[key]} handleDeleteChange={handleDeleteChange} />);
+			if (key !== 'link') if (list[key].length > 0) components.push(<Change key={key} cat={key} arr={list[key]} handleDeleteChange={handleDeleteChange} />);
 		}
 		return components;
 	};

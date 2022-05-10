@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import EditButtons from './Elementos/EditButtons';
 import EditColor from './Elementos/EditColor';
 import EditFont from './Elementos/EditFont';
@@ -8,26 +9,27 @@ import EditTextfield from './Elementos/EditTextfield';
 
 const EditarElem = () => {
 	const [selected, setSelected] = useState('radio-colores');
+	const selectedObj = useSelector((state) => state.objSelectInt.selected);
 
-	const handleRadio = (event) => {
-		setSelected(event.target.value);
+	const handleSelected = (id) => {
+		setSelected(id);
 	};
 
 	return (
 		<div className='edit-estr-container position-relative h-100'>
-			<div className='row top-part' onChange={handleRadio}>
-				<RadioCustom text={'Colores'} id={'radio-colores'} selected={selected} />
-				<RadioCustom text={'Fuente'} id={'radio-fuente'} selected={selected} />
-				<RadioCustom text={'Botones'} id={'radio-botones'} selected={selected} />
-				<RadioCustom text={'Barra de navegación'} id={'radio-navbar'} selected={selected} />
-				<RadioCustom text={'Footer'} id={'radio-footer'} selected={selected} />
-				<RadioCustom text={'Cuadros de texto'} id={'radio-text'} selected={selected} />
+			<div className='row top-part'>
+				<OptionButton text={'Colores'} id={'radio-colores'} selected={selected} handleSelected={handleSelected} />
+				<OptionButton text={'Fuente'} id={'radio-fuente'} selected={selected} handleSelected={handleSelected} />
+				<OptionButton text={'Botones'} id={'radio-botones'} selected={selected} handleSelected={handleSelected} />
+				<OptionButton text={'Barra de navegación'} id={'radio-navbar'} selected={selected} handleSelected={handleSelected} />
+				<OptionButton text={'Footer'} id={'radio-footer'} selected={selected} handleSelected={handleSelected} />
+				<OptionButton text={'Cuadros de texto'} id={'radio-text'} selected={selected} handleSelected={handleSelected} />
 			</div>
-			<hr />
+			<hr style={{color: '#5777ba'}} />
 			{
 				{
-					'radio-colores': <EditColor />,
-					'radio-fuente': <EditFont />,
+					'radio-colores': <EditColor selected={selectedObj.color} />,
+					'radio-fuente': <EditFont selected={selectedObj.font} />,
 					'radio-botones': <EditButtons />,
 					'radio-navbar': <EditNavbar />,
 					'radio-footer': <EditFooter />,
@@ -38,15 +40,12 @@ const EditarElem = () => {
 	);
 };
 
-const RadioCustom = ({ text, id, selected }) => {
+const OptionButton = ({ text, id, selected, handleSelected }) => {
 	const isSelected = selected === id;
 	return (
 		<>
-			<div className='col-6 form-check radio-container'>
-				<input className='form-check-input radio' type='radio' name='radio-estructura' id={id} value={id} />
-				<label className={!isSelected ? 'form-check-label ms-3 label-radio-edit' : 'form-check-label ms-3 label-radio-edit-active'} htmlFor={id}>
-					{text}
-				</label>
+			<div className={`col-6`}>
+				<div className={`select-option-container ${isSelected && 'soc-selected'}`} onClick={() => handleSelected(id)}>{text}</div>
 			</div>
 		</>
 	);

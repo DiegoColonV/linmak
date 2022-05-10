@@ -125,3 +125,10 @@ export const deleteItemTF = (id) => {
 		payload: id,
 	};
 };
+
+export const addLink = (link) =>{
+	return {
+		type: ActionTypes.EDIT_ADD_LINK,
+		payload: link
+	}
+} 
