@@ -23,22 +23,6 @@ const options = [
 		text: 'Grande',
 		id: 'elem-navbar-size',
 	},
-	{
-		text: 'Contenido a la izquierda',
-		id: 'elem-navbar-content',
-	},
-	{
-		text: 'Contenido a la derecha',
-		id: 'elem-navbar-content',
-	},
-	{
-		text: 'Fija',
-		id: 'elem-navbar-position',
-	},
-	{
-		text: 'Estática',
-		id: 'elem-navbar-position',
-	},
 ];
 
 const EditNavbar = () => {

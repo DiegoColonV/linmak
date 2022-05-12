@@ -4,14 +4,14 @@ const NavEditInt = ({ activeTab, onChangeTab }) => {
 	return (
 		<nav id='navbar' className='nav ms-auto navbar-expand-lg pt-3 nav-tabs tabs text-center'>
 			<div className='nav-item '>
-				<Link className={activeTab === 1 ? 'nav-link tab active' : 'nav-link tab'} to='/editar/estructura' onClick={onChangeTab}>
+				<span className={activeTab === 1 ? 'nav-link tab active' : 'nav-link tab'} onClick={onChangeTab}>
 					Estructura
-				</Link>
+				</span>
 			</div>
 			<div className='nav-item '>
-				<Link className={activeTab === 2 ? 'nav-link tab active' : 'nav-link tab'} to='/editar/elementos' onClick={onChangeTab}>
+				<span className={activeTab === 2 ? 'nav-link tab active' : 'nav-link tab'} onClick={onChangeTab}>
 					Elementos
-				</Link>
+				</span>
 			</div>
 		</nav>
 	);

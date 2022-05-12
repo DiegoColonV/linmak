@@ -3,15 +3,23 @@ import { useSelector } from 'react-redux';
 import NavEditInt from './components/NavEditInt';
 import './editarint.css';
 import { useState } from 'react';
+import DoneButtons from './components/DoneButtons';
+import EditarElem from './EditarElem';
+import EditarEstr from './EditarEstr';
 
 function EditarInt() {
 	const [activeTab, setActiveTab] = useState(1);
 	const objEdit = useSelector((state) => state.objEditInt);
+	const [reload, setReload] = useState(0);
 
 	const onChangeTab = () => {
 		if (activeTab === 1) setActiveTab(2);
 		else setActiveTab(1);
 	};
+
+	const onReload = () =>{
+		setReload(reload + 1)
+	}
 
 	return (
 		<>
@@ -30,10 +38,16 @@ function EditarInt() {
 				<div className='row'>
 					<div className='col-5 vista-previa p-0'>
 						{/* <img style={{ width: '100%' }} src='/img/preview/prev.png' /> */}
-						<iframe src={`http://25.59.209.228:5000${objEdit.link}`} style={{ width: '166.6%', height: '166.6%', transform: 'scale(0.6)', transformOrigin: '0 0' }}></iframe>
+						<iframe key={reload} src={`http://25.59.209.228:5000${objEdit.link}`} style={{ width: '166.6%', height: '166.6%', transform: 'scale(0.6)', transformOrigin: '0 0' }}></iframe>
 					</div>
-					<div className='col-7'>
-						<Outlet />
+					<div className='col-7 position-relative'>
+						{
+							{
+								2: <EditarElem onReload={onReload} />,
+								1: <EditarEstr onReload={onReload} />,
+							}[activeTab]
+						}
+						<DoneButtons link={`http://25.59.209.228:5000${objEdit.link}`} />
 					</div>
 				</div>
 			</section>

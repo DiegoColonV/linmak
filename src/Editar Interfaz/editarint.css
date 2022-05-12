@@ -5,7 +5,8 @@
 .vista-previa{
     background: lightgray;
     height: calc(100vh - 76px);
-    border: 4px solid #5777ba
+    border: 4px solid #5777ba;
+    background: url('../assets/loading.gif') center center no-repeat;
 }
 
 .tabs{
@@ -214,6 +215,7 @@
 }
 
 .select-option-container{
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -229,6 +231,7 @@
     margin-bottom: 15px;
     cursor: pointer;
     transition: all 0.3s;
+    padding: 5px 15px;
 }
 
 .select-option-container:hover{
@@ -241,4 +244,27 @@
     color: white;
     background: #5777ba;
     transition: all 0.3s;
+}
+
+.done-buttons-container{
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+}
+
+.done-buttons-container button{
+    width: 60px;
+    height: 60px;
+    background-color: #5cb85c;
+    border-radius: 30px;
+    color: azure;
+    font-size: 30px;
+    border-width: 0px;
+    margin-right: 20px;
+}
+
+.done-buttons-container button:hover{
+    background-color: #4ea04e;
+    color: azure;
+    border-width: 0px;
 }

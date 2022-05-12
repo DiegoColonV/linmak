@@ -7,7 +7,7 @@ import DisplayColor from './components/DisplayColor';
 import DisplayFont from './components/DisplayFont';
 import DisplayInt from './components/DisplayInt';
 import { selectColor, selectFont, selectInt } from '../redux/actions/selectedIntActions';
-import { addLink } from '../redux/actions/editIntActions';
+import { addFolder, addLink } from '../redux/actions/editIntActions';
 
 const ElegirInt = () => {
 	const dispatch = useDispatch();
@@ -90,9 +90,10 @@ const ElegirInt = () => {
 		const dataJson = await data.json();
 		console.log(dataJson);
 		dispatch(addLink(dataJson.url))
+		dispatch(addFolder(dataJson.folder))
 		setLoading(false);
 
-		navigate('/editar/estructura')
+		navigate('/editar')
 	};
 
 	return (

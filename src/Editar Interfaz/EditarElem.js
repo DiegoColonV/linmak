@@ -7,7 +7,7 @@ import EditFooter from './Elementos/EditFooter';
 import EditNavbar from './Elementos/EditNavbar';
 import EditTextfield from './Elementos/EditTextfield';
 
-const EditarElem = () => {
+const EditarElem = ({onReload}) => {
 	const [selected, setSelected] = useState('radio-colores');
 	const selectedObj = useSelector((state) => state.objSelectInt.selected);
 
@@ -28,7 +28,7 @@ const EditarElem = () => {
 			<hr style={{color: '#5777ba'}} />
 			{
 				{
-					'radio-colores': <EditColor selected={selectedObj.color} />,
+					'radio-colores': <EditColor selected={selectedObj.color} onReload={onReload} />,
 					'radio-fuente': <EditFont selected={selectedObj.font} />,
 					'radio-botones': <EditButtons />,
 					'radio-navbar': <EditNavbar />,

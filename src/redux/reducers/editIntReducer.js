@@ -10,7 +10,8 @@ const initialState = {
 	navbar: [],
 	footer: [],
 	textfield: [],
-	link: ''
+	link: '',
+	folder: ''
 };
 
 export const editIntReducer = (state = initialState, action) => {
@@ -109,6 +110,11 @@ export const editIntReducer = (state = initialState, action) => {
 			return {
 				...state,
 				link: action.payload
+			}
+		case ActionTypes.EDIT_ADD_FOLDER:
+			return {
+				...state,
+				folder: action.payload
 			}
 		default:
 			return state;

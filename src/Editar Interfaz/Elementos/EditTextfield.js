@@ -20,11 +20,11 @@ const options = [
 		id: 'elem-textfield-elevation',
 	},
 	{
-		text: 'Con bordes',
+		text: 'Con bordes de color',
 		id: 'elem-textfield-border',
 	},
 	{
-		text: 'Sin bordes',
+		text: 'Sin bordes de color',
 		id: 'elem-textfield-borders',
 	},
 ];

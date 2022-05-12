@@ -16,10 +16,6 @@ const options = [
 		id: 'elem-footer-size',
 	},
 	{
-		text: 'Mediano',
-		id: 'elem-footer-size',
-	},
-	{
 		text: 'Grande',
 		id: 'elem-footer-size',
 	},

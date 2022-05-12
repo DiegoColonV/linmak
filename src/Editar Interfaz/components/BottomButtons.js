@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import * as actions from '../../redux/actions/editIntActions';
 import ChangesModal from './ChangesModal';
 
-const BottomButtons = ({ cat_change, id_change, text_change }) => {
+const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
 	const dispatch = useDispatch();
 	const list = useSelector((state) => state.objEditInt);
 
@@ -138,6 +138,33 @@ const BottomButtons = ({ cat_change, id_change, text_change }) => {
 		setModalOpen(false);
 	};
 
+	const handleApply = async () => {
+		console.log(list);
+
+		const data_send = {
+			folder: list.folder,
+			color: [list.color[0].text.first, list.color[0].text.second, list.color[0].text.third, list.color[0].text.fourth],
+		};
+		console.log(data_send);
+
+		const requestOptions = {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json', Authorization: `Bearer token-local`, 'Access-Control-Allow-Origin': '*' },
+			body: JSON.stringify(data_send),
+		};
+
+		// setLoading(true);
+
+		const data = await fetch('http://25.59.209.228:5000/edit/mockColor', requestOptions);
+		const dataJson = await data.json();
+		console.log(dataJson);
+		onReload()
+		// dispatch(addLink(dataJson.url))
+		// setLoading(false);
+
+		//navigate('/editar/estructura')
+	};
+
 	return (
 		<>
 			{showAlert && (
@@ -158,9 +185,13 @@ const BottomButtons = ({ cat_change, id_change, text_change }) => {
 					<i className='bx bx-list-ul me-3'></i>
 					Lista
 				</button>
-				<button className='btn btn-edit-save'>
+				<button className='btn btn-edit-save' onClick={handleApply}>
 					<i className='bx bx-save me-3'></i>
 					Aplicar
+				</button>
+				<button className='btn btn-edit-save' onClick={onReload}>
+					<i className='bx bx-save me-3'></i>
+					recargar
 				</button>
 			</div>
 		</>

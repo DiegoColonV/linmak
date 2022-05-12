@@ -60,10 +60,7 @@ function App() {
 					<Route path='fuente' element={<ElegirFuente />} />
 					<Route path='elegir' element={<ElegirInt />} />
 				</Route>
-				<Route path='/editar' element={<EditarInt />}>
-					<Route path='estructura' element={<EditarEstr />} />
-					<Route path='elementos' element={<EditarElem />} />
-				</Route>
+				<Route path='/editar' element={<EditarInt />}/>
 			</Routes>
 		</>
 	);

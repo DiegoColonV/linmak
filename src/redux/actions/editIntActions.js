@@ -132,3 +132,10 @@ export const addLink = (link) =>{
 		payload: link
 	}
 } 
+
+export const addFolder = (folder) =>{
+	return {
+		type: ActionTypes.EDIT_ADD_FOLDER,
+		payload: folder
+	}
+} 
