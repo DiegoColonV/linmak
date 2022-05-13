@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import BottomButtons from '../components/BottomButtons';
 
-const EditFont = ({ selected }) => {
+const EditFont = ({ selected, onReload}) => {
 	console.log(selected)
 
 	const initialObj = {
@@ -115,7 +115,7 @@ const EditFont = ({ selected }) => {
 					</div>
 				</div>
 			</div>
-			<BottomButtons cat_change='font' id_change='elem-font' text_change={JSON.stringify(objFont)} />
+			<BottomButtons cat_change='font' id_change='elem-font' text_change={JSON.stringify(objFont)} onReload={onReload}  />
 		</>
 	);
 };

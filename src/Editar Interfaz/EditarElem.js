@@ -29,11 +29,11 @@ const EditarElem = ({onReload}) => {
 			{
 				{
 					'radio-colores': <EditColor selected={selectedObj.color} onReload={onReload} />,
-					'radio-fuente': <EditFont selected={selectedObj.font} />,
-					'radio-botones': <EditButtons />,
-					'radio-navbar': <EditNavbar />,
-					'radio-footer': <EditFooter />,
-					'radio-text': <EditTextfield />,
+					'radio-fuente': <EditFont selected={selectedObj.font} onReload={onReload} />,
+					'radio-botones': <EditButtons onReload={onReload} />,
+					'radio-navbar': <EditNavbar onReload={onReload} />,
+					'radio-footer': <EditFooter onReload={onReload} />,
+					'radio-text': <EditTextfield onReload={onReload} />,
 				}[selected]
 			}
 		</div>

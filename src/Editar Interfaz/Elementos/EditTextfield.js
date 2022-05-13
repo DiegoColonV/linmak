@@ -29,7 +29,7 @@ const options = [
 	},
 ];
 
-const EditTextfield = () => {
+const EditTextfield = ({onReload}) => {
 	const [text, setText] = useState('');
 	const [idChange, setIdChange] = useState('');
 
@@ -48,7 +48,7 @@ const EditTextfield = () => {
 					<Autocomplete handleAutocomplete={handleAutocomplete} arr={options} />
 				</div>
 			</div>
-			<BottomButtons cat_change='textfield' id_change={idChange} text_change={text} />
+			<BottomButtons cat_change='textfield' id_change={idChange} text_change={text} onReload={onReload}  />
 		</>
 	);
 };

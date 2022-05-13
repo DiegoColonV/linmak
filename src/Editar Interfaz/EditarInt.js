@@ -38,7 +38,7 @@ function EditarInt() {
 				<div className='row'>
 					<div className='col-5 vista-previa p-0'>
 						{/* <img style={{ width: '100%' }} src='/img/preview/prev.png' /> */}
-						<iframe key={reload} src={`http://25.59.209.228:5000${objEdit.link}`} style={{ width: '166.6%', height: '166.6%', transform: 'scale(0.6)', transformOrigin: '0 0' }}></iframe>
+						<iframe key={reload} src={`http://25.59.209.228:5000${objEdit.link}`} loading='lazy' style={{ width: '166.6%', height: '166.6%', transform: 'scale(0.6)', transformOrigin: '0 0' }}></iframe>
 					</div>
 					<div className='col-7 position-relative'>
 						{

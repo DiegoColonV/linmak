@@ -12,15 +12,13 @@ import './styles.css';
     
 */
 
-class PerfilUsuario extends React.Component {
-	render() {
+const PerfilUsuario = () => {
 		return (
 			<div className='container profile'>
 				<DatosUsuario />
 				<Carpetas />
 			</div>
 		);
-	}
 }
 
 export default PerfilUsuario;

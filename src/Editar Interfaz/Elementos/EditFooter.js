@@ -21,7 +21,7 @@ const options = [
 	},
 ];
 
-const EditFooter = () => {
+const EditFooter = ({onReload}) => {
 	const [text, setText] = useState('');
 	const [idChange, setIdChange] = useState('');
 
@@ -40,7 +40,7 @@ const EditFooter = () => {
 					<Autocomplete handleAutocomplete={handleAutocomplete} arr={options} />
 				</div>
 			</div>
-			<BottomButtons cat_change='footer' id_change={idChange} text_change={text} />
+			<BottomButtons cat_change='footer' id_change={idChange} text_change={text} onReload={onReload}  />
 		</>
 	);
 };

@@ -138,13 +138,29 @@ const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
 		setModalOpen(false);
 	};
 
-	const handleApply = async () => {
-		console.log(list);
+	const makeArray = (list) =>{
+		let temp = []
 
-		const data_send = {
-			folder: list.folder,
-			color: [list.color[0].text.first, list.color[0].text.second, list.color[0].text.third, list.color[0].text.fourth],
-		};
+		for(const key in list){
+			if(list[key].length > 0 && key !== 'folder' && key !== 'link'){
+				console.log(list[key])
+				list[key].map((item) =>{
+					if(item.id_change === 'elem-color-order'){
+						temp.push({type: item.id_change, color: [item.text.first, item.text.second, item.text.third, item.text.fourth]})
+					}
+					else{
+						temp.push({type: item.id_change, name: item.text})
+					}
+				})
+			}
+		}
+
+		return temp
+	}
+
+	const handleApply = async () => {
+
+		const data_send = {folder: list.folder, changes: makeArray(list)}
 		console.log(data_send);
 
 		const requestOptions = {
@@ -155,7 +171,7 @@ const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
 
 		// setLoading(true);
 
-		const data = await fetch('http://25.59.209.228:5000/edit/mockColor', requestOptions);
+		const data = await fetch('http://25.59.209.228:5000/edit/all', requestOptions);
 		const dataJson = await data.json();
 		console.log(dataJson);
 		onReload()

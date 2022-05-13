@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import BottomButtons from '../components/BottomButtons';
 
-const EditCat = () => {
+const EditCat = ({onReload}) => {
 	const [textChange, setTextChange] = useState('');
 
 	const handleCategoryButton = (value) => {
@@ -65,7 +65,7 @@ const EditCat = () => {
 					</div>
 				</div>
 			</div>
-			<BottomButtons cat_change='category' id_change='estr_category' text_change={textChange} />
+			<BottomButtons cat_change='category' id_change='estr_category' text_change={textChange} onReload={onReload} />
 		</>
 	);
 };

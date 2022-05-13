@@ -4,7 +4,7 @@ import EditAmbit from './Estructura/EditAmbit';
 import EditCat from './Estructura/EditCat';
 import EditStyle from './Estructura/EditStyle';
 
-const EditarEstr = () => {
+const EditarEstr = ({onReload}) => {
 	const [selected, setSelected] = useState('radio-categoria');
 
 
@@ -22,9 +22,9 @@ const EditarEstr = () => {
 			<hr style={{color: '#5777ba'}} />
 			{
 				{
-					'radio-categoria': <EditCat />,
-					'radio-ambito': <EditAmbit />,
-					'radio-estilo': <EditStyle />,
+					'radio-categoria': <EditCat onReload={onReload} />,
+					'radio-ambito': <EditAmbit onReload={onReload} />,
+					'radio-estilo': <EditStyle onReload={onReload} />,
 				}[selected]
 			}
 		</div>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import BottomButtons from '../components/BottomButtons';
 
-const EditStyle = () => {
+const EditStyle = ({onReload}) => {
 	const [text, setText] = useState('');
 
 	const handleInput = (event) => {
@@ -16,7 +16,7 @@ const EditStyle = () => {
 					<input type='text' className='form-control form-control-lg' value={text} placeholder='Escribe el estilo que quieres que tenga tu página' onChange={handleInput}></input>
 				</div>
 			</div>
-			<BottomButtons cat_change='style' id_change='estr_stylet' text_change={text.trim()} />
+			<BottomButtons cat_change='style' id_change='estr_stylet' text_change={text.trim()} onReload={onReload} />
 		</>
 	);
 };
