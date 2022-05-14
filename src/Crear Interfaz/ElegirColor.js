@@ -8,10 +8,15 @@ const dummyExample = [
 	{ text: 'Azúl frío', img: '/img/ejemplos/paletas/azul frio.png' },
 	{ text: 'Naranja cálido', img: '/img/ejemplos/paletas/naranja calido.png' },
 	{ text: 'Verde pastel', img: '/img/ejemplos/paletas/verde pastel.png' },
-	{ text: 'Comida', img: '/img/ejemplos/food.png' },
-	{ text: 'Marketing', img: '/img/ejemplos/marketing.jpg' },
-	{ text: 'Salud', img: '/img/ejemplos/med.png' },
-	{ text: 'Tecnología', img: '/img/ejemplos/tech.png' },
+	{ text: 'Arcoíris', img: '/img/ejemplos/arcoiris.png' },
+	{ text: 'Espaciales', img: '/img/ejemplos/espacial.png' },
+	{ text: 'Infantiles', img: '/img/ejemplos/infantiles.png' },
+	{ text: 'Morado brillante', img: '/img/ejemplos/morado brillante.png' },
+	{ text: 'Naranja brillante', img: '/img/ejemplos/naranja brillante.png' },
+	{ text: 'Oscuros', img: '/img/ejemplos/oscuros.png' },
+	{ text: 'Pastel', img: '/img/ejemplos/pastel.png' },
+	{ text: 'Rojos nocturnos', img: '/img/ejemplos/rojos nocturnos.png' },
+	{ text: 'Verde y azul', img: '/img/ejemplos/verde y azul.png' },
 ];
 
 const ElegirEstilo = () => {
