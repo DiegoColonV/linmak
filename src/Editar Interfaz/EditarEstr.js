@@ -5,7 +5,7 @@ import EditCat from './Estructura/EditCat';
 import EditStyle from './Estructura/EditStyle';
 
 const EditarEstr = ({onReload}) => {
-	const [selected, setSelected] = useState('radio-categoria');
+	const [selected, setSelected] = useState('categoria');
 
 
 	const handleSelected = (id) => {
@@ -15,16 +15,16 @@ const EditarEstr = ({onReload}) => {
 	return (
 		<div className='edit-estr-container position-relative h-100'>
 			<div className='row top-part'>
-				<OptionButton text={'Categoría'} id={'radio-categoria'} selected={selected} handleSelected={handleSelected} />
-				<OptionButton text={'Ámbito'} id={'radio-ambito'} selected={selected} handleSelected={handleSelected} />
-				<OptionButton text={'Estilo'} id={'radio-estilo'} selected={selected} handleSelected={handleSelected} />
+				<OptionButton text={'Categoría'} id={'categoria'} selected={selected} handleSelected={handleSelected} />
+				<OptionButton text={'Ámbito'} id={'ambito'} selected={selected} handleSelected={handleSelected} />
+				<OptionButton text={'Estilo'} id={'estilo'} selected={selected} handleSelected={handleSelected} />
 			</div>
 			<hr style={{color: '#5777ba'}} />
 			{
 				{
-					'radio-categoria': <EditCat onReload={onReload} />,
-					'radio-ambito': <EditAmbit onReload={onReload} />,
-					'radio-estilo': <EditStyle onReload={onReload} />,
+					'categoria': <EditCat onReload={onReload} />,
+					'ambito': <EditAmbit onReload={onReload} />,
+					'estilo': <EditStyle onReload={onReload} />,
 				}[selected]
 			}
 		</div>
@@ -33,10 +33,23 @@ const EditarEstr = ({onReload}) => {
 
 const OptionButton = ({ text, id, selected, handleSelected }) => {
 	const isSelected = selected === id;
+	let icon = null;
+	switch (id) {
+		case 'categoria':
+			icon = <i className='bx bx-category' ></i>
+			break;
+		case 'ambito':
+			icon = <i className='bx bx-briefcase-alt-2' ></i>;
+			break;
+		case 'estilo':
+			icon = <i className='bx bx-paint-roll' ></i>
+			break;
+	}
+
 	return (
 		<>
 			<div className={`col-6`}>
-				<div className={`select-option-container ${isSelected && 'soc-selected'}`} onClick={() => handleSelected(id)}>{text}</div>
+				<div className={`select-option-container ${isSelected && 'soc-selected'}`} onClick={() => handleSelected(id)}>{icon}{text}</div>
 			</div>
 		</>
 	);

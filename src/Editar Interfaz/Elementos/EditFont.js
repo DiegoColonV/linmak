@@ -58,7 +58,7 @@ const EditFont = ({ selected, onReload}) => {
 							</select>
 						</div>
 					</div>
-					<div className='row'>
+					<div className='row d-flex justify-content-center'>
 						<div className='col-md-5 px-5 col-xs-12'>
 							<label htmlFor='espaciado' className='form-label'>
 								<h4>

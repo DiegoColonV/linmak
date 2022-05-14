@@ -2,13 +2,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import * as actions from '../../redux/actions/editIntActions';
 import ChangesModal from './ChangesModal';
+import ConfirmChangesModal from './ConfirmChangesModal';
 
 const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
 	const dispatch = useDispatch();
 	const list = useSelector((state) => state.objEditInt);
 
 	const [showAlert, setShowAlert] = useState(false);
+	const [alertText, setAlertText] = useState('');
 	const [modalOpen, setModalOpen] = useState(false);
+	const [modalConfirm, setModalConfirm] = useState(false);
 
 	if (showAlert) {
 		setTimeout(() => {
@@ -86,6 +89,7 @@ const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
 				default:
 					break;
 			}
+			setAlertText('¡Cambios agregados a la lista!')
 			setShowAlert(true);
 		}
 	};
@@ -138,6 +142,14 @@ const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
 		setModalOpen(false);
 	};
 
+	const handleCloseConfirm = () =>{
+		setModalConfirm(false)
+	}
+
+	const handleOpenConfirm = () =>{
+		setModalConfirm(true)
+	}
+
 	const makeArray = (list) =>{
 		let temp = []
 
@@ -174,6 +186,10 @@ const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
 		const data = await fetch('http://25.59.209.228:5000/edit/all', requestOptions);
 		const dataJson = await data.json();
 		console.log(dataJson);
+		dispatch(actions.cleanList())
+		handleCloseConfirm()
+		setAlertText('¡Cambios aplicados!')
+		setShowAlert(true)
 		onReload()
 		// dispatch(addLink(dataJson.url))
 		// setLoading(false);
@@ -186,30 +202,28 @@ const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
 			{showAlert && (
 				<div className='row'>
 					<div className='alert alert-success alert-edit-save position-absolute' role='alert' style={{ textAlign: 'center' }}>
-						<i className='bx bx-check'></i> ¡Cambios agregados!
+						<i className='bx bx-check'></i> {alertText}
 					</div>
 				</div>
 			)}
 			<ChangesModal open={modalOpen} handleCloseModal={handleCloseModal} list={list} handleDeleteChange={handleDeleteChange} />
-
-			<div className='row d-flex justify-content-center align-items-center position-absolute btns-edit-container'>
+			<ConfirmChangesModal open={modalConfirm} handleCloseModal={handleCloseConfirm} list={list} handleSave={handleApply} handleDeleteChange={handleDeleteChange} />
+			<div className='d-flex justify-content-center'>
 				<button className='btn btn-edit-add position-relative' onClick={handleSaveChange}>
 					<i className='bx bx-plus-circle me-3' />
 					Agregar
 				</button>
-				<button className='btn btn-edit-list' onClick={handleShowList}>
-					<i className='bx bx-list-ul me-3'></i>
-					Lista
-				</button>
-				<button className='btn btn-edit-save' onClick={handleApply}>
-					<i className='bx bx-save me-3'></i>
-					Aplicar
-				</button>
-				<button className='btn btn-edit-save' onClick={onReload}>
-					<i className='bx bx-save me-3'></i>
-					recargar
-				</button>
 			</div>
+			{/* <button className='btn btn-edit-list' onClick={handleShowList}>
+				<i className='bx bx-list-ul me-3'></i>Lista
+			</button> */}
+			<button className='btn btn-edit-save' onClick={handleOpenConfirm}>
+				<i className='bx bxs-edit'></i>Aplicar
+			</button>
+			{/* <button className='btn btn-edit-save' onClick={onReload}>
+				<i className='bx bx-save me-3'></i>
+				recargar
+			</button> */}
 		</>
 	);
 };

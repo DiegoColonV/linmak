@@ -16,6 +16,19 @@ const initialState = {
 
 export const editIntReducer = (state = initialState, action) => {
 	switch (action.type) {
+		case ActionTypes.EDIT_CLEAN_LIST:
+			return {
+				...state,
+				category: [],
+				ambit: [],
+				style: [],
+				color: [],
+				font: [],
+				buttons: [],
+				navbar: [],
+				footer: [],
+				textfield: [],
+			};
 		case ActionTypes.EDIT_INT_CAT:
 			return {
 				...state,

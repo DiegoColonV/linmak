@@ -7,8 +7,8 @@ import EditFooter from './Elementos/EditFooter';
 import EditNavbar from './Elementos/EditNavbar';
 import EditTextfield from './Elementos/EditTextfield';
 
-const EditarElem = ({onReload}) => {
-	const [selected, setSelected] = useState('radio-colores');
+const EditarElem = ({ onReload }) => {
+	const [selected, setSelected] = useState('colores');
 	const selectedObj = useSelector((state) => state.objSelectInt.selected);
 
 	const handleSelected = (id) => {
@@ -16,36 +16,63 @@ const EditarElem = ({onReload}) => {
 	};
 
 	return (
-		<div className='edit-estr-container position-relative h-100'>
-			<div className='row top-part'>
-				<OptionButton text={'Colores'} id={'radio-colores'} selected={selected} handleSelected={handleSelected} />
-				<OptionButton text={'Fuente'} id={'radio-fuente'} selected={selected} handleSelected={handleSelected} />
-				<OptionButton text={'Botones'} id={'radio-botones'} selected={selected} handleSelected={handleSelected} />
-				<OptionButton text={'Barra de navegación'} id={'radio-navbar'} selected={selected} handleSelected={handleSelected} />
-				<OptionButton text={'Footer'} id={'radio-footer'} selected={selected} handleSelected={handleSelected} />
-				<OptionButton text={'Cuadros de texto'} id={'radio-text'} selected={selected} handleSelected={handleSelected} />
+		<div className='edit-estr-container h-100'>
+			<div className='row top-part d-flex justify-content-center'>
+				<OptionButton text={'Colores'} id={'colores'} selected={selected} handleSelected={handleSelected} />
+				<OptionButton text={'Fuente'} id={'fuente'} selected={selected} handleSelected={handleSelected} />
+				<OptionButton text={'Botones'} id={'botones'} selected={selected} handleSelected={handleSelected} />
+				<OptionButton text={'Barra de navegación'} id={'navbar'} selected={selected} handleSelected={handleSelected} />
+				<OptionButton text={'Footer'} id={'footer'} selected={selected} handleSelected={handleSelected} />
+				<OptionButton text={'Cuadros de texto'} id={'text'} selected={selected} handleSelected={handleSelected} />
 			</div>
-			<hr style={{color: '#5777ba'}} />
-			{
+			<hr style={{ color: '#5777ba' }} />
+			<div className='position-relative'>
 				{
-					'radio-colores': <EditColor selected={selectedObj.color} onReload={onReload} />,
-					'radio-fuente': <EditFont selected={selectedObj.font} onReload={onReload} />,
-					'radio-botones': <EditButtons onReload={onReload} />,
-					'radio-navbar': <EditNavbar onReload={onReload} />,
-					'radio-footer': <EditFooter onReload={onReload} />,
-					'radio-text': <EditTextfield onReload={onReload} />,
-				}[selected]
-			}
+					{
+						colores: <EditColor selected={selectedObj.color} onReload={onReload} />,
+						fuente: <EditFont selected={selectedObj.font} onReload={onReload} />,
+						botones: <EditButtons onReload={onReload} />,
+						navbar: <EditNavbar onReload={onReload} />,
+						footer: <EditFooter onReload={onReload} />,
+						text: <EditTextfield onReload={onReload} />,
+					}[selected]
+				}
+			</div>
 		</div>
 	);
 };
 
 const OptionButton = ({ text, id, selected, handleSelected }) => {
 	const isSelected = selected === id;
+	let icon = null;
+	switch (id) {
+		case 'colores':
+			icon = <i className='bx bx-palette'></i>;
+			break;
+		case 'fuente':
+			icon = <i className='bx bx-font'></i>;
+			break;
+		case 'botones':
+			icon = <i className='bx bx-square-rounded'></i>;
+			break;
+		case 'navbar':
+			icon = <i className='bx bx-dock-top'></i>;
+			break;
+		case 'footer':
+			icon = <i className='bx bx-dock-top bx-rotate-180'></i>;
+			break;
+		case 'text':
+			icon = <i className='bx bx-message-square-detail'></i>;
+			break;
+	}
+
 	return (
 		<>
 			<div className={`col-6`}>
-				<div className={`select-option-container ${isSelected && 'soc-selected'}`} onClick={() => handleSelected(id)}>{text}</div>
+				<div className={`select-option-container ${isSelected && 'soc-selected'}`} onClick={() => handleSelected(id)}>
+					{icon}
+					{text}
+				</div>
 			</div>
 		</>
 	);

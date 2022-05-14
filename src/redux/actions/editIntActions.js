@@ -139,3 +139,9 @@ export const addFolder = (folder) =>{
 		payload: folder
 	}
 } 
+
+export const cleanList = () =>{
+	return {
+		type: ActionTypes.EDIT_CLEAN_LIST,
+	}
+}

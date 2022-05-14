@@ -12,7 +12,7 @@ const EditCat = ({onReload}) => {
 		<>
 			<h1 className='section-title-edit mt-5'>CATEGORÍA</h1>
 			<div className='row mt-5'>
-				<div className='row col-10 offset-1 mt-5'>
+				<div className='row col-10 offset-1 mt-5 d-flex justify-content-center'>
 					<div className='col-md-2'>
 						<button
 							className={textChange === '0' ? 'btn btn-outline-primary btn-cat-create shadow cat-active' : 'btn btn-outline-primary btn-cat-create shadow'}

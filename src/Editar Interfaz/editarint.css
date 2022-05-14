@@ -78,55 +78,86 @@
 }
 
 .btn-edit-list{
-    height: 50px;
-    border: 1px solid #009cd7;
-    color: #009cd7;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border-radius: 30px;
+    border: 2px solid #0069a0;
+    color: #0069a0;
+    margin-right: 20px;
+    transition: all 0.35s;
+    display: flex;
+    align-items: center;
+    padding-left: 14px;
+    font-size: 18px;
     font-weight: 600;
-
+    position: fixed;
+    bottom: 160px;
+    right: 20px;
+    overflow: hidden;
 }
 .btn-edit-list:hover{
+    width: 150px;
+    height: 40px;
+    border-color: #0069a0;
     color: #0069a0;
-    border-color: #242526;
+}
+
+.btn-edit-list i{
+    font-size: 30px;
 }
 
 .btn-edit-add{
-    height: 50px;
+    height: 40px;
     color: white;
     font-weight: 600;
-    background-color: #009cd7;
+    background-color: #5cb85c;
+    width: 200px;
+    margin-top: 40px;
 }
 .btn-edit-add:hover{
     color: white;
-    background-color: #0069a0;
+    background-color: #4ea04e;
 }
 
 .btn-edit-save{
-    height: 50px;
-    color: white;
+    width: 60px;
+    height: 60px;
+    background-color: #0069a0;
+    border-radius: 30px;
+    color: azure;
+    border-width: 0px;
+    margin-right: 20px;
+    transition: all 0.35s;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    font-size: 18px;
     font-weight: 600;
-    background-color: #5777ba;
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    overflow: hidden;
+
 }
+
 .btn-edit-save:hover{
     color: white;
-    background-color: #405d9b;
-}
-
-.btns-edit-container{
+    background-color: #0069a0;
     width: 150px;
-    top: calc(50% + 85px);
-    right: 30px;
-    transform: translateY(-50%);
+    height: 60px;
 }
 
-.btns-edit-container .btn{
-    margin: 50px 0px;
+.btn-edit-save i{
+    font-size: 30px;
+    margin-right: 15px;
 }
 
 .alert-edit-save{
     width: 445px;
-    top: 50%;
+    bottom: -100px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
 }
 
 .section-title-edit{
@@ -217,17 +248,16 @@
 .select-option-container{
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 500;
     color: #5777ba;
     border-color: #5777ba;
     border: 2px solid #5777ba;
     border-radius: 20px;
     text-align: center;
-    width: 55%;
-    min-height: 40px;
+    width: 250px;
+    min-height: 30px;
     margin-bottom: 15px;
     cursor: pointer;
     transition: all 0.3s;
@@ -240,6 +270,12 @@
     transition: all 0.3s;
 }
 
+.select-option-container i{
+    margin-right: 15px;
+}
+
+
+
 .soc-selected{
     color: white;
     background: #5777ba;
@@ -247,9 +283,16 @@
 }
 
 .done-buttons-container{
-    position: absolute;
-    bottom: 50px;
-    left: 50px;
+    position: fixed;
+    top: 320px;
+    right: 40px;
+    height: 60px;
+    overflow: hidden;
+    transition: all 0.35s;
+}
+
+.done-buttons-container:hover{
+    height: 280px;
 }
 
 .done-buttons-container button{
@@ -260,7 +303,7 @@
     color: azure;
     font-size: 30px;
     border-width: 0px;
-    margin-right: 20px;
+    margin-bottom: 8px;
 }
 
 .done-buttons-container button:hover{
