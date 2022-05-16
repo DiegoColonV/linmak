@@ -1,7 +1,42 @@
-import carpetas from "./carpetas.json";
-import React from "react";
-import FilaProyecto from "./FilaProyecto";
-import PreviewPag from "./PreviewPag";
+import { useState } from 'react';
+import FilaProyecto from './FilaProyecto';
+import PreviewPag from './PreviewPag';
+
+const dummyCarpetas = [
+    {
+        "nombre": "Proyecto 1",
+        "id": 1, 
+        "paginas" : [
+            {
+                "nombre" : "principal",
+                "id":0
+            },
+            {
+                "nombre" : "carrito",
+                "id":1
+            },
+            {
+                "nombre" : "contacto",
+                "id":2
+            }
+        ]
+    },
+    {
+        "nombre": "Proyecto 2",
+        "id": 2, 
+        "paginas": [
+            {
+                "nombre" : "principal",
+                "id":3
+            },
+            {
+                "nombre" : "conocenos",
+                "id":4
+            }
+        ]
+    }
+]
+
 
 /*
     Clase que muestra los proyectos en las carpetas almacenadas por el usuario
@@ -13,58 +48,36 @@ import PreviewPag from "./PreviewPag";
         * paginas : Arreglo que contiene las paginas correspondientes al proyecto seleccionado
 */
 
-class Carpetas extends React.Component{
+const Carpetas = () => {
+	const [idSelected, setIdSelected] = useState(null);
+	const [pages, setPages] = useState([]);
+    const carpetas = [...dummyCarpetas]
 
-    constructor(props){
-        super(props);
-        this.state = {
-            selected : "",
-            contActive : false,
-            paginas : []
-        }
-        this.seleccionar = this.seleccionar.bind(this);
+    const onSelect = (id) =>{
+        const temp = carpetas.filter((item) => {return item.id === id})
+        setIdSelected(id)
+        setPages(temp[0].paginas)
     }
 
-    seleccionar(nombre){
-        let value = !!nombre;
-        let pags = [];
-        if (value) {
-            carpetas.forEach(carp=>{
-                if (carp.nombre == nombre)
-                    pags = carp.paginas;
-            });
-        }
-        this.setState({
-            selected:nombre,
-            contActive:value,
-            paginas : pags
-        });
-    }
+	const rows = carpetas.map((carp, i) => {
+		return <div key={i} className='row'><FilaProyecto item={carp} current_selected={idSelected} onSelect={onSelect} /></div>;
+	});
 
-    render(){
-        let rows = carpetas.map(carp=>{
-            return <FilaProyecto name={carp.nombre} active={this.state.selected} select={this.seleccionar} />
-        });
-        return(
-            <div className="contenedor-carpetas">
-                <div className="tabla-carpetas">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Nombre del proyecto</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {rows}
-                        </tbody>
-                    </table>
+	return (
+		<>
+            <div className='row'>
+                <div className='col-4'>
+                    <div className='row'>
+                        <h4>Carpetas:</h4>
+                    </div>
+                    {rows}
                 </div>
-                <div className={"show-content "+(this.state.contActive?"active":"")}>
-                    <PreviewPag pages={this.state.paginas}/>
+                <div className='col-8'>
+                    <PreviewPag pages={pages} />
                 </div>
-            </div>
-        );
-    }
-}
+            </div>				
+		</>
+	);
+};
 
 export default Carpetas;

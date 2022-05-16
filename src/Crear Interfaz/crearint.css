@@ -229,3 +229,10 @@
 .expand-int:hover{
 	background-color: #009cd7;
 }
+
+.preview-fix{
+	object-fit: cover;
+	height: 220px;
+	width: 100%;
+	object-position: center top;
+}

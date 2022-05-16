@@ -7,6 +7,7 @@ import ConfirmChangesModal from './ConfirmChangesModal';
 const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
 	const dispatch = useDispatch();
 	const list = useSelector((state) => state.objEditInt);
+	const objCreate = useSelector((state) => state.objTxtInt.txt_int);
 
 	const [showAlert, setShowAlert] = useState(false);
 	const [alertText, setAlertText] = useState('');
@@ -89,7 +90,7 @@ const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
 				default:
 					break;
 			}
-			setAlertText('¡Cambios agregados a la lista!')
+			setAlertText('¡Cambios agregados a la lista!');
 			setShowAlert(true);
 		}
 	};
@@ -142,37 +143,40 @@ const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
 		setModalOpen(false);
 	};
 
-	const handleCloseConfirm = () =>{
-		setModalConfirm(false)
-	}
+	const handleCloseConfirm = () => {
+		setModalConfirm(false);
+	};
 
-	const handleOpenConfirm = () =>{
-		setModalConfirm(true)
-	}
+	const handleOpenConfirm = () => {
+		setModalConfirm(true);
+	};
 
-	const makeArray = (list) =>{
-		let temp = []
+	const makeArray = (list) => {
+		let temp = [];
 
-		for(const key in list){
-			if(list[key].length > 0 && key !== 'folder' && key !== 'link'){
-				console.log(list[key])
-				list[key].map((item) =>{
-					if(item.id_change === 'elem-color-order'){
-						temp.push({type: item.id_change, color: [item.text.first, item.text.second, item.text.third, item.text.fourth]})
+		for (const key in list) {
+			if (list[key].length > 0 && key !== 'folder' && key !== 'link' && key !== 'possible_pages') {
+				console.log(list[key]);
+				list[key].map((item) => {
+					if (item.id_change === 'elem-color-order') {
+						temp.push({ type: item.id_change, color: [item.text.first, item.text.second, item.text.third, item.text.fourth] });
+					} else {
+						if (item.id_change === 'elem-font') {
+							temp.push({ type: item.id_change, font: item.text });
+							console.log({ type: item.id_change, font: item.text });
+						} else {
+							temp.push({ type: item.id_change, name: item.text });
+						}
 					}
-					else{
-						temp.push({type: item.id_change, name: item.text})
-					}
-				})
+				});
 			}
 		}
 
-		return temp
-	}
+		return temp;
+	};
 
 	const handleApply = async () => {
-
-		const data_send = {folder: list.folder, changes: makeArray(list)}
+		const data_send = { folder: list.folder, changes: makeArray(list), pagetype: objCreate.categoria + 1 };
 		console.log(data_send);
 
 		const requestOptions = {
@@ -186,11 +190,11 @@ const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
 		const data = await fetch('http://25.59.209.228:5000/edit/all', requestOptions);
 		const dataJson = await data.json();
 		console.log(dataJson);
-		dispatch(actions.cleanList())
-		handleCloseConfirm()
-		setAlertText('¡Cambios aplicados!')
-		setShowAlert(true)
-		onReload()
+		dispatch(actions.cleanList());
+		handleCloseConfirm();
+		setAlertText('¡Cambios aplicados!');
+		setShowAlert(true);
+		onReload();
 		// dispatch(addLink(dataJson.url))
 		// setLoading(false);
 

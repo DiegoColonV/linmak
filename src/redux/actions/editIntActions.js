@@ -145,3 +145,10 @@ export const cleanList = () =>{
 		type: ActionTypes.EDIT_CLEAN_LIST,
 	}
 }
+
+export const addPosiblePages = (pages) =>{
+	return {
+		type: ActionTypes.EDIT_ADD_POSSIBLE_PAGES,
+		payload: pages
+	}
+} 

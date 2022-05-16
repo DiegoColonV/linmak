@@ -7,7 +7,7 @@ import DisplayColor from './components/DisplayColor';
 import DisplayFont from './components/DisplayFont';
 import DisplayInt from './components/DisplayInt';
 import { selectColor, selectFont, selectInt } from '../redux/actions/selectedIntActions';
-import { addFolder, addLink } from '../redux/actions/editIntActions';
+import { addFolder, addLink, addPosiblePages } from '../redux/actions/editIntActions';
 
 const ElegirInt = () => {
 	const dispatch = useDispatch();
@@ -91,6 +91,7 @@ const ElegirInt = () => {
 		console.log(dataJson);
 		dispatch(addLink(dataJson.url))
 		dispatch(addFolder(dataJson.folder))
+		dispatch(addPosiblePages(dataJson.categories))
 		setLoading(false);
 
 		navigate('/editar')
@@ -154,7 +155,7 @@ const ElegirInt = () => {
 							))}
 						</div>
 						<div className='col-md-1 col-xs-12 d-flex justify-content-center'>
-							<button type='button' className='btn btn-lg right-button-create ms-5' onClick={selected.color > 0 && selected.font > 0 && selected.int > 0 ? sendSelected : null}>
+							<button type='button' className='btn btn-lg right-button-create ms-5' onClick={selected.color >= 0 && selected.font >= 0 && selected.int >= 0 ? sendSelected : null}>
 								<div className='d-flex'>
 									<p>
 										VISUALIZAR

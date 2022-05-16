@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import BottomButtons from '../components/BottomButtons';
 
 const EditFont = ({ selected, onReload}) => {
-	console.log(selected)
 
 	const initialObj = {
 		category: selected[2],
@@ -17,7 +16,7 @@ const EditFont = ({ selected, onReload}) => {
 
 
 	const handleRangeCategory = (event) => {
-		setObjFont({ ...objFont, category: parseInt(event.target.value) });
+		setObjFont({ ...objFont, category: event.target.value });
 	};
 	const handleRangeSpace = (event) => {
 		setObjFont({ ...objFont, space: parseInt(event.target.value) });
@@ -115,7 +114,7 @@ const EditFont = ({ selected, onReload}) => {
 					</div>
 				</div>
 			</div>
-			<BottomButtons cat_change='font' id_change='elem-font' text_change={JSON.stringify(objFont)} onReload={onReload}  />
+			<BottomButtons cat_change='font' id_change='elem-font' text_change={objFont} onReload={onReload}  />
 		</>
 	);
 };

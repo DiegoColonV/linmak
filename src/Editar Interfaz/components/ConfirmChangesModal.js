@@ -6,7 +6,7 @@ const ConfirmChangesModal = ({ open, handleCloseModal, list, handleSave, handleD
 	const componentsArr = () => {
 		let components = [];
 		for (const key in list) {
-			if (key !== 'link' && key !== 'folder') if (list[key].length > 0) components.push(<Change handleDeleteChange={handleDeleteChange} key={key} cat={key} arr={list[key]}/>);
+			if (key !== 'link' && key !== 'folder') if (list[key].length > 0) components.push(<Change handleDeleteChange={handleDeleteChange} key={key} cat={key} arr={list[key]} />);
 		}
 		return components;
 	};
@@ -20,11 +20,15 @@ const ConfirmChangesModal = ({ open, handleCloseModal, list, handleSave, handleD
 				{componentsArr().map((item) => item)}
 				<div className='row'>
 					<div className='col-5'>
-						<Button variant='success' className='w-100' onClick={handleSave}>Aceptar</Button>
+						<Button variant='outline-danger' className='w-100' onClick={handleCloseModal}>
+							Cancelar
+						</Button>
 					</div>
-					<div className='col-2'></div>
-					<div className='col-5'>
-						<Button variant='outline-danger' className='w-100'  onClick={handleCloseModal}>Cancelar</Button>
+					<div className='col-1'></div>
+					<div className='col-6'>
+						<Button variant='success' className='w-100' onClick={handleSave}>
+							Aceptar
+						</Button>
 					</div>
 				</div>
 			</Modal.Body>
@@ -32,7 +36,7 @@ const ConfirmChangesModal = ({ open, handleCloseModal, list, handleSave, handleD
 	);
 };
 
-const Change = ({ cat, arr, handleDeleteChange}) => {
+const Change = ({ cat, arr, handleDeleteChange }) => {
 	const _cat = () => {
 		switch (cat) {
 			case 'category':
@@ -59,8 +63,25 @@ const Change = ({ cat, arr, handleDeleteChange}) => {
 	};
 
 	const _font = () => {
-		const temp = JSON.parse(arr[0].text);
-		return `Categoría: ${temp.category} \n Espaciado: ${temp.space} \n Tamaño: ${temp.size} \n Grosor: ${temp.thickness} \n Forma: ${temp.shape}`;
+		const temp = arr[0].text;
+		let _cat = ''
+		switch (temp.category) {
+			case 'sans-seriff':
+				_cat = 'Sin adorno'
+				break;
+			case 'seriff':
+				_cat = 'Con adorno'
+				break;
+			case 'display':
+				_cat = 'Decorativa'
+				break;
+			case 'handwriting':
+				_cat = 'Caligráfica'
+				break;
+			default:
+				break;
+		}
+		return `Categoría: ${_cat} \n Espaciado: ${temp.space} \n Tamaño: ${temp.size} \n Grosor: ${temp.thickness} \n Forma: ${temp.shape}`;
 	};
 
 	return (

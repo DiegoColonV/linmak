@@ -11,7 +11,8 @@ const initialState = {
 	footer: [],
 	textfield: [],
 	link: '',
-	folder: ''
+	folder: '',
+	possible_pages: []
 };
 
 export const editIntReducer = (state = initialState, action) => {
@@ -128,6 +129,11 @@ export const editIntReducer = (state = initialState, action) => {
 			return {
 				...state,
 				folder: action.payload
+			}
+		case ActionTypes.EDIT_ADD_POSSIBLE_PAGES:
+			return {
+				...state,
+				possible_pages: action.payload
 			}
 		default:
 			return state;

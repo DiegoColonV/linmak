@@ -1,4 +1,3 @@
-import React from "react";
 
 /* Esta clase muestra las filas de los proyectos 
     return: un elemento tr junto a un elemento td en el que se muestra el nombre del proyecto
@@ -8,28 +7,15 @@ import React from "react";
         * select: función que marca esta fila como seleccionada
 */
 
-class FilaProyecto extends React.Component{
-    constructor(props){
-        super(props);
-        this.state={};
-        this.seleccionar = this.seleccionar.bind(this);
-    }
+const FilaProyecto = ({item, current_selected, onSelect}) =>{
+	const isSelected = item.id === current_selected
     
-    seleccionar(){
-        let value = this.props.name==this.props.active?"":this.props.name;
-        this.props.select(value);
-    }
-
-    render(){
-        return(
-            <tr>
-               <td className={"table-row "+(this.props.name==this.props.active?"active":"")} onClick={this.seleccionar}>
-                   <i className={'bx bx-folder'+(this.props.name==this.props.active?"-open":"")}></i>
-                   {this.props.name}
-                </td> 
-            </tr>
-        );
-    }
+    return (
+		<div className={`table-row ${isSelected ? 'active' : ''}`} onClick={() => onSelect(item.id)}>
+			<i style={{paddingRight: 10}} className={`bx bx-folder${isSelected ? '-open' : ''}`}></i>
+			{item.nombre}
+		</div>
+	);
 }
 
 export default FilaProyecto;

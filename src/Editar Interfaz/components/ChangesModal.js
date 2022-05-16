@@ -4,9 +4,10 @@ import { useDispatch } from 'react-redux';
 
 const ChangesModal = ({ open, handleCloseModal, list, handleDeleteChange }) => {
 	const componentsArr = () => {
+		console.log(list)
 		let components = [];
 		for (const key in list) {
-			if (key !== 'link' && key !== 'folder') if (list[key].length > 0) components.push(<Change key={key} cat={key} arr={list[key]} handleDeleteChange={handleDeleteChange} />);
+			if (key !== 'link' && key !== 'folder' && key !== 'possible_pages') if (list[key].length > 0) components.push(<Change key={key} cat={key} arr={list[key]} handleDeleteChange={handleDeleteChange} />);
 		}
 		return components;
 	};

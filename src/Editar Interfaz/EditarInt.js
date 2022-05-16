@@ -6,11 +6,13 @@ import { useState } from 'react';
 import DoneButtons from './components/DoneButtons';
 import EditarElem from './EditarElem';
 import EditarEstr from './EditarEstr';
+import AlertRegister from './components/AlertRegister';
 
 function EditarInt() {
 	const [activeTab, setActiveTab] = useState(1);
 	const objEdit = useSelector((state) => state.objEditInt);
 	const [reload, setReload] = useState(0);
+	const  [registerModal, setRegisterModal] = useState(false)
 
 	const onChangeTab = () => {
 		if (activeTab === 1) setActiveTab(2);
@@ -19,6 +21,14 @@ function EditarInt() {
 
 	const onReload = () =>{
 		setReload(reload + 1)
+	}
+
+	const onCloseRegister = () =>{
+		setRegisterModal(false)
+	}
+
+	const onShowModal = () =>{
+		setRegisterModal(true)
 	}
 
 	return (
@@ -47,10 +57,11 @@ function EditarInt() {
 								1: <EditarEstr onReload={onReload} />,
 							}[activeTab]
 						}
-						<DoneButtons link={`http://25.59.209.228:5000${objEdit.link}`} />
+						<DoneButtons link={`http://25.59.209.228:5000${objEdit.link}`} onShowModal={onShowModal} />
 					</div>
 				</div>
 			</section>
+			<AlertRegister open={registerModal} onClose={onCloseRegister} />
 		</>
 	);
 }

@@ -109,7 +109,7 @@ const ElegirEstilo = () => {
 							<div className='col-md-3 col-xs-10 mt-4'>
 								<div className='card profile-card-5'>
 									<div className='card-img-block'>
-										<img className='card-img-top' src={dummyExample[indexImg[0]].img} alt='Card image cap' />
+										<img className='card-img-top preview-fix' src={dummyExample[indexImg[0]].img} alt='Card image cap' />
 									</div>
 									<div className='card-body pt-0'>
 										<h5 className='card-title'>
@@ -121,7 +121,7 @@ const ElegirEstilo = () => {
 							<div className='col-md-3 col-xs-10 mt-4'>
 								<div className='card profile-card-5'>
 									<div className='card-img-block'>
-										<img className='card-img-top' src={dummyExample[indexImg[1]].img} alt='Card image cap' />
+										<img className='card-img-top preview-fix' src={dummyExample[indexImg[1]].img} alt='Card image cap' />
 									</div>
 									<div className='card-body pt-0'>
 										<h5 className='card-title'>
@@ -133,7 +133,7 @@ const ElegirEstilo = () => {
 							<div className='col-md-3 col-xs-10 mt-4'>
 								<div className='card profile-card-5'>
 									<div className='card-img-block'>
-										<img className='card-img-top' src={dummyExample[indexImg[2]].img} alt='Card image cap' />
+										<img className='card-img-top preview-fix' src={dummyExample[indexImg[2]].img} alt='Card image cap' />
 									</div>
 									<div className='card-body pt-0'>
 										<h5 className='card-title'>
