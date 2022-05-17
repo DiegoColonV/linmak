@@ -126,3 +126,15 @@
     width: 100%;
     height: 150px;
 }
+
+.icon-crear{
+    margin-top: 38px;
+    height: 37px;
+}
+
+.icon-crear box-icon {
+    padding-top: 2%;
+    text-align: center;
+    font-size: 10px;
+    color: dodgerblue !important;
+}

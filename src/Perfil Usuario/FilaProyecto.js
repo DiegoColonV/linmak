@@ -11,9 +11,9 @@ const FilaProyecto = ({item, current_selected, onSelect}) =>{
 	const isSelected = item.id === current_selected
     
     return (
-		<div className={`table-row ${isSelected ? 'active' : ''}`} onClick={() => onSelect(item.id)}>
+		<div className={`table-row ${isSelected ? 'active' : ''}`} onClick={() => onSelect(item.id_carpeta)}>
 			<i style={{paddingRight: 10}} className={`bx bx-folder${isSelected ? '-open' : ''}`}></i>
-			{item.nombre}
+			{item.titulo_carpeta}
 		</div>
 	);
 }
