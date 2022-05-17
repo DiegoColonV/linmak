@@ -11,6 +11,8 @@ import AlertRegister from './components/AlertRegister';
 function EditarInt() {
 	const [activeTab, setActiveTab] = useState(1);
 	const objEdit = useSelector((state) => state.objEditInt);
+	const objSelected = useSelector((state) => state.objSelectInt);
+	const objCreateInt = useSelector((state) => state.objTxtInt.txt_int);
 	const [reload, setReload] = useState(0);
 	const  [registerModal, setRegisterModal] = useState(false)
 
@@ -57,7 +59,7 @@ function EditarInt() {
 								1: <EditarEstr onReload={onReload} />,
 							}[activeTab]
 						}
-						<DoneButtons link={`http://25.59.209.228:5000${objEdit.link}`} onShowModal={onShowModal} />
+						<DoneButtons link={`http://25.59.209.228:5000${objEdit.link}`} onShowModal={onShowModal} objEdit={objEdit} objSelected={objSelected} objCreateInt={objCreateInt} />
 					</div>
 				</div>
 			</section>

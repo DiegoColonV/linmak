@@ -210,7 +210,7 @@ const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
 					</div>
 				</div>
 			)}
-			<ChangesModal open={modalOpen} handleCloseModal={handleCloseModal} list={list} handleDeleteChange={handleDeleteChange} />
+			{/*<ChangesModal open={modalOpen} handleCloseModal={handleCloseModal} list={list} handleDeleteChange={handleDeleteChange} />*/}
 			<ConfirmChangesModal open={modalConfirm} handleCloseModal={handleCloseConfirm} list={list} handleSave={handleApply} handleDeleteChange={handleDeleteChange} />
 			<div className='d-flex justify-content-center'>
 				<button className='btn btn-edit-add position-relative' onClick={handleSaveChange}>

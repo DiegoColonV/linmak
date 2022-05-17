@@ -1,12 +1,10 @@
-import { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
 
 const ConfirmChangesModal = ({ open, handleCloseModal, list, handleSave, handleDeleteChange }) => {
 	const componentsArr = () => {
 		let components = [];
 		for (const key in list) {
-			if (key !== 'link' && key !== 'folder') if (list[key].length > 0) components.push(<Change handleDeleteChange={handleDeleteChange} key={key} cat={key} arr={list[key]} />);
+			if (key !== 'link' && key !== 'folder' && key !== 'possible_pages') if (list[key].length > 0) components.push(<Change handleDeleteChange={handleDeleteChange} key={key} cat={key} arr={list[key]} />);
 		}
 		return components;
 	};
