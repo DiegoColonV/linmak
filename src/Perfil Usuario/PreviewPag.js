@@ -8,7 +8,7 @@
 const PreviewCard = ({item}) => {
 	return (
 		<div className='preview-card'>
-			<div className='preview-title'>{item.name}</div>
+			<div className='preview-title'><p>{item.titulo_trabajo}</p></div>
 			<div className='preview-body'>
 				{/* <img src={images[this.props.img]} className='preview-img' /> */}
 			</div>

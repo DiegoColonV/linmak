@@ -29,8 +29,6 @@ function App() {
 		};
 		const data = await fetch('http://25.59.209.228:5000/getuser', requestOptions);
 		const dataJson = await data.json();
-		console.log(dataJson);
-		console.log(tokenlocal);
 
 		if (dataJson.status == 200) {
 			const userData = {
