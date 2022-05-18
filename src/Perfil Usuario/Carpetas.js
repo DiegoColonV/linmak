@@ -3,9 +3,6 @@ import { useSelector } from 'react-redux';
 import FilaProyecto from './FilaProyecto';
 import PreviewPag from './PreviewPag';
 
-const dummyCarpetas = []
-const dummyPaginas = []
-
 /*
     Clase que muestra los proyectos en las carpetas almacenadas por el usuario
     return: Contenedor con una tabla y una sección de previsualización
@@ -27,7 +24,6 @@ const Carpetas = () => {
     const [showSuccess, setShowSuccess] = useState(false);
     const [successText, setSuccessText] = useState('');
     const [carpetas, setCarpetas] = useState([]);
-    const [rows, setRows] = useState([]);
     useEffect(() => { consultarCarpetas() }, [])
 
     const consultarCarpetas = async () => {
@@ -41,10 +37,7 @@ const Carpetas = () => {
 
         console.log(dataJson.data)
         setCarpetas(dataJson.data)
-        const _rows = dataJson.data.map((carp, i) => {
-            return <div key={i} className='row'><FilaProyecto item={carp} current_selected={idSelected} onSelect={onSelect} /></div>;
-        });
-        setRows(_rows)
+
     }
     
     const handleNombre = (e) => {
@@ -93,36 +86,40 @@ const Carpetas = () => {
 
 	return (
 		<>
-            <div className='row'>
-                <div className='col-4'>
-                    <div className='row'>
-                        <h4>Carpetas:</h4>
-                    </div>
-                    {rows}
-                    <div className="row">
-                        <div className="col-md-9 mt-3">
-                            <label htmlFor='carpeta'>Agregar nueva carpeta</label>
-                            <input type="text" className="form-control nombreC" id="nombrec" name="nombrec" placeholder="Nombre de la carpeta" value={nombre} onChange={handleNombre}/>
-                        </div>
-                        <button type="submit" onClick={crearCarpeta} className="btn btn-outline-primary col-md-3 icon-crear">
-                            <box-icon name='plus-circle'></box-icon>
-                        </button>
-                        {showError && (
-                            <h6 className='mt-4' style={{ color: 'darkred' }}>
-                                {errorText}
-                            </h6>
-                        )}
-                        {showSuccess && (
-                            <h6 className='mt-4' style={{ color: 'green' }}>
-                                {successText}
-                            </h6>
-                        )}
-                    </div>
-                </div>
-                <div className='col-8'>
-                    <PreviewPag pages={pages} />
-                </div>
-            </div>				
+			<div className='row'>
+				<div className='col-4'>
+					<div className='row'>
+						<h4>Carpetas:</h4>
+					</div>
+					{carpetas.map((carp, i) => (
+						<div key={i} className='row'>
+							<FilaProyecto item={carp} current_selected={idSelected} onSelect={onSelect} />
+						</div>
+					))}
+					<div className='row'>
+						<div className='col-md-9 mt-3'>
+							<label htmlFor='carpeta'>Agregar nueva carpeta</label>
+							<input type='text' className='form-control nombreC' id='nombrec' name='nombrec' placeholder='Nombre de la carpeta' value={nombre} onChange={handleNombre} />
+						</div>
+						<button type='submit' onClick={crearCarpeta} className='btn btn-outline-primary col-md-3 icon-crear'>
+							<box-icon name='plus-circle'></box-icon>
+						</button>
+						{showError && (
+							<h6 className='mt-4' style={{ color: 'darkred' }}>
+								{errorText}
+							</h6>
+						)}
+						{showSuccess && (
+							<h6 className='mt-4' style={{ color: 'green' }}>
+								{successText}
+							</h6>
+						)}
+					</div>
+				</div>
+				<div className='col-8'>
+					<PreviewPag pages={pages} />
+				</div>
+			</div>
 		</>
 	);
 };

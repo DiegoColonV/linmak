@@ -105,7 +105,6 @@ const ElegirInt = () => {
 			{!loading ? (
 				<div>
 					<div className='row mb-3 mt-3'>
-						{JSON.stringify(options.selected)}
 						<h1 className='section-title'>Elige los valores que deseas</h1>
 					</div>
 					<div className='row'>

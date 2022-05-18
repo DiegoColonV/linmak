@@ -232,7 +232,7 @@
 
 .preview-fix{
 	object-fit: cover;
-	height: 220px;
+	height: 170px;
 	width: 100%;
 	object-position: center top;
 }

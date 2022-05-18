@@ -35,8 +35,7 @@ function CrearInt() {
 				</div> */}
 				<br />
 				<div className='row'>
-					{JSON.stringify(obj)}
-					<Outlet />
+				<Outlet />
 				</div>
 				<div className='row fixed-bottom mb-5'>
 					<div className='progress'>
