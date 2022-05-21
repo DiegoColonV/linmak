@@ -311,3 +311,28 @@
     color: azure;
     border-width: 0px;
 }
+
+.folder-save{
+    font-size: 18px;
+    padding: 4px 0px;
+}
+
+.folder-save:hover{
+    color: #5777ba;
+    cursor: pointer;
+}
+
+.folder-save.folder-selected{
+    color: #5777ba;
+    text-decoration: underline;
+}
+
+.modal-save{
+    padding: 30px
+}
+
+i.add-folder{
+    color: #0069a0;
+    font-size: 22px;
+    cursor: pointer;
+}

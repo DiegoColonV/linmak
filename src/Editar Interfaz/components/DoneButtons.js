@@ -1,13 +1,24 @@
 import { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import SaveModal from './SaveModal';
 
 const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt }) => {
+
+	const [modalSave, setModalSave] = useState(false)
+
+	const onShowModalSave = () =>{
+		setModalSave(true)
+	}
+
+	const onCloseModalSave = () =>{
+		setModalSave(false)
+	}
 
 	const onExpand = () => {
 		window.open(link);
 	};
 
-	const onSave = async() =>{
+	const onSave = async(name, id_folder) =>{
 		const token_local = localStorage.getItem('token');
 		if(!token_local || token_local === 'token-local' || token_local === 'log_in_init' || token_local === ''){
 			onShowModal()
@@ -17,10 +28,10 @@ const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt }) 
 				id_mock: objSelected.selected.int[0],
 				id_font: objSelected.selected.font[0],
 				id_color: objSelected.selected.color[0],
-				name: 'Prueba guardar 2',
+				name: name,
 				pagetype: 'index',
 				folder: objEdit.folder,
-				id_folder: 1
+				id_folder: id_folder
 			}
 			console.log(data2send)
 
@@ -37,6 +48,8 @@ const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt }) 
 	}
 
 	return (
+		<>
+		<SaveModal open={modalSave} onClose={onCloseModalSave} onSave={onSave}/>
 		<div className='done-buttons-container'>
 			<Button variant='success'>
 				<i className='bx bx-check'></i>
@@ -46,7 +59,7 @@ const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt }) 
 				<i className='bx bx-expand'></i>
 			</Button>
 			<br/>
-			<Button variant='success' onClick={onSave}>
+			<Button variant='success' onClick={onShowModalSave}>
 				<i className='bx bxs-save'></i>
 			</Button>
 			<br/>
@@ -54,6 +67,7 @@ const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt }) 
 				<i className='bx bxs-download'></i>
 			</Button>			
 		</div>
+		</>
 	);
 };
 
