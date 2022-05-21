@@ -8,7 +8,7 @@
 */
 
 const FilaProyecto = ({item, current_selected, onSelect}) =>{
-	const isSelected = item.id === current_selected
+	const isSelected = item.id_carpeta === current_selected
     
     return (
 		<div className={`table-row ${isSelected ? 'active' : ''}`} onClick={() => onSelect(item.id_carpeta)}>

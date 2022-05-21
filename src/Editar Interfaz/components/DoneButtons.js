@@ -17,7 +17,7 @@ const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt }) 
 				id_mock: objSelected.selected.int[0],
 				id_font: objSelected.selected.font[0],
 				id_color: objSelected.selected.color[0],
-				name: 'Prueba guardar',
+				name: 'Prueba guardar 2',
 				pagetype: 'index',
 				folder: objEdit.folder,
 				id_folder: 1

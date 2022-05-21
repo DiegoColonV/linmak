@@ -13,80 +13,82 @@ import PreviewPag from './PreviewPag';
         * paginas : Arreglo que contiene las paginas correspondientes al proyecto seleccionado
 */
 
-
 const Carpetas = () => {
 	const [idSelected, setIdSelected] = useState(null);
 	const [pages, setPages] = useState([]);
-    const user = useSelector((state) => state.usrData);
-    const [nombre, setNombre] = useState(' ');
-    const [showError, setShowError] = useState(false);
-    const [errorText, setErrorText] = useState('');
-    const [showSuccess, setShowSuccess] = useState(false);
-    const [successText, setSuccessText] = useState('');
-    const [carpetas, setCarpetas] = useState([]);
-    useEffect(() => { consultarCarpetas() }, [])
+	const [nombre, setNombre] = useState(' ');
+	const [showError, setShowError] = useState(false);
+	const [errorText, setErrorText] = useState('');
+	const [showSuccess, setShowSuccess] = useState(false);
+	const [successText, setSuccessText] = useState('');
+	const [carpetas, setCarpetas] = useState([]);
 
-    const consultarCarpetas = async () => {
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${user.token}` },
-            body: JSON.stringify({})
-        }
-        const data = await fetch("http://25.59.209.228:5000/view/carpeta", requestOptions)
-        const dataJson = await data.json()
+	useEffect(() => {
+		consultarCarpetas();
+	}, []);
 
-        console.log(dataJson.data)
-        setCarpetas(dataJson.data)
+	const consultarCarpetas = async () => {
+		const requestOptions = {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
+			body: JSON.stringify({}),
+		};
+		const data = await fetch('http://25.59.209.228:5000/view/carpeta', requestOptions);
+		const dataJson = await data.json();
 
-    }
-    
-    const handleNombre = (e) => {
-        setNombre(e.target.value);
-    };
+		console.log(dataJson.data);
+		setCarpetas(dataJson.data);
+	};
 
-    const limpiar = () => {
-        setNombre(' ')
-    }
+	const handleNombre = (e) => {
+		setNombre(e.target.value);
+	};
 
-    const crearCarpeta = async (e) => {
-        setShowError(false);
-        setShowSuccess(false);
-        e.preventDefault();
-        /*if (nombre === ' ') {*/
-            const requestOptions = {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${user.token}` },
-                body: JSON.stringify({ nombre: nombre })
-            }
-            const data = await fetch("http://25.59.209.228:5000/insert/carpeta", requestOptions)
-            const dataJson = await data.json()
+	const limpiar = () => {
+		setNombre(' ');
+	};
 
-            if (dataJson.status === 200) {
-                setSuccessText('Carpeta creada con éxito');
-                setShowSuccess(true);
-                limpiar()
-                console.log(dataJson)
-            } else if (dataJson.status === 201) {
-                setErrorText('Ya existe una carpeta con ese nombre');
-                setShowError(true);
-            }
-       /* } else {
+	const crearCarpeta = async (e) => {
+		setShowError(false);
+		setShowSuccess(false);
+		e.preventDefault();
+		/*if (nombre === ' ') {*/
+		const requestOptions = {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
+			body: JSON.stringify({ nombre: nombre }),
+		};
+		const data = await fetch('http://25.59.209.228:5000/insert/carpeta', requestOptions);
+		const dataJson = await data.json();
+
+		if (dataJson.status === 200) {
+			setSuccessText('Carpeta creada con éxito');
+			setShowSuccess(true);
+			limpiar();
+			console.log(dataJson);
+		} else if (dataJson.status === 201) {
+			setErrorText('Ya existe una carpeta con ese nombre');
+			setShowError(true);
+		}
+		/* } else {
             setErrorText('No puedes enviar campos vacios');
             setShowError(true);
         } */
-        consultarCarpetas()
-    }
+		consultarCarpetas();
+	};
 
-    const onSelect = (id) =>{
-        const temp = carpetas.filter((item) => { return item.id_carpeta === id })
-        console.log(temp)
-        setIdSelected(id)
-        setPages(temp[0].trabajos)  
-    }
+	const onSelect = (id) => {
+		const temp = carpetas.filter((item) => {
+			return item.id_carpeta === id;
+		});
+		console.log(temp[0].trabajos);
+		setIdSelected(id);
+		setPages(temp[0].trabajos);
+	};
 
 	return (
 		<>
-			<div className='row'>
+			<div className='row p-4'>
 				<div className='col-4'>
 					<div className='row'>
 						<h4>Carpetas:</h4>

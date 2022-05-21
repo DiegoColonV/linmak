@@ -1,7 +1,9 @@
-import React from 'react';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { userLogin } from '../redux/actions/userActions';
 import Carpetas from './Carpetas';
 import DatosUsuario from './DatosUsuario';
-import './styles.css';
+import './styles.css'; 
 
 /* 
     Clase para mostrar el Perfil del usuario
@@ -13,12 +15,13 @@ import './styles.css';
 */
 
 const PerfilUsuario = () => {
-		return (
-			<div className='container profile'>
-				<DatosUsuario />
-				<Carpetas />
-			</div>
-		);
-}
+
+	return (
+		<div className='container profile'>
+			<DatosUsuario />
+			<Carpetas />
+		</div>
+	);
+};
 
 export default PerfilUsuario;
