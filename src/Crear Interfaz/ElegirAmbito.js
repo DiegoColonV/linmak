@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setUIProgress } from '../redux/actions/uiActions';
 import { addAmbito } from '../redux/actions/txtIntActions';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const dummyAmbitos = [
 	{
@@ -30,18 +30,17 @@ const dummyAmbitos = [
 ];
 
 const dummyExample = [
-	{ text: 'Negocios', img: '/img/previews/navigator.png' },
-	{ text: 'Construcción', img: '/img/previews/constra.png' },
-	{ text: 'Salud', img: '/img/previews/novena.png' },
-	{ text: 'Portafolio', img: '/img/previews/kross.png' },
-	{ text: 'Publicidad', img: '/img/previews/promodise.png' },
-	{ text: 'Educación', img: '/img/previews/educenter.png' },
-	{ text: 'Eventos', img: '/img/previews/eventre.png' },
-	{ text: 'Economía', img: '/img/previews/bitbank.png' },
-	{ text: 'Comercio', img: '/img/previews/aviato.png' },
-	{ text: 'Comida', img: '/img/previews/restaurant.png' },
-	{ text: 'Aplicaciones', img: '/img/previews/smallapps.png' },
-	{ text: 'Tecnología', img: '/img/previews/smallapps.png' },
+	{ text: 'Negocios', img: '/img/previews/Compressed/navigator.png' },
+	{ text: 'Construcción', img: '/img/previews/Compressed/constra.png' },
+	{ text: 'Salud', img: '/img/previews/Compressed/novena.png' },
+	{ text: 'Portafolio', img: '/img/previews/Compressed/kross.png' },
+	{ text: 'Publicidad', img: '/img/previews/Compressed/promodise.png' },
+	{ text: 'Educación', img: '/img/previews/Compressed/educenter.png' },
+	{ text: 'Eventos', img: '/img/previews/Compressed/eventre.png' },
+	{ text: 'Economía', img: '/img/previews/Compressed/bitbank.png' },
+	{ text: 'Comercio', img: '/img/previews/Compressed/aviato.png' },
+	{ text: 'Comida', img: '/img/previews/Compressed/restaurant.png' },
+	{ text: 'Tecnología', img: '/img/previews/Compressed/timer.png' },
 ];
 
 dummyAmbitos.sort((a, b) => {
@@ -65,6 +64,8 @@ const ElegirAmbito = () => {
 	const [otroDisabled, setOtroDisabled] = useState(true);
 	const [textOtro, setTextOtro] = useState('');
 	const [indexImg, setIndexImg] = useState([0, 1, 2]);
+
+	useEffect(() => { get3rands() }, [])
 
 	const handleStep = (step, path) => {
 		dispatch(setUIProgress(step));

@@ -86,6 +86,28 @@ const Carpetas = () => {
 		setPages(temp[0].trabajos);
 	};
 
+	const openSaved = async (id) => {
+		const temp = carpetas.filter((item) => {
+			return item.id_carpeta === idSelected;
+		});
+
+		const data2send = { id_folder: temp[0].id_carpeta, folder: temp[0].titulo_carpeta, pagetype: 'index', id_work: id };
+
+		console.log(data2send);
+
+		const requestOptions = {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
+			body: JSON.stringify(data2send),
+		};
+		const data = await fetch('http://25.59.209.228:5000/view/work', requestOptions);
+		const dataJson = await data.json();
+
+		console.log(dataJson);
+
+		window.open(`http://25.59.209.228:5000/${dataJson.url}`);
+	};
+
 	return (
 		<>
 			<div className='row p-4'>
@@ -95,7 +117,7 @@ const Carpetas = () => {
 					</div>
 					{carpetas.map((carp, i) => (
 						<div key={i} className='row'>
-							<FilaProyecto item={carp} current_selected={idSelected} onSelect={onSelect} />
+							<FilaProyecto item={carp} current_selected={idSelected} onSelect={onSelect} onUpdate={consultarCarpetas} />
 						</div>
 					))}
 					<div className='row'>
@@ -104,7 +126,7 @@ const Carpetas = () => {
 							<input type='text' className='form-control nombreC' id='nombrec' name='nombrec' placeholder='Nombre de la carpeta' value={nombre} onChange={handleNombre} />
 						</div>
 						<button type='submit' onClick={crearCarpeta} className='btn btn-outline-primary col-md-3 icon-crear'>
-							<box-icon name='plus-circle'></box-icon>
+							Agregar
 						</button>
 						{showError && (
 							<h6 className='mt-4' style={{ color: 'darkred' }}>
@@ -119,7 +141,7 @@ const Carpetas = () => {
 					</div>
 				</div>
 				<div className='col-8'>
-					<PreviewPag pages={pages} />
+					<PreviewPag pages={pages} openSaved={openSaved} />
 				</div>
 			</div>
 		</>

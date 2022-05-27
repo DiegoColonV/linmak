@@ -5,9 +5,9 @@
         * pages: arreglo con las páginas
 */
 
-const PreviewCard = ({item}) => {
+const PreviewCard = ({item, openSaved}) => {
 	return (
-		<div className='preview-card'>
+		<div className='preview-card' onClick={() => openSaved(item[0])}>
 			<div className='preview-title'><p>{item[1]}</p></div>
 			<div className='preview-body'>
 				{/* <img src={images[this.props.img]} className='preview-img' /> */}
@@ -16,9 +16,9 @@ const PreviewCard = ({item}) => {
 	);
 };
 
-const PreviewPag = ({ pages }) => {
+const PreviewPag = ({ pages, openSaved }) => {
 	const comps = pages.map((pag, i) => {
-		return <PreviewCard item={pag} key={i} />;
+		return <PreviewCard item={pag} key={i} openSaved={openSaved} />;
 	});
 
 	return <div className='preview-cont'>{comps}</div>;

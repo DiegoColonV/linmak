@@ -2,21 +2,21 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setUIProgress } from '../redux/actions/uiActions';
 import { addEstilo } from '../redux/actions/txtIntActions';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const dummyExample = [
-	{ text: 'Original', img: '/img/previews/navigator.png' },
-	{ text: 'Urbano', img: '/img/previews/constra.png' },
-	{ text: 'Ordenado', img: '/img/previews/novena.png' },
-	{ text: 'Colorido', img: '/img/previews/kross.png' },
-	{ text: 'Moderno', img: '/img/previews/promodise.png' },
-	{ text: 'Profesional', img: '/img/previews/educenter.png' },
-	{ text: 'Atractivo', img: '/img/previews/eventre.png' },
-	{ text: 'Formal', img: '/img/previews/bitbank.png' },
-	{ text: 'Sofisticado', img: '/img/previews/aviato.png' },
-	{ text: 'Clásico', img: '/img/previews/restaurant.png' },
-	{ text: 'Casual', img: '/img/previews/brandi.png' },
-	{ text: 'Dinámico', img: '/img/previews/smallapps.png' },
+	{ text: 'Original', img: '/img/previews/Compressed/navigator.png' },
+	{ text: 'Urbano', img: '/img/previews/Compressed/constra.png' },
+	{ text: 'Ordenado', img: '/img/previews/Compressed/novena.png' },
+	{ text: 'Colorido', img: '/img/previews/Compressed/kross.png' },
+	{ text: 'Moderno', img: '/img/previews/Compressed/promodise.png' },
+	{ text: 'Profesional', img: '/img/previews/Compressed/educenter.png' },
+	{ text: 'Atractivo', img: '/img/previews/Compressed/eventre.png' },
+	{ text: 'Formal', img: '/img/previews/Compressed/bitbank.png' },
+	{ text: 'Sofisticado', img: '/img/previews/Compressed/aviato.png' },
+	{ text: 'Clásico', img: '/img/previews/Compressed/restaurant.png' },
+	{ text: 'Casual', img: '/img/previews/Compressed/brandi.png' },
+	{ text: 'Minimalista', img: '/img/previews/Compressed/timer.png' },
 ];
 
 const ElegirEstilo = () => {
@@ -25,6 +25,8 @@ const ElegirEstilo = () => {
 	const est = useSelector((state) => state.objTxtInt.txt_int.estilo);
 	const [indexImg, setIndexImg] = useState([0, 1, 2]);
 	const [text, setText] = useState(est);
+
+	useEffect(() => { get3rands() }, [])
 
 	const handleStep = (step, path) => {
 		dispatch(setUIProgress(step));

@@ -18,6 +18,28 @@ const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt }) 
 		window.open(link);
 	};
 
+	const setFile = () => {
+		switch (objCreateInt.categoria) {
+			case 0:
+				return 'index';
+
+			case 1:
+				return 'contact';
+
+			case 2:
+				return 'about';
+
+			case 3:
+				return 'cart';
+
+			case 4:
+				return 'login';
+
+			default:
+				break;
+		}
+	};
+
 	const onSave = async(name, id_folder) =>{
 		const token_local = localStorage.getItem('token');
 		if(!token_local || token_local === 'token-local' || token_local === 'log_in_init' || token_local === ''){
@@ -29,15 +51,16 @@ const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt }) 
 				id_font: objSelected.selected.font[0],
 				id_color: objSelected.selected.color[0],
 				name: name,
-				pagetype: 'index',
+				pagetype: setFile(),
 				folder: objEdit.folder,
-				id_folder: id_folder
+				id_folder: id_folder,
+				mock: objSelected.selected.int[1].toLowerCase(),
 			}
 			console.log(data2send)
 
 			const requestOptions = {
 				method: 'POST',
-				headers: { 'Content-Type': 'application/json', Authorization: `Bearer token-local`, 'Access-Control-Allow-Origin': '*' },
+				headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}`, 'Access-Control-Allow-Origin': '*' },
 				body: JSON.stringify(data2send),
 			};
 

@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setUIProgress } from '../redux/actions/uiActions';
 import { addColor } from '../redux/actions/txtIntActions';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const dummyExample = [
 	{ text: 'Azúl frío', img: '/img/ejemplos/paletas/azul frio.png' },
@@ -23,13 +23,10 @@ const ElegirEstilo = () => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	const col = useSelector((state) => state.objTxtInt.txt_int.color);
-	// const [indexImg, setIndexImg] = useState([
-	// 	Math.floor(Math.random() * dummyExample.length),
-	// 	Math.floor(Math.random() * dummyExample.length),
-	// 	Math.floor(Math.random() * dummyExample.length),
-	// ]);
 	const [indexImg, setIndexImg] = useState([0, 1, 2]);
 	const [text, setText] = useState(col);
+
+	useEffect(() => { get3rands() }, [])
 
 	const handleStep = (step, path) => {
 		dispatch(setUIProgress(step));

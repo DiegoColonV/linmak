@@ -8,6 +8,7 @@ const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
 	const dispatch = useDispatch();
 	const list = useSelector((state) => state.objEditInt);
 	const objCreate = useSelector((state) => state.objTxtInt.txt_int);
+	const objSelect = useSelector((state) => state.objSelectInt)
 
 	const [showAlert, setShowAlert] = useState(false);
 	const [alertText, setAlertText] = useState('');
@@ -176,7 +177,7 @@ const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
 	};
 
 	const handleApply = async () => {
-		const data_send = { folder: list.folder, changes: makeArray(list), pagetype: objCreate.categoria + 1 };
+		const data_send = { folder: list.folder, changes: makeArray(list), pagetype: objCreate.categoria + 1, mock: objSelect.selected.int[1].toLowerCase() };
 		console.log(data_send);
 
 		const requestOptions = {
