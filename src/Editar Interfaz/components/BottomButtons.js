@@ -21,6 +21,8 @@ const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
 		}, 2000);
 	}
 
+
+
 	const handleSaveChange = () => {
 		let isRepited = false;
 
@@ -176,8 +178,30 @@ const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
 		return temp;
 	};
 
+	const setIdPagetype = () => {
+		switch (objCreate.categoria) {
+			case 0:
+				return 1;
+
+			case 1:
+				return 3;
+
+			case 2:
+				return 2;
+
+			case 3:
+				return 4;
+
+			case 4:
+				return 5;
+
+			default:
+				break;
+		}
+	};
+
 	const handleApply = async () => {
-		const data_send = { folder: list.folder, changes: makeArray(list), pagetype: objCreate.categoria + 1, mock: objSelect.selected.int[1].toLowerCase() };
+		const data_send = { folder: list.folder, changes: makeArray(list), pagetype: setIdPagetype(), mock: objSelect.selected.int[1].toLowerCase() };
 		console.log(data_send);
 
 		const requestOptions = {

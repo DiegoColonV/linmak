@@ -86,12 +86,12 @@ const Carpetas = () => {
 		setPages(temp[0].trabajos);
 	};
 
-	const openSaved = async (id) => {
+	const openSaved = async (id, pagetype) => {
 		const temp = carpetas.filter((item) => {
 			return item.id_carpeta === idSelected;
 		});
 
-		const data2send = { id_folder: temp[0].id_carpeta, folder: temp[0].titulo_carpeta, pagetype: 'index', id_work: id };
+		const data2send = { id_folder: temp[0].id_carpeta, folder: temp[0].titulo_carpeta, pagetype: pagetype.toLowerCase(), id_work: id };
 
 		console.log(data2send);
 

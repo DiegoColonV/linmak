@@ -7,7 +7,7 @@
 
 const PreviewCard = ({item, openSaved}) => {
 	return (
-		<div className='preview-card' onClick={() => openSaved(item[0])}>
+		<div className='preview-card' onClick={() => openSaved(item[0], item[3])}>
 			<div className='preview-title'><p>{item[1]}</p></div>
 			<div className='preview-body'>
 				{/* <img src={images[this.props.img]} className='preview-img' /> */}

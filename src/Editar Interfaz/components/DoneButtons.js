@@ -18,7 +18,7 @@ const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt }) 
 		window.open(link);
 	};
 
-	const setFile = () => {
+	const setPagetype = () => {
 		switch (objCreateInt.categoria) {
 			case 0:
 				return 'index';
@@ -40,6 +40,28 @@ const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt }) 
 		}
 	};
 
+	const setIdPagetype = () => {
+		switch (objCreateInt.categoria) {
+			case 0:
+				return 1;
+
+			case 1:
+				return 3;
+
+			case 2:
+				return 2;
+
+			case 3:
+				return 4;
+
+			case 4:
+				return 5;
+
+			default:
+				break;
+		}
+	};
+
 	const onSave = async(name, id_folder) =>{
 		const token_local = localStorage.getItem('token');
 		if(!token_local || token_local === 'token-local' || token_local === 'log_in_init' || token_local === ''){
@@ -51,7 +73,8 @@ const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt }) 
 				id_font: objSelected.selected.font[0],
 				id_color: objSelected.selected.color[0],
 				name: name,
-				pagetype: setFile(),
+				pagetype: setPagetype(),
+				id_pagetype: setIdPagetype(),
 				folder: objEdit.folder,
 				id_folder: id_folder,
 				mock: objSelected.selected.int[1].toLowerCase(),
