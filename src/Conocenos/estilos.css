@@ -201,7 +201,7 @@ header.masthead {
     .parallax {
         position: relative;
         /* The image used */
-        background-image: url("../assets/ux-design-gif.gif");
+        background-image: url("../assets/parallax.png");
       
         /* Set a specific height */
         min-height: 500px;
@@ -267,5 +267,4 @@ header.masthead {
     object-fit: cover;
     border-radius: 100%;
     border: 5px solid #5777ba;
-
 }

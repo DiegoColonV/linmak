@@ -5,11 +5,11 @@ function Conocenos() {
 		<div>
 			<main id='main'>
 				<section className='topimg'>
-					<div className='parallax'>
+					<div className='parallax' >
 						<div className='text-parallax'>LINMAK</div>
 					</div>
 				</section>
-				<section className='queEs'>
+				<section className='queEs'  data-aos='fade-up' data-aos-delay={300}>
 					<h1> ¿Qué es Linmak? </h1>
 					<p className='mt-5 text'>
 						El nombre de Linmak es un juego de palabras, viene de Language Interface Maker. El proyecto de Linmak nace con la idea de facilitar la creación de interfaces web, y
@@ -19,20 +19,20 @@ function Conocenos() {
 						y la diferencia que marcan en las páginas web. <br />
 						Queremos enfocar este proyecto para que sea una herramienta de utilidad entre desarrolladores web y potenciales clientes.
 					</p>
-					<div className='row text-center d-flex justify-content-center '>
-						<div className='col-md-3 mt-5'>
+					<div className='row text-center d-flex justify-content-center ' style={{padding: '150px 0px'}} >
+						<div className='col-md-3 mt-5' data-aos='fade-left' data-aos-delay={300}>
 							<span className=''>
 								<img src='/img/conocenos/write.gif' className='icon-gif-about'></img>
 							</span>
 							<h4 className='my-3'>Escribe</h4>
 						</div>
-						<div className='col-md-3 mt-5'>
+						<div className='col-md-3 mt-5' data-aos='fade-up' data-aos-delay={300}>
 							<span className=''>
 								<img src='/img/conocenos/create.gif' className='icon-gif-about'></img>
 							</span>
 							<h4 className='my-3'>Crea</h4>
 						</div>
-						<div className='col-md-3 mt-5'>
+						<div className='col-md-3 mt-5' data-aos='fade-right' data-aos-delay={300}>
 							<span className=''>
 								<img src='/img/conocenos/edit.gif' className='icon-gif-about'></img>
 							</span>
@@ -40,7 +40,7 @@ function Conocenos() {
 						</div>
 					</div>
 				</section>
-				<section className='page-section bg-light' id='portfolio'>
+				<section className='page-section bg-light' id='portfolio' >
 					<div className='container mt-4'>
 						<div className='text-center'>
 							<h1 className=' title section-heading '>Estadisticas</h1>
@@ -109,7 +109,7 @@ function Conocenos() {
 						</div>
 					</div>
 				</section>
-				<section className='nosotros'>
+				<section className='nosotros' data-aos='fade-up' data-aos-delay={300}>
 					<div className='container mt-4'>
 						<div className='text-center'>
 							<h1 className='title text-center'>Nosotros</h1>
@@ -127,7 +127,7 @@ function Conocenos() {
 								<p className='text-muted'>Lead Marketer</p>
 							</div>
 							<div className='col-lg-4 text-center'>
-								<img className='img-team my-4' src='img/conocenos/user.png' alt='...' />
+								<img className='img-team my-4' src='img/conocenos/team/yaxiri.jpg' alt='...' />
 								<h4>Yaxiri Vázquez</h4>
 								<p className='text-muted'>Lead Developer</p>
 							</div>

@@ -108,6 +108,29 @@ const Carpetas = () => {
 		window.open(`http://25.59.209.228:5000/${dataJson.url}`);
 	};
 
+	const onDeleteWork = async(id_work) =>{
+		const temp = carpetas.filter((item) => {
+			return item.id_carpeta === idSelected;
+		});
+
+		const data2send = {id_work: id_work, folder: temp[0].titulo_carpeta}
+		console.log(data2send)
+
+		const requestOptions = {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
+			body: JSON.stringify(data2send),
+		};
+		const data = await fetch('http://25.59.209.228:5000/delete/work', requestOptions);
+		const dataJson = await data.json();
+
+		console.log(dataJson);
+
+		await consultarCarpetas();
+
+		onSelect(idSelected)
+	}
+
 	return (
 		<>
 			<div className='row p-4'>
@@ -141,7 +164,7 @@ const Carpetas = () => {
 					</div>
 				</div>
 				<div className='col-8'>
-					<PreviewPag pages={pages} openSaved={openSaved} />
+					<PreviewPag pages={pages} openSaved={openSaved} onDeleteWork={onDeleteWork} />
 				</div>
 			</div>
 		</>

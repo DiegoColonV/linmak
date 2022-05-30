@@ -105,23 +105,36 @@
 .preview-card{
     display: inline-block;
     margin: 1vh 1vh;
-    width: 25%;
-    cursor: pointer;
+    width: 33%;
     transition: all ease-in-out 0.2s;
     background-color: white;
     padding : 5px 5px;
     border-radius: 10px;
-}
-
-.preview-card:hover{
     border: 1px solid #0069a0;
+    position: relative;
 }
 
+.preview-card .icon-delete-folder{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.preview-card .icon-delete-folder.see{
+    position: absolute;
+    right: 30px;
+    top: 0;
+}
+
+.preview-card .icon-delete-folder.see i{
+    color: #0069a0 !important;
+}
 /* Titulo de la tarjeta */
 .preview-title{
     text-align: center;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
+    margin-top: 30px;
 }
 
 /* Imagen previsualizada */

@@ -11,10 +11,8 @@ body {
 	color: #585a61;
 }
 #formLogin {
-	width: 100%;
 	position: relative;
 	overflow: hidden;
-	padding: 140px 0 100px 0;
 }
 
 #formLogin h1 {
@@ -41,4 +39,48 @@ body {
 .ingresa-google {
 	height: 40px;
 	font-size: 16px;
+}
+
+.banner-login{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.banner-login-container{
+	height: 100vh;
+}
+
+.tab-login{
+	width: 150px;
+	height: 50px;
+	border-radius: 0px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	color: white;
+	background-color: #5777ba;
+}
+
+.tab-login.active{
+	width: 150px;
+	height: 50px;
+	border: 1px solid #5777ba;
+	border-bottom-width: 0px;
+	border-radius: 0px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	color: #5777ba;
+	background-color: white;
+}
+
+.tab-login:hover{
+	background-color: #5777ba;
+	color: white;
+	opacity: 0.7;
+}
+
+.tab-login.active:hover{
+	background-color: white;
+	color: #5777ba;
+	opacity: 0.5;
 }
