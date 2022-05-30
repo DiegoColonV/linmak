@@ -15,7 +15,6 @@ const dummyExample = [
 	{ text: 'Formal', img: '/img/previews/Compressed/bitbank.png' },
 	{ text: 'Sofisticado', img: '/img/previews/Compressed/aviato.png' },
 	{ text: 'Clásico', img: '/img/previews/Compressed/restaurant.png' },
-	{ text: 'Casual', img: '/img/previews/Compressed/brandi.png' },
 	{ text: 'Minimalista', img: '/img/previews/Compressed/timer.png' },
 ];
 

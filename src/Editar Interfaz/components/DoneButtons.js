@@ -1,10 +1,18 @@
 import { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import AlertGeneral from '../../Componentes Generales/AlertGeneral';
 import SaveModal from './SaveModal';
 
 const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt }) => {
 
 	const [modalSave, setModalSave] = useState(false)
+	const [showAlert, setShowAlert] = useState(false)
+
+	if (showAlert) {
+		setTimeout(() => {
+			setShowAlert(false);
+		}, 2000);
+	}
 
 	const onShowModalSave = () =>{
 		setModalSave(true)
@@ -90,12 +98,17 @@ const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt }) 
 			const data = await fetch('http://25.59.209.228:5000/save/newWork', requestOptions);
 			const dataJson = await data.json();
 			console.log(dataJson);
+
+			onCloseModalSave()
+			setShowAlert(true)
+
 		}
 	}
 
 	return (
 		<>
 		<SaveModal open={modalSave} onClose={onCloseModalSave} onSave={onSave}/>
+		<AlertGeneral show={showAlert} text={'Guardado con éxito'} />
 		<div className='done-buttons-container'>
 			<Button variant='success'>
 				<i className='bx bx-check'></i>

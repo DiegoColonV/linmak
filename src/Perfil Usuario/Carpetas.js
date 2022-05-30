@@ -45,7 +45,7 @@ const Carpetas = () => {
 	};
 
 	const limpiar = () => {
-		setNombre(' ');
+		setNombre('');
 	};
 
 	const crearCarpeta = async (e) => {

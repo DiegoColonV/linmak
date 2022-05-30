@@ -33,7 +33,7 @@ const options = [
 	},
 ];
 
-const EditButtons = ({onReload}) => {
+const EditButtons = ({onReload, openInfo}) => {
 	const [text, setText] = useState('');
 	const [idChange, setIdChange] = useState('');
 
@@ -46,7 +46,7 @@ const EditButtons = ({onReload}) => {
 
 	return (
 		<>
-			<h1 className='section-title-edit mt-5'>BOTONES</h1>
+			<h1 className='section-title-edit mt-5'>BOTONES <i className='bx bx-info-circle' style={{cursor: 'pointer'}} onClick={() => openInfo('buttons')}></i></h1>
 			<div className='row d-flex justify-content-center mt-5'>
 				<div className='col-6'>
 					<Autocomplete handleAutocomplete={handleAutocomplete} arr={options} />

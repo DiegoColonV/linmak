@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
+import InfoModal from './components/InfoModal';
 import EditButtons from './Elementos/EditButtons';
 import EditColor from './Elementos/EditColor';
 import EditFont from './Elementos/EditFont';
@@ -10,12 +11,25 @@ import EditTextfield from './Elementos/EditTextfield';
 const EditarElem = ({ onReload }) => {
 	const [selected, setSelected] = useState('colores');
 	const selectedObj = useSelector((state) => state.objSelectInt.selected);
+	const  [infoModal, setInfoModal] = useState(false)
+	const [typeModal, setTypeModal] = useState('')
 
 	const handleSelected = (id) => {
 		setSelected(id);
 	};
 
+	const onCloseInfoModal = () =>{
+		setInfoModal(false)
+	}
+
+	const onOpenInfoModal = (type) =>{
+		setInfoModal(true)
+		setTypeModal(type)
+	}
+
 	return (
+		<>
+		<InfoModal open={infoModal} onClose={onCloseInfoModal} type={typeModal} />
 		<div className='edit-estr-container h-100'>
 			<div className='row top-part d-flex justify-content-center'>
 				<OptionButton text={'Colores'} id={'colores'} selected={selected} handleSelected={handleSelected} />
@@ -29,16 +43,17 @@ const EditarElem = ({ onReload }) => {
 			<div className='position-relative'>
 				{
 					{
-						colores: <EditColor selected={selectedObj.color} onReload={onReload} />,
+						colores: <EditColor selected={selectedObj.color} onReload={onReload}/>,
 						fuente: <EditFont selected={selectedObj.font} onReload={onReload} />,
-						botones: <EditButtons onReload={onReload} />,
-						navbar: <EditNavbar onReload={onReload} />,
-						footer: <EditFooter onReload={onReload} />,
-						text: <EditTextfield onReload={onReload} />,
+						botones: <EditButtons onReload={onReload} openInfo={onOpenInfoModal} />,
+						navbar: <EditNavbar onReload={onReload} openInfo={onOpenInfoModal} />,
+						footer: <EditFooter onReload={onReload} openInfo={onOpenInfoModal} />,
+						text: <EditTextfield onReload={onReload} openInfo={onOpenInfoModal} />,
 					}[selected]
 				}
 			</div>
 		</div>
+		</>
 	);
 };
 

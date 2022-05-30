@@ -25,7 +25,7 @@ const options = [
 	},
 ];
 
-const EditNavbar = ({onReload}) => {
+const EditNavbar = ({onReload, openInfo}) => {
 	const [text, setText] = useState('');
 	const [idChange, setIdChange] = useState('');
 
@@ -38,7 +38,7 @@ const EditNavbar = ({onReload}) => {
 
 	return (
 		<>
-			<h1 className='section-title-edit mt-5'>BARRA DE NAVEGACIÓN</h1>
+			<h1 className='section-title-edit mt-5'>BARRA DE NAVEGACIÓN <i className='bx bx-info-circle' style={{cursor: 'pointer'}} onClick={() => openInfo('navbar')}></i></h1>
 			<div className='row d-flex justify-content-center mt-5'>
 				<div className='col-6'>
 					<Autocomplete handleAutocomplete={handleAutocomplete} arr={options} />

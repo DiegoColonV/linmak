@@ -20,3 +20,10 @@
 	color: #5777ba;
 	border-width: 0px;
 }
+
+.alert-general{
+    width: 445px;
+    transform: translate(-50%, -50%);
+	text-align: center;
+	height: 200px;
+}

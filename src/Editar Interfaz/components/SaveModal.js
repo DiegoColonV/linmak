@@ -56,7 +56,7 @@ const SaveModal = ({ open, onClose, onSave }) => {
 
 
 	return (
-		<Modal show={open} onHide={onClose} centered>
+		<Modal show={open} onHide={onClose} centered size='lg'>
 			<div className='modal-save'>
 				<h3 style={{ marginBottom: 30 }}>Selecciona una carpeta</h3>
 				<div className='row'>

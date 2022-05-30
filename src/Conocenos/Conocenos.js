@@ -4,76 +4,39 @@ function Conocenos() {
 	return (
 		<div>
 			<main id='main'>
-				{/* ======= Breadcrumbs Section ======= */}
-				<section className='breadcrumbs'>
-					<div className='container'>
-						<div className='d-flex justify-content-between align-items-center'>
-							<h2>Inner Page</h2>
-							<ol>
-								<li>
-									<a href='index.html'>Home</a>
-								</li>
-								<li>Inner Page</li>
-							</ol>
-						</div>
-					</div>
-				</section>
-				{/* End Breadcrumbs Section */}
 				<section className='topimg'>
-					<div>
-						<div className='section-images'>
-							<div
-								id='cImagen'
-								className='img-fluid img-thumbnail'
-								alt='Responsive image'
-							>
-								<img
-									src='img/conocenos/img-compu1.png'
-									className='img-fluid'
-									alt=''
-								/>
-							</div>
-						</div>
+					<div className='parallax'>
+						<div className='text-parallax'>LINMAK</div>
 					</div>
 				</section>
 				<section className='queEs'>
-					<div className='container'>
-						<h1 className='title text-center'> ¿Qué es Linmak? </h1>
-						<p className='mt-5 text'>
-							El nombre de Linmak es un juego de palabras, viene de Language
-							Interface Maker. El proyecto de Linmak nace con la idea de
-							facilitar la creación de interfaces web, y creemos que no hay
-							forma más fácil de crear una interfaz que describirla con tus
-							propias palabras. <br /> <br />
-							Con ayuda del Procesamiento de Lenguaje Natural somos capaces de
-							crear una interfaz a partir de una frase, y de seguirla
-							modificando con palabras. También nos aseguramos que todas las
-							interfaces creadas cumplan con los requirimientos de Usabilidad y
-							UX/UI, porque como programadores y usuarios conocemos la
-							importancia de estos y la diferencia que marcan en las páginas
-							web. <br /> <br />
-							Queremos enfocar este proyecto para que sea una herramienta de
-							utilidad entre desarrolladores web y potenciales clientes.
-						</p>
-						<div className='row text-center '>
-							<div className='col-md-3 offset-md-1 mt-5'>
-								<span className=''>
-									<i className='bx bx-text'></i>
-								</span>
-								<h5 className='my-3'>Escribe</h5>
-							</div>
-							<div className='col-md-3 offset-md-1 mt-5'>
-								<span className=''>
-									<i className='bx bx-layout'></i>
-								</span>
-								<h5 className='my-3'>Crea</h5>
-							</div>
-							<div className='col-md-3 offset-md-1 mt-5'>
-								<span className=''>
-									<i className='bx bxs-edit'></i>
-								</span>
-								<h5 className='my-3'>Edita</h5>
-							</div>
+					<h1> ¿Qué es Linmak? </h1>
+					<p className='mt-5 text'>
+						El nombre de Linmak es un juego de palabras, viene de Language Interface Maker. El proyecto de Linmak nace con la idea de facilitar la creación de interfaces web, y
+						creemos que no hay forma más fácil de crear una interfaz que describirla con tus propias palabras. <br />
+						Con ayuda del Procesamiento de Lenguaje Natural somos capaces de crear una interfaz a partir de una frase, y de seguirla modificando con palabras. También nos
+						aseguramos que todas las interfaces creadas cumplan con los requirimientos de Usabilidad y UX/UI, porque como programadores y usuarios conocemos la importancia de estos
+						y la diferencia que marcan en las páginas web. <br />
+						Queremos enfocar este proyecto para que sea una herramienta de utilidad entre desarrolladores web y potenciales clientes.
+					</p>
+					<div className='row text-center d-flex justify-content-center '>
+						<div className='col-md-3 mt-5'>
+							<span className=''>
+								<img src='/img/conocenos/write.gif' className='icon-gif-about'></img>
+							</span>
+							<h4 className='my-3'>Escribe</h4>
+						</div>
+						<div className='col-md-3 mt-5'>
+							<span className=''>
+								<img src='/img/conocenos/create.gif' className='icon-gif-about'></img>
+							</span>
+							<h4 className='my-3'>Crea</h4>
+						</div>
+						<div className='col-md-3 mt-5'>
+							<span className=''>
+								<img src='/img/conocenos/edit.gif' className='icon-gif-about'></img>
+							</span>
+							<h4 className='my-3'>Edita</h4>
 						</div>
 					</div>
 				</section>
@@ -91,16 +54,10 @@ function Conocenos() {
 												<p className='nums'>200</p>
 											</div>
 										</div>
-										<img
-											className='img-fluid'
-											src='img/conocenos/1.jpg'
-											alt='...'
-										/>
+										<img className='img-fluid' src='img/conocenos/1.jpg' alt='...' />
 									</div>
 									<div className='portfolio-caption'>
-										<div className='portfolio-caption-heading'>
-											Páginas creadas
-										</div>
+										<div className='portfolio-caption-heading'>Páginas creadas</div>
 									</div>
 								</div>
 							</div>
@@ -112,11 +69,7 @@ function Conocenos() {
 												<p className='nums'>100</p>
 											</div>
 										</div>
-										<img
-											className='img-fluid'
-											src='img/conocenos/3.jpg'
-											alt='...'
-										/>
+										<img className='img-fluid' src='img/conocenos/3.jpg' alt='...' />
 									</div>
 									<div className='portfolio-caption'>
 										<div className='portfolio-caption-heading'>Usuarios</div>
@@ -131,16 +84,10 @@ function Conocenos() {
 												<p className='nums'>3000</p>
 											</div>
 										</div>
-										<img
-											className='img-fluid'
-											src='img/conocenos/2.jpg'
-											alt='...'
-										/>
+										<img className='img-fluid' src='img/conocenos/2.jpg' alt='...' />
 									</div>
 									<div className='portfolio-caption'>
-										<div className='portfolio-caption-heading'>
-											Lineas de código
-										</div>
+										<div className='portfolio-caption-heading'>Lineas de código</div>
 									</div>
 								</div>
 							</div>
@@ -152,11 +99,7 @@ function Conocenos() {
 												<p className='nums'>+600</p>
 											</div>
 										</div>
-										<img
-											className='img-fluid'
-											src='img/conocenos/4.jpg'
-											alt='...'
-										/>
+										<img className='img-fluid' src='img/conocenos/4.jpg' alt='...' />
 									</div>
 									<div className='portfolio-caption'>
 										<div className='portfolio-caption-heading'>Elementos</div>
@@ -170,43 +113,23 @@ function Conocenos() {
 					<div className='container mt-4'>
 						<div className='text-center'>
 							<h1 className='title text-center'>Nosotros</h1>
-							<h7 className='section-subheading text-muted'>
-								El equipo de desarrollo.
-							</h7>
+							<h7 className='section-subheading text-muted'>El equipo de desarrollo.</h7>
 						</div>
-						<div className='row mt-5'>
-							<div className='col-lg-4'>
-								<div className=' row team-member'>
-									<img
-										className='mx-auto rounded-circle'
-										src='img/conocenos/user.png'
-										alt='...'
-									/>
-									<h4>Diego Colón</h4>
-									<p className='text-muted'>Lead Designer</p>
-								</div>
+						<div className='row d-flex justify-content-center mt-5'>
+							<div className='col-lg-4 text-center'>
+								<img className='img-team my-4' src='img/conocenos/team/diego.png' alt='...' />
+								<h4>Diego Colón</h4>
+								<p className='text-muted'>Lead Designer</p>
 							</div>
-							<div className='col-lg-4'>
-								<div className=' row team-member'>
-									<img
-										className='mx-auto rounded-circle'
-										src='img/conocenos/user.png'
-										alt='...'
-									/>
-									<h4>Jesús García</h4>
-									<p className='text-muted'>Lead Marketer</p>
-								</div>
+							<div className='col-lg-4 text-center'>
+								<img className='img-team my-4' src='img/conocenos/team/jesus.jpg' alt='...' />
+								<h4>Jesús García</h4>
+								<p className='text-muted'>Lead Marketer</p>
 							</div>
-							<div className='col-lg-4'>
-								<div className='row team-member'>
-									<img
-										className='mx-auto rounded-circle'
-										src='img/conocenos/user.png'
-										alt='...'
-									/>
-									<h4>Yaxiri Vázquez</h4>
-									<p className='text-muted'>Lead Developer</p>
-								</div>
+							<div className='col-lg-4 text-center'>
+								<img className='img-team my-4' src='img/conocenos/user.png' alt='...' />
+								<h4>Yaxiri Vázquez</h4>
+								<p className='text-muted'>Lead Developer</p>
 							</div>
 						</div>
 					</div>

@@ -29,7 +29,7 @@ const options = [
 	},
 ];
 
-const EditTextfield = ({onReload}) => {
+const EditTextfield = ({onReload, openInfo}) => {
 	const [text, setText] = useState('');
 	const [idChange, setIdChange] = useState('');
 
@@ -42,7 +42,7 @@ const EditTextfield = ({onReload}) => {
 
 	return (
 		<>
-			<h1 className='section-title-edit mt-5'>CUADROS DE TEXTO</h1>
+			<h1 className='section-title-edit mt-5'>CUADROS DE TEXTO <i className='bx bx-info-circle' style={{cursor: 'pointer'}} onClick={() => openInfo('textfield')}></i></h1>
 			<div className='row d-flex justify-content-center mt-5'>
 				<div className='col-6'>
 					<Autocomplete handleAutocomplete={handleAutocomplete} arr={options} />
