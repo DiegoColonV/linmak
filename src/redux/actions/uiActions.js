@@ -6,3 +6,10 @@ export const setUIProgress = (progress) => {
 		payload: progress,
 	};
 };
+
+export const setEditSaved = (val) =>{
+	return {
+		type: ActionTypes.UI_EDIT_SAVED,
+		payload: val,
+	};
+}

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FormCheck, Modal } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { setUIProgress } from '../redux/actions/uiActions';
+import { setEditSaved, setUIProgress } from '../redux/actions/uiActions';
 import DisplayColor from './components/DisplayColor';
 import DisplayFont from './components/DisplayFont';
 import DisplayInt from './components/DisplayInt';
@@ -92,6 +92,7 @@ const ElegirInt = () => {
 		dispatch(addLink(dataJson.url))
 		dispatch(addFolder(dataJson.folder))
 		dispatch(addPosiblePages(dataJson.categories))
+		dispatch(setEditSaved(false))
 		setLoading(false);
 
 		navigate('/editar')

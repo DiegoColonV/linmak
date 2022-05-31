@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { addLink } from '../redux/actions/editIntActions';
+import { selectColor } from '../redux/actions/selectedIntActions';
+import { setEditSaved } from '../redux/actions/uiActions';
 import FilaProyecto from './FilaProyecto';
 import PreviewPag from './PreviewPag';
 
@@ -22,6 +26,9 @@ const Carpetas = () => {
 	const [showSuccess, setShowSuccess] = useState(false);
 	const [successText, setSuccessText] = useState('');
 	const [carpetas, setCarpetas] = useState([]);
+
+	const dispatch = useDispatch()
+	const navigate = useNavigate()
 
 	useEffect(() => {
 		consultarCarpetas();
@@ -86,7 +93,7 @@ const Carpetas = () => {
 		setPages(temp[0].trabajos);
 	};
 
-	const openSaved = async (id, pagetype) => {
+	const openSaved = async (id, pagetype, open) => {
 		const temp = carpetas.filter((item) => {
 			return item.id_carpeta === idSelected;
 		});
@@ -102,10 +109,11 @@ const Carpetas = () => {
 		};
 		const data = await fetch('http://25.59.209.228:5000/view/work', requestOptions);
 		const dataJson = await data.json();
-
 		console.log(dataJson);
+		if(open)
+			window.open(`http://25.59.209.228:5000/${dataJson.url}`);
 
-		window.open(`http://25.59.209.228:5000/${dataJson.url}`);
+		return dataJson.url
 	};
 
 	const onDeleteWork = async(id_work) =>{
@@ -129,6 +137,15 @@ const Carpetas = () => {
 		await consultarCarpetas();
 
 		onSelect(idSelected)
+	}
+
+	const editSaved = async(work) =>{
+		dispatch(selectColor([work.id_color, work.color_primario, work.color_secundario, work.color_tercero, work.color_cuarto]));
+		dispatch(setEditSaved(true))
+		const link = await openSaved(work.id_trabajo, work.pagetype, false)
+		dispatch(addLink(link))
+		console.log({color: [work.id_color, work.color_primario, work.color_secundario, work.color_tercero, work.color_cuarto], link: link})
+		navigate('/editar')
 	}
 
 	return (
@@ -164,7 +181,7 @@ const Carpetas = () => {
 					</div>
 				</div>
 				<div className='col-8'>
-					<PreviewPag pages={pages} openSaved={openSaved} onDeleteWork={onDeleteWork} />
+					<PreviewPag editSaved={editSaved} pages={pages} openSaved={openSaved} onDeleteWork={onDeleteWork} />
 				</div>
 			</div>
 		</>

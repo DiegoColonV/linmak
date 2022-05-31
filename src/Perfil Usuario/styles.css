@@ -126,9 +126,20 @@
     top: 0;
 }
 
+.preview-card .icon-delete-folder.edit{
+    position: absolute;
+    right: 60px;
+    top: 0;
+}
+
 .preview-card .icon-delete-folder.see i{
     color: #0069a0 !important;
 }
+
+.preview-card .icon-delete-folder.edit i{
+    color: #0069a0 !important;
+}
+
 /* Titulo de la tarjeta */
 .preview-title{
     text-align: center;

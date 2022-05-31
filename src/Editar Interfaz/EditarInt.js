@@ -17,6 +17,8 @@ function EditarInt() {
 	const [reload, setReload] = useState(0);
 	const  [registerModal, setRegisterModal] = useState(false)
 
+	console.log(objEdit.link)
+
 	const onChangeTab = () => {
 		if (activeTab === 1) setActiveTab(2);
 		else setActiveTab(1);
