@@ -39,7 +39,7 @@ const EditarElem = ({ onReload }) => {
 				<OptionButton text={'Footer'} id={'footer'} selected={selected} handleSelected={handleSelected} />
 				<OptionButton text={'Cuadros de texto'} id={'text'} selected={selected} handleSelected={handleSelected} />
 			</div>
-			<hr style={{ color: '#5777ba' }} />
+			<hr style={{ color: '#8080ff' }} />
 			<div className='position-relative'>
 				{
 					{

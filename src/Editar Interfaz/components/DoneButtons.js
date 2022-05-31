@@ -1,12 +1,12 @@
-import { useState } from 'react';
+import { createRef, useState } from 'react';
 import { Button } from 'react-bootstrap';
+import { createFileName, useScreenshot } from 'use-react-screenshot';
 import AlertGeneral from '../../Componentes Generales/AlertGeneral';
 import SaveModal from './SaveModal';
 
-const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt }) => {
-
-	const [modalSave, setModalSave] = useState(false)
-	const [showAlert, setShowAlert] = useState(false)
+const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt, refIframe }) => {
+	const [modalSave, setModalSave] = useState(false);
+	const [showAlert, setShowAlert] = useState(false);
 
 	if (showAlert) {
 		setTimeout(() => {
@@ -14,13 +14,13 @@ const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt }) 
 		}, 2000);
 	}
 
-	const onShowModalSave = () =>{
-		setModalSave(true)
-	}
+	const onShowModalSave = () => {
+		setModalSave(true);
+	};
 
-	const onCloseModalSave = () =>{
-		setModalSave(false)
-	}
+	const onCloseModalSave = () => {
+		setModalSave(false);
+	};
 
 	const onExpand = () => {
 		window.open(link);
@@ -70,12 +70,11 @@ const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt }) 
 		}
 	};
 
-	const onSave = async(name, id_folder) =>{
+	const onSave = async (name, id_folder) => {
 		const token_local = localStorage.getItem('token');
-		if(!token_local || token_local === 'token-local' || token_local === 'log_in_init' || token_local === ''){
-			onShowModal()
-		}
-		else{
+		if (!token_local || token_local === 'token-local' || token_local === 'log_in_init' || token_local === '') {
+			onShowModal();
+		} else {
 			const data2send = {
 				id_mock: objSelected.selected.int[0],
 				id_font: objSelected.selected.font[0],
@@ -86,8 +85,8 @@ const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt }) 
 				folder: objEdit.folder,
 				id_folder: id_folder,
 				mock: objSelected.selected.int[1].toLowerCase(),
-			}
-			console.log(data2send)
+			};
+			console.log(data2send);
 
 			const requestOptions = {
 				method: 'POST',
@@ -99,33 +98,32 @@ const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt }) 
 			const dataJson = await data.json();
 			console.log(dataJson);
 
-			onCloseModalSave()
-			setShowAlert(true)
-
+			onCloseModalSave();
+			setShowAlert(true);
 		}
-	}
+	};
 
 	return (
 		<>
-		<SaveModal open={modalSave} onClose={onCloseModalSave} onSave={onSave}/>
-		<AlertGeneral show={showAlert} text={'Guardado con éxito'} />
-		<div className='done-buttons-container'>
-			<Button variant='success'>
-				<i className='bx bx-check'></i>
-			</Button>
-			<br/>
-			<Button variant='success' onClick={onExpand}>
-				<i className='bx bx-expand'></i>
-			</Button>
-			<br/>
-			<Button variant='success' onClick={onShowModalSave}>
-				<i className='bx bxs-save'></i>
-			</Button>
-			<br/>
-			<Button variant='success'>
-				<i className='bx bxs-download'></i>
-			</Button>			
-		</div>
+			<SaveModal open={modalSave} onClose={onCloseModalSave} onSave={onSave} />
+			<AlertGeneral show={showAlert} text={'Guardado con éxito'} />
+			<div className='done-buttons-container'>
+				<Button variant='success'>
+					<i className='bx bx-check'></i>
+				</Button>
+				<br />
+				<Button variant='success' onClick={onExpand}>
+					<i className='bx bx-expand'></i>
+				</Button>
+				<br />
+				<Button variant='success' onClick={onShowModalSave}>
+					<i className='bx bxs-save'></i>
+				</Button>
+				<br />
+				<Button variant='success'>
+					<i className='bx bxs-download'></i>
+				</Button>
+			</div>
 		</>
 	);
 };

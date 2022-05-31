@@ -46,7 +46,7 @@ function Navbar() {
 								</NavLink>
 							</li>
 							<li>
-								<NavLink to='/loginreg' className='getstarted'>
+								<NavLink to='/loginreg' className='getstarted m-0 ms-1'>
 									Registrarse
 								</NavLink>
 							</li>

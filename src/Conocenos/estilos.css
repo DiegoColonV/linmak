@@ -29,7 +29,7 @@
         font-size: 100px;
         font-weight: 500;
         line-height: 56px;
-        color: #5777ba;
+        color: #8080ff;
         font-family: "Poppins", sans-serif;
     }
 
@@ -38,7 +38,7 @@
     font-size: 30px;
     font-weight: 500;
     line-height: 56px;
-    color: #5777ba;
+    color: #8080ff;
     font-family: "Poppins", sans-serif;
 }
 
@@ -201,7 +201,7 @@ header.masthead {
     .parallax {
         position: relative;
         /* The image used */
-        background-image: url("../assets/parallax.png");
+        background-image: url("../assets/parallax2.png");
       
         /* Set a specific height */
         min-height: 500px;
@@ -229,7 +229,7 @@ header.masthead {
     height: 100px;
     font-size: 100px;
     background: rgba(232, 236, 245, 0.9);
-    color: #5777ba;
+    color: #8080ff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -238,19 +238,18 @@ header.masthead {
 }
 
 .queEs h1{
-    color: #5777ba;
+    color: #8080ff;
     padding: 0px 150px;
 }
 
 .queEs h4{
     font-weight: 600;
-    color: #5777ba;
+    color: #8080ff;
 }
 
 .queEs p{
-    background: rgb(0,156,215);
-    background: linear-gradient(95deg, rgba(0,156,215,1) 0%, rgba(0,105,160,1) 28%, rgba(87,119,186,1) 100%);
-    color: white;
+    background: rgba(128, 128, 255, 0.2);
+    color: #7070ff;
     padding: 50px 150px;
     font-size: 18px;
 }
@@ -266,5 +265,5 @@ header.masthead {
     height: 250px;
     object-fit: cover;
     border-radius: 100%;
-    border: 5px solid #5777ba;
+    border: 5px solid #8080ff;
 }

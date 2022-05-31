@@ -19,7 +19,7 @@ const EditarEstr = ({onReload}) => {
 				<OptionButton text={'Ámbito'} id={'ambito'} selected={selected} handleSelected={handleSelected} />
 				<OptionButton text={'Estilo'} id={'estilo'} selected={selected} handleSelected={handleSelected} />
 			</div>
-			<hr style={{color: '#5777ba'}} />
+			<hr style={{color: '#8080ff'}} />
 			{
 				{
 					'categoria': <EditCat onReload={onReload} />,

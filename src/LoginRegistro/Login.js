@@ -51,7 +51,7 @@ function Login() {
 						<label htmlFor='contraseña'>Contraseña</label>
 						<input type='password' className='form-control' id='lcontrasena' name='lcontrasena' placeholder='Contraseña' onChange={handlePass} />
 					</div>
-					<button type='submit' onClick={loginn} className='btn btn-primary col-md-12 col-xs-18 mt-5'>
+					<button type='submit' onClick={loginn} className='btn btn-primary col-md-12 col-xs-18 mt-5 btn-color-change'>
 						Ingresar
 					</button>
 				</form>

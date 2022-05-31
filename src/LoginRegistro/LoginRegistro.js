@@ -24,9 +24,9 @@ function LoginRegistro() {
 	};
 
 	return (
-		<div className='row position-relative'>
+		<div className='row position-relative p-0 m-0'>
 			<AlertGeneral show={showAlert} text='Usuario registrado con éxito' />
-			<div className='col-6 ' data-aos='fade-right' data-aos-delay={300}>
+			<div className='col-6' data-aos='fade-right' data-aos-delay={300}>
 				<div className='banner-login-container'>
 					<img className='banner-login' src='img/general/details-3.png'></img>
 				</div>

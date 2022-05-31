@@ -20,14 +20,14 @@ body {
 	font-size: 30px;
 	font-weight: 500;
 	line-height: 56px;
-	color: #5777ba;
+	color: #8080ff;
 	font-family: 'Poppins', sans-serif;
 }
 
 #formLogin p {
 	font-size: 16px;
 	font-weight: 500;
-	color: #5777ba;
+	color: #8080ff;
 	font-family: 'Poppins', sans-serif;
 }
 
@@ -58,29 +58,41 @@ body {
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 	color: white;
-	background-color: #5777ba;
+	background-color: #8080ff;
 }
 
 .tab-login.active{
 	width: 150px;
 	height: 50px;
-	border: 1px solid #5777ba;
+	border: 1px solid #8080ff;
 	border-bottom-width: 0px;
 	border-radius: 0px;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
-	color: #5777ba;
+	color: #8080ff;
 	background-color: white;
 }
 
 .tab-login:hover{
-	background-color: #5777ba;
+	background-color: #8080ff;
 	color: white;
 	opacity: 0.7;
 }
 
 .tab-login.active:hover{
 	background-color: white;
-	color: #5777ba;
+	color: #8080ff;
 	opacity: 0.5;
+}
+
+.btn-color-change{
+	background-color: #8080ff;
+	color: white;
+	border: #8080ff;
+}
+
+.btn-color-change:hover{
+	background-color: #7070ff;
+	border: #7070ff;
+	color: white;
 }

@@ -12,7 +12,7 @@ const PreviewCard = ({ item, openSaved, onDeleteWork }) => {
 				<i className='bx bxs-trash'></i>
 			</div>
 			<div className='icon-delete-folder see' onClick={() => openSaved(item[0], item[3])}>
-				<i className='bx bx-expand'></i>
+				<i className='bx bx-show'></i>
 			</div>
 			<div className='preview-title'>
 				<p>{item[1]}</p>

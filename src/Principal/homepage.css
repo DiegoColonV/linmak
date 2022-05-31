@@ -1,6 +1,6 @@
 .icon-box-hp {
 	font-size: 48px;
-	color: #5777ba;
+	color: #8080ff;
 }
 
 .editar {
@@ -8,20 +8,20 @@
 }
 
 .btn-create {
-	background-color: #5777ba;
+	background-color: #8080ff;
 	border-width: 0;
 	width: 100%;
 }
 
 .btn-create:hover {
-	background-color: #748ec6;
+	background-color: #7070ff;
 }
 
 .icon-create {
 	font-size: 50px;
 	margin-top: auto;
 	/* color: #ffaab5; */
-	color: #5777ba;
+	color: #8080ff;
 }
 
 .img-hp-mockup {

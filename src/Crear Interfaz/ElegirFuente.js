@@ -84,6 +84,7 @@ const ElegirEstilo = () => {
 		if (dataJson.status > 200) {
 			setError(dataJson.message);
 		} else {
+			dispatch(setUIProgress(4));
 			fillOptions(dataJson.colors, dataJson.fonts, dataJson.mocks);
 		}
 	};

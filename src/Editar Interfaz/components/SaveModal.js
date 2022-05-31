@@ -78,7 +78,7 @@ const SaveModal = ({ open, onClose, onSave }) => {
 							</div>
 						</div>
 					</div>
-					<div className='col-6 px-4' style={{color: '#5777ba'}}>
+					<div className='col-6 px-4' style={{color: '#8080ff'}}>
                         <h5>Páginas guardadas:</h5>
                         <ul>
                             {selected ? selected.trabajos.map((item, i) =>(

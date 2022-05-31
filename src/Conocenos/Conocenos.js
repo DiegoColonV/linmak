@@ -6,7 +6,7 @@ function Conocenos() {
 			<main id='main'>
 				<section className='topimg'>
 					<div className='parallax' >
-						<div className='text-parallax'>LINMAK</div>
+						<div className='text-parallax'><img src="/img/logo.png" alt="" class="img-fluid" style={{width: 500}}/> </div>
 					</div>
 				</section>
 				<section className='queEs'  data-aos='fade-up' data-aos-delay={300}>

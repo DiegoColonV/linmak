@@ -5,7 +5,7 @@
 .vista-previa{
     background: lightgray;
     height: calc(100vh - 76px);
-    border: 4px solid #5777ba;
+    border: 4px solid #8080ff;
     background: url('../assets/loading.gif') center center no-repeat;
 }
 
@@ -22,7 +22,7 @@
 }
 .nav-link.tab.active{
     width: 200px;
-    color: #5777ba;
+    color: #8080ff;
     background-color: #f8f8f8;
     cursor: pointer;
 }
@@ -36,7 +36,7 @@
 }
 #header .logo h1 a,
 #header .logo h1 a:hover {
-	color: #5777ba;
+	color: #8080ff;
 	text-decoration: none;
 }
 #header .logo img {
@@ -161,7 +161,7 @@
 }
 
 .section-title-edit{
-    color:#5777ba;
+    color:#8080ff;
     font-weight: 600;
     text-align: center;
     font-size: 30px;
@@ -182,7 +182,7 @@
 .btn-autocomplete{
     width: 100%;
     height: 48px;
-    background-color: #5777ba;
+    background-color: #8080ff;
     color: white;
     box-shadow: none;
     border-top-right-radius: 8px;
@@ -251,9 +251,9 @@
     align-items: center;
     font-size: 16px;
     font-weight: 500;
-    color: #5777ba;
-    border-color: #5777ba;
-    border: 2px solid #5777ba;
+    color: #8080ff;
+    border-color: #8080ff;
+    border: 2px solid #8080ff;
     border-radius: 20px;
     text-align: center;
     width: 250px;
@@ -266,7 +266,7 @@
 
 .select-option-container:hover{
     color: white;
-    background: #5777ba;
+    background: #8080ff;
     transition: all 0.3s;
 }
 
@@ -278,7 +278,7 @@
 
 .soc-selected{
     color: white;
-    background: #5777ba;
+    background: #8080ff;
     transition: all 0.3s;
 }
 
@@ -318,12 +318,12 @@
 }
 
 .folder-save:hover{
-    color: #5777ba;
+    color: #8080ff;
     cursor: pointer;
 }
 
 .folder-save.folder-selected{
-    color: #5777ba;
+    color: #8080ff;
     text-decoration: underline;
 }
 

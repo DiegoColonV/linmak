@@ -84,7 +84,7 @@ function Registro({ onSetView, onShowAlert }) {
 							{errorText}
 						</h6>
 					)}
-					<button type='submit' onClick={regg} className='btn btn-primary btn-login col-md-12 col-xs-18 mt-5'>
+					<button type='submit' onClick={regg} className='btn btn-primary btn-login col-md-12 col-xs-18 mt-5 btn-color-change'>
 						Registrarse
 					</button>
 				</form>
