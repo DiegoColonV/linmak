@@ -83,7 +83,7 @@ const SaveModal = ({ open, onClose, onSave }) => {
                         <ul>
                             {selected ? selected.trabajos.map((item, i) =>(
                                 <li key={i}>
-                                    {item[1]}
+                                    {item.titulo_trabajo}
                                 </li>
                             )) : null}
                         </ul>

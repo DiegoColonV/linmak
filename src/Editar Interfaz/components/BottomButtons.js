@@ -8,20 +8,22 @@ const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
 	const dispatch = useDispatch();
 	const list = useSelector((state) => state.objEditInt);
 	const objCreate = useSelector((state) => state.objTxtInt.txt_int);
-	const objSelect = useSelector((state) => state.objSelectInt)
+	const objSelect = useSelector((state) => state.objSelectInt);
 
 	const [showAlert, setShowAlert] = useState(false);
 	const [alertText, setAlertText] = useState('');
 	const [modalOpen, setModalOpen] = useState(false);
 	const [modalConfirm, setModalConfirm] = useState(false);
 
+	const editingSaved = useSelector((state) => state.getUIProgress.edit_saved);
+	const idWorkSelected = useSelector((state) => state.getUIProgress.id_work);
+	const idFolderSelected = useSelector((state) => state.getUIProgress.id_folder);
+
 	if (showAlert) {
 		setTimeout(() => {
 			setShowAlert(false);
 		}, 2000);
 	}
-
-
 
 	const handleSaveChange = () => {
 		let isRepited = false;
@@ -201,29 +203,48 @@ const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
 	};
 
 	const handleApply = async () => {
-		const data_send = { folder: list.folder, changes: makeArray(list), pagetype: setIdPagetype(), mock: objSelect.selected.int[1].toLowerCase() };
-		console.log(data_send);
+		if (!editingSaved) {
+			const data_send = { folder: list.folder, changes: makeArray(list), pagetype: setIdPagetype(), mock: objSelect.selected.int[1].toLowerCase() };
+			console.log(data_send);
 
-		const requestOptions = {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json', Authorization: `Bearer token-local`, 'Access-Control-Allow-Origin': '*' },
-			body: JSON.stringify(data_send),
-		};
+			const requestOptions = {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}`, 'Access-Control-Allow-Origin': '*' },
+				body: JSON.stringify(data_send),
+			};
 
-		// setLoading(true);
+			// setLoading(true);
 
-		const data = await fetch('http://25.59.209.228:5000/edit/all', requestOptions);
-		const dataJson = await data.json();
-		console.log(dataJson);
-		dispatch(actions.cleanList());
-		handleCloseConfirm();
-		setAlertText('¡Cambios aplicados!');
-		setShowAlert(true);
-		onReload();
-		// dispatch(addLink(dataJson.url))
-		// setLoading(false);
+			const data = await fetch('http://25.59.209.228:5000/edit/all', requestOptions);
+			const dataJson = await data.json();
+			console.log(dataJson);
+			dispatch(actions.cleanList());
+			handleCloseConfirm();
+			setAlertText('¡Cambios aplicados!');
+			setShowAlert(true);
+			onReload();
+		}
+		else{
+			const data_send = { id_work: idWorkSelected, changes: makeArray(list), id_folder: idFolderSelected };
+			console.log(data_send);
 
-		//navigate('/editar/estructura')
+			const requestOptions = {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}`, 'Access-Control-Allow-Origin': '*' },
+				body: JSON.stringify(data_send),
+			};
+
+			// setLoading(true);
+
+			const data = await fetch('http://25.59.209.228:5000/edit/saved', requestOptions);
+			const dataJson = await data.json();
+			console.log(dataJson);
+			dispatch(actions.cleanList());
+			handleCloseConfirm();
+			setAlertText('¡Cambios aplicados!');
+			setShowAlert(true);
+			onReload();
+		}
 	};
 
 	return (

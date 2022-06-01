@@ -110,7 +110,7 @@
     background-color: white;
     padding : 5px 5px;
     border-radius: 10px;
-    border: 1px solid #0069a0;
+    border: 1px solid #1f1fff;
     position: relative;
 }
 
@@ -133,11 +133,11 @@
 }
 
 .preview-card .icon-delete-folder.see i{
-    color: #0069a0 !important;
+    color: #1f1fff !important;
 }
 
 .preview-card .icon-delete-folder.edit i{
-    color: #0069a0 !important;
+    color: #1f1fff !important;
 }
 
 /* Titulo de la tarjeta */

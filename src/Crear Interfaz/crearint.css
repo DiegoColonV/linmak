@@ -20,33 +20,33 @@
 }
 
 .progress-bar {
-	background-color: #009cd7;
+	background-color: #4747FF;
 	/* background-color: #fbdee2; */
 }
 
 .right-button-create {
 	text-align: left;
 	color: white;
-	background-color: #009cd7;
+	background-color: #4747FF;
 	font-weight: bold;
 }
 
 .right-button-create:hover {
-	background-color: #0069a0;
+	background-color: #1f1fff;
 	color: white;
 }
 
 .left-button-create {
 	text-align: right;
-	color: #009cd7;
+	color: #4747FF;
 	font-weight: bold;
-	border-color: #009cd7;
+	border-color: #4747FF;
 	z-index: 2;
 }
 
 .left-button-create:hover {
-	color: #0069a0;
-	border-color: #0069a0;
+	color: #1f1fff;
+	border-color: #1f1fff;
 }
 
 .icon-cat-create {
@@ -54,7 +54,7 @@
 }
 
 .btn-cat-create {
-	color: #009cd7;
+	color: #4747FF;
 	font-weight: bolder;
 	width: 100%;
 	border-width: 0;
@@ -63,18 +63,18 @@
 }
 
 .btn-cat-create:hover {
-	background-color: #0069a0;
-	border-color: #0069a0;
+	background-color: #1f1fff;
+	border-color: #1f1fff;
 }
 
 .info-btn-create {
 	margin-left: 16px;
-	color: #009cd7;
+	color: #4747FF;
 	font-size: 35px;
 }
 .info-btn-create:hover {
 	margin-left: 16px;
-	color: #00bdd4;
+	color: #1f1fff;
 }
 
 .nav-create {
@@ -89,20 +89,20 @@
 }
 
 .cat-active {
-	background-color: #0069a0;
-	border-color: #0069a0;
+	background-color: #1f1fff;
+	border-color: #1f1fff;
 	color: white;
 }
 
 .btn-save-next {
-	color: #009cd7;
-	border-color: #009cd7;
+	color: #4747FF;
+	border-color: #4747FF;
 }
 
 .btn-save-next:hover {
 	color: white;
 	border-color: white;
-	background-color: #009cd7;
+	background-color: #4747FF;
 }
 
 
@@ -149,7 +149,7 @@
 
 .card-ambit {
 	font-size: 30px;
-	color: #0069a0;
+	color: #1f1fff;
 }
 
 .create_img_example{
@@ -173,7 +173,7 @@
 }
 .create-font-rangenumbers_active{
 	font-weight: bold;
-	color: #009cd7;
+	color: #4747FF;
 }
 
 .select-container{
@@ -212,7 +212,7 @@
 }
 
 .expand-int{
-	background-color: #0069a0;
+	background-color: #1f1fff;
 	color: #dee2e6;
 	width: 35px;
 	HEIGHT: 35px;
@@ -227,7 +227,7 @@
 }
 
 .expand-int:hover{
-	background-color: #009cd7;
+	background-color: #4747FF;
 }
 
 .preview-fix{

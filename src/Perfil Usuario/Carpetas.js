@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addLink } from '../redux/actions/editIntActions';
-import { selectColor } from '../redux/actions/selectedIntActions';
-import { setEditSaved } from '../redux/actions/uiActions';
+import { selectColor, selectFont } from '../redux/actions/selectedIntActions';
+import { setEditSaved, setIdFolder, setIdWork } from '../redux/actions/uiActions';
 import FilaProyecto from './FilaProyecto';
 import PreviewPag from './PreviewPag';
 
@@ -27,8 +27,8 @@ const Carpetas = () => {
 	const [successText, setSuccessText] = useState('');
 	const [carpetas, setCarpetas] = useState([]);
 
-	const dispatch = useDispatch()
-	const navigate = useNavigate()
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		consultarCarpetas();
@@ -110,19 +110,18 @@ const Carpetas = () => {
 		const data = await fetch('http://25.59.209.228:5000/view/work', requestOptions);
 		const dataJson = await data.json();
 		console.log(dataJson);
-		if(open)
-			window.open(`http://25.59.209.228:5000/${dataJson.url}`);
+		if (open) window.open(`http://25.59.209.228:5000/${dataJson.url}`);
 
-		return dataJson.url
+		return dataJson.url;
 	};
 
-	const onDeleteWork = async(id_work) =>{
+	const onDeleteWork = async (id_work) => {
 		const temp = carpetas.filter((item) => {
 			return item.id_carpeta === idSelected;
 		});
 
-		const data2send = {id_work: id_work, folder: temp[0].titulo_carpeta}
-		console.log(data2send)
+		const data2send = { id_work: id_work, folder: temp[0].titulo_carpeta };
+		console.log(data2send);
 
 		const requestOptions = {
 			method: 'POST',
@@ -136,17 +135,22 @@ const Carpetas = () => {
 
 		await consultarCarpetas();
 
-		onSelect(idSelected)
-	}
+		onSelect(idSelected);
+	};
 
-	const editSaved = async(work) =>{
+	const editSaved = async (work) => {
 		dispatch(selectColor([work.id_color, work.color_primario, work.color_secundario, work.color_tercero, work.color_cuarto]));
-		dispatch(setEditSaved(true))
-		const link = await openSaved(work.id_trabajo, work.pagetype, false)
-		dispatch(addLink(link))
-		console.log({color: [work.id_color, work.color_primario, work.color_secundario, work.color_tercero, work.color_cuarto], link: link})
-		navigate('/editar')
-	}
+		dispatch(
+			selectFont([0, '', 'seriff', 1, 1, 1, 1])
+		);
+		dispatch(setEditSaved(true));
+		const link = await openSaved(work.id_trabajo, work.pagetype, false);
+		dispatch(addLink(link));
+		dispatch(setIdWork(work.id_trabajo));
+		dispatch(setIdFolder(idSelected));
+		console.log({ color: [work.id_color, work.color_primario, work.color_secundario, work.color_tercero, work.color_cuarto], link: link });
+		navigate('/editar');
+	};
 
 	return (
 		<>

@@ -1,4 +1,4 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import NavEditInt from './components/NavEditInt';
 import './editarint.css';
@@ -16,8 +16,7 @@ function EditarInt() {
 	const objCreateInt = useSelector((state) => state.objTxtInt.txt_int);
 	const [reload, setReload] = useState(0);
 	const  [registerModal, setRegisterModal] = useState(false)
-
-	console.log(objEdit.link)
+	const navigate = useNavigate()
 
 	const onChangeTab = () => {
 		if (activeTab === 1) setActiveTab(2);
@@ -41,9 +40,7 @@ function EditarInt() {
 			<header id='header' className='nav-create pt-3'>
 				<div className='container d-flex align-items-center '>
 					<div className='logo'>
-						<h1>
-							<Link to='/'>linmak</Link>
-						</h1>
+						<img src="/img/logo.png" alt="" class="img-fluid" onClick={() => navigate('/')}/> 
 					</div>
 					{/* .navbar */}
 					<NavEditInt activeTab={activeTab} onChangeTab={onChangeTab} />

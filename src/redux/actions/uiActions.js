@@ -13,3 +13,17 @@ export const setEditSaved = (val) =>{
 		payload: val,
 	};
 }
+
+export const setIdWork = (val) =>{
+	return {
+		type: ActionTypes.UI_ID_WORK,
+		payload: val,
+	};
+}
+
+export const setIdFolder = (val) =>{
+	return {
+		type: ActionTypes.UI_ID_FOLDER,
+		payload: val,
+	};
+}
