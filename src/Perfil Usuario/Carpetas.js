@@ -148,9 +148,25 @@ const Carpetas = () => {
 		dispatch(addLink(link));
 		dispatch(setIdWork(work.id_trabajo));
 		dispatch(setIdFolder(idSelected));
-		console.log({ color: [work.id_color, work.color_primario, work.color_secundario, work.color_tercero, work.color_cuarto], link: link });
 		navigate('/editar');
 	};
+
+	const downloadSaved = async(work) =>{
+		const requestOptions = {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
+			body: JSON.stringify({id_work: work.id_trabajo, id_folder: idSelected}),
+		};
+		const data = await fetch('http://25.59.209.228:5000/download/saved', requestOptions);
+
+		const dataJson = await data.json();
+
+		window.open(`http://25.59.209.228:5000${dataJson.url}`)
+
+		console.log(dataJson);
+
+
+	}
 
 	return (
 		<>
@@ -185,7 +201,7 @@ const Carpetas = () => {
 					</div>
 				</div>
 				<div className='col-8'>
-					<PreviewPag editSaved={editSaved} pages={pages} openSaved={openSaved} onDeleteWork={onDeleteWork} />
+					<PreviewPag editSaved={editSaved} downloadSaved={downloadSaved} pages={pages} openSaved={openSaved} onDeleteWork={onDeleteWork} />
 				</div>
 			</div>
 		</>

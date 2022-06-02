@@ -13,7 +13,7 @@ const AlertRegister = ({open, onClose}) =>{
                 <hr/>
                 <div className="row d-flex justify-content-center mt-2">
                     <div className="col-8">
-                        <Button onClick={() => navigate('/loginreg')} className="w-100" style={{background: '#1f1fff'}}>Iniciar sesión</Button>
+                        <Button onClick={() => navigate('/loginreg')} className="w-100" style={{background: '#3535e9'}}>Iniciar sesión</Button>
                     </div>
                 </div>
             </Modal.Body>

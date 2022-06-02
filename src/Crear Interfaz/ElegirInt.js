@@ -173,7 +173,7 @@ const ElegirInt = () => {
 					<div className='loading d-flex justify-content-center mt-5'>
 						<img src='/img/loading.gif' />
 					</div>
-					<h3 style={{ color: '#1f1fff', textAlign: 'center' }}>Generando interfaz</h3>
+					<h3 style={{ color: '#3535e9', textAlign: 'center' }}>Generando interfaz</h3>
 				</>
 			)}
 		</>

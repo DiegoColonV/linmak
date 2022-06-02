@@ -32,7 +32,7 @@
 }
 
 .right-button-create:hover {
-	background-color: #1f1fff;
+	background-color: #3535e9;
 	color: white;
 }
 
@@ -45,8 +45,8 @@
 }
 
 .left-button-create:hover {
-	color: #1f1fff;
-	border-color: #1f1fff;
+	color: #3535e9;
+	border-color: #3535e9;
 }
 
 .icon-cat-create {
@@ -63,8 +63,8 @@
 }
 
 .btn-cat-create:hover {
-	background-color: #1f1fff;
-	border-color: #1f1fff;
+	background-color: #3535e9;
+	border-color: #3535e9;
 }
 
 .info-btn-create {
@@ -74,7 +74,7 @@
 }
 .info-btn-create:hover {
 	margin-left: 16px;
-	color: #1f1fff;
+	color: #3535e9;
 }
 
 .nav-create {
@@ -89,8 +89,8 @@
 }
 
 .cat-active {
-	background-color: #1f1fff;
-	border-color: #1f1fff;
+	background-color: #3535e9;
+	border-color: #3535e9;
 	color: white;
 }
 
@@ -149,7 +149,7 @@
 
 .card-ambit {
 	font-size: 30px;
-	color: #1f1fff;
+	color: #3535e9;
 }
 
 .create_img_example{
@@ -212,7 +212,7 @@
 }
 
 .expand-int{
-	background-color: #1f1fff;
+	background-color: #3535e9;
 	color: #dee2e6;
 	width: 35px;
 	HEIGHT: 35px;

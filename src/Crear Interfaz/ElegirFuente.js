@@ -221,7 +221,7 @@ const ElegirEstilo = () => {
 					<div className='loading d-flex justify-content-center mt-5'>
 						<img src='/img/loading.gif' />
 					</div>
-					<h3 style={{ color: '#1f1fff', textAlign: 'center' }}>Generando opciones de acuerdo a tus preferencias</h3>
+					<h3 style={{ color: '#3535e9', textAlign: 'center' }}>Generando opciones de acuerdo a tus preferencias</h3>
 				</>
 			)}
 		</>

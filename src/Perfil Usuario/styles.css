@@ -110,7 +110,7 @@
     background-color: white;
     padding : 5px 5px;
     border-radius: 10px;
-    border: 1px solid #1f1fff;
+    border: 1px solid #3535e9;
     position: relative;
 }
 
@@ -132,12 +132,22 @@
     top: 0;
 }
 
+.preview-card .icon-delete-folder.download{
+    position: absolute;
+    right: 90px;
+    top: 0;
+}
+
 .preview-card .icon-delete-folder.see i{
-    color: #1f1fff !important;
+    color: #3535e9 !important;
 }
 
 .preview-card .icon-delete-folder.edit i{
-    color: #1f1fff !important;
+    color: #3535e9 !important;
+}
+
+.preview-card .icon-delete-folder.download i{
+    color: #3535e9 !important;
 }
 
 /* Titulo de la tarjeta */
