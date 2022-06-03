@@ -119,10 +119,6 @@ const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt, re
 				<Button variant='success' onClick={onShowModalSave}>
 					<i className='bx bxs-save'></i>
 				</Button>
-				<br />
-				<Button variant='success'>
-					<i className='bx bxs-download'></i>
-				</Button>
 			</div>
 		</>
 	);

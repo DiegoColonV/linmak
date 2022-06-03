@@ -6,7 +6,7 @@ function Conocenos() {
 			<main id='main'>
 				<section className='topimg'>
 					<div className='parallax' >
-						<div className='text-parallax'><img src="/img/logo.png" alt="" class="img-fluid" style={{width: 500}}/> </div>
+						<div className='text-parallax'><img src="/img/logo.png" alt="" className="img-fluid" style={{width: 500}}/> </div>
 					</div>
 				</section>
 				<section className='queEs'  data-aos='fade-up' data-aos-delay={300}>
@@ -113,7 +113,7 @@ function Conocenos() {
 					<div className='container mt-4'>
 						<div className='text-center'>
 							<h1 className='title text-center'>Nosotros</h1>
-							<h7 className='section-subheading text-muted'>El equipo de desarrollo.</h7>
+							<h6 className='section-subheading text-muted'>El equipo de desarrollo.</h6>
 						</div>
 						<div className='row d-flex justify-content-center mt-5'>
 							<div className='col-lg-4 text-center'>

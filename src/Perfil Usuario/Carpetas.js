@@ -26,6 +26,7 @@ const Carpetas = () => {
 	const [showSuccess, setShowSuccess] = useState(false);
 	const [successText, setSuccessText] = useState('');
 	const [carpetas, setCarpetas] = useState([]);
+	const [loading, setLoading] = useState(false);
 
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
@@ -140,9 +141,7 @@ const Carpetas = () => {
 
 	const editSaved = async (work) => {
 		dispatch(selectColor([work.id_color, work.color_primario, work.color_secundario, work.color_tercero, work.color_cuarto]));
-		dispatch(
-			selectFont([0, '', 'seriff', 1, 1, 1, 1])
-		);
+		dispatch(selectFont([0, '', 'seriff', 1, 1, 1, 1]));
 		dispatch(setEditSaved(true));
 		const link = await openSaved(work.id_trabajo, work.pagetype, false);
 		dispatch(addLink(link));
@@ -151,22 +150,27 @@ const Carpetas = () => {
 		navigate('/editar');
 	};
 
-	const downloadSaved = async(work) =>{
-		const requestOptions = {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
-			body: JSON.stringify({id_work: work.id_trabajo, id_folder: idSelected}),
-		};
-		const data = await fetch('http://25.59.209.228:5000/download/saved', requestOptions);
+	const downloadSaved = async (work) => {
+		setLoading(true);
+		try {
+			const requestOptions = {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
+				body: JSON.stringify({ id_work: work.id_trabajo, id_folder: idSelected }),
+			};
+			const data = await fetch('http://25.59.209.228:5000/download/saved', requestOptions);
 
-		const dataJson = await data.json();
+			const dataJson = await data.json();
+			setLoading(false);
 
-		window.open(`http://25.59.209.228:5000${dataJson.url}`)
+			window.open(`http://25.59.209.228:5000${dataJson.url}`, '_blank');
 
-		console.log(dataJson);
-
-
-	}
+			console.log(dataJson);
+		} catch (e) {
+			console.log(e);
+			setLoading(false);
+		}
+	};
 
 	return (
 		<>
@@ -201,7 +205,7 @@ const Carpetas = () => {
 					</div>
 				</div>
 				<div className='col-8'>
-					<PreviewPag editSaved={editSaved} downloadSaved={downloadSaved} pages={pages} openSaved={openSaved} onDeleteWork={onDeleteWork} />
+					<PreviewPag loading={loading} editSaved={editSaved} downloadSaved={downloadSaved} pages={pages} openSaved={openSaved} onDeleteWork={onDeleteWork} />
 				</div>
 			</div>
 		</>

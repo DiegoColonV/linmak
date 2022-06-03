@@ -5,7 +5,7 @@
         * pages: arreglo con las páginas
 */
 
-const PreviewCard = ({ item, openSaved, onDeleteWork, editSaved, downloadSaved }) => {
+const PreviewCard = ({ loading, item, openSaved, onDeleteWork, editSaved, downloadSaved }) => {
 	return (
 		<div className='preview-card'>
 			<div className='icon-delete-folder' onClick={() => onDeleteWork(item.id_trabajo)}>
@@ -18,7 +18,7 @@ const PreviewCard = ({ item, openSaved, onDeleteWork, editSaved, downloadSaved }
 				<i className='bx bx-edit'></i>
 			</div>
 			<div className='icon-delete-folder download' onClick={() => downloadSaved(item)}>
-				<i className='bx bx-download'></i>{' '}
+				{loading ? <i className='bx bx-loader-alt bx-spin'></i> : <i className='bx bx-download'></i>}
 			</div>
 			<div className='preview-title'>
 				<p>{item.titulo_trabajo}</p>
@@ -28,9 +28,9 @@ const PreviewCard = ({ item, openSaved, onDeleteWork, editSaved, downloadSaved }
 	);
 };
 
-const PreviewPag = ({ pages, openSaved, onDeleteWork, editSaved, downloadSaved }) => {
+const PreviewPag = ({ loading, pages, openSaved, onDeleteWork, editSaved, downloadSaved }) => {
 	const comps = pages.map((pag, i) => {
-		return <PreviewCard item={pag} key={i} editSaved={editSaved} downloadSaved={downloadSaved} openSaved={openSaved} onDeleteWork={onDeleteWork} />;
+		return <PreviewCard item={pag} loading={loading} key={i} editSaved={editSaved} downloadSaved={downloadSaved} openSaved={openSaved} onDeleteWork={onDeleteWork} />;
 	});
 
 	return <div className='preview-cont'>{comps}</div>;

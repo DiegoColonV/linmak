@@ -40,7 +40,7 @@ function EditarInt() {
 			<header id='header' className='nav-create pt-3'>
 				<div className='container d-flex align-items-center '>
 					<div className='logo'>
-						<img src="/img/logo.png" alt="" class="img-fluid" onClick={() => navigate('/')}/> 
+						<img src="/img/logo.png" alt="" className="img-fluid" onClick={() => navigate('/')}/> 
 					</div>
 					{/* .navbar */}
 					<NavEditInt activeTab={activeTab} onChangeTab={onChangeTab} />

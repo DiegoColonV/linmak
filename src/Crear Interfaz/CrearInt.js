@@ -20,7 +20,7 @@ function CrearInt() {
 			<header id='header' className='fixed-top nav-create'>
 				<div className='container d-flex align-items-center '>
 					<div className='logo'>
-						<img src="/img/logo.png" alt="" class="img-fluid" onClick={() => navigate('/')}/> 
+						<img src="/img/logo.png" alt="" className="img-fluid" onClick={() => navigate('/')}/> 
 						{/* Uncomment below if you prefer to use an image logo */}
 						{/* <a href="index.html"><img src="img/logo.png" alt="" class="img-fluid"></a>*/}
 					</div>

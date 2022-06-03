@@ -16,7 +16,7 @@ function Header() {
 						<Link to='/'>linmak</Link>
 					</h1> */}
 					{/* Uncomment below if you prefer to use an image logo */}
-					<img src="/img/logo.png" alt="" class="img-fluid"/> 
+					<img src="/img/logo.png" alt="" className="img-fluid"/> 
 					{/* <h1 style={{marginLeft: 10, color: '#8080ff', fontWeight: 600}} className='d-inline'>linmak</h1> */}
 				</div>
 				{/* .navbar */}
