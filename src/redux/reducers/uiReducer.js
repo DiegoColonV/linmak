@@ -4,7 +4,8 @@ const initialState = {
 	progress: 0,
 	edit_saved: false,
 	id_work: null,
-	id_folder: null
+	id_folder: null,
+	login_tab: 1
 };
 
 export const uiReducer = (state = initialState, action) => {
@@ -28,6 +29,16 @@ export const uiReducer = (state = initialState, action) => {
 			return {
 				...state,
 				id_folder: action.payload,
+			};
+		case ActionTypes.UI_ID_FOLDER:
+			return {
+				...state,
+				id_folder: action.payload,
+			};
+		case ActionTypes.UI_LOGIN_TAB:
+			return {
+				...state,
+				login_tab: action.payload,
 			};
 		default:
 			return state;

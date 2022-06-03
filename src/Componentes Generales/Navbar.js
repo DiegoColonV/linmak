@@ -3,6 +3,7 @@ import './estilos_comp_generales.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { userLogout } from '../redux/actions/userActions';
 import { useNavigate } from "react-router-dom";
+import { setLoginTab } from '../redux/actions/uiActions';
 
 function Navbar() {
 	const navigate = useNavigate();
@@ -13,6 +14,11 @@ function Navbar() {
 		localStorage.setItem('token', "log_in_init");
 		navigate("/")
 	}
+
+	const loginTab = (tab) => {
+		dispatch(setLoginTab(tab))
+	}
+
 	return (
 		<nav id='navbar' className='navbar navbar-expand-lg'>
 			<button
@@ -34,19 +40,19 @@ function Navbar() {
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to='/conocenos' className='nav-link'>
+						<NavLink to='/conocenos' className='nav-link' >
 							Conócenos
 						</NavLink>
 					</li>
 					{!user.autenticado ? (
 						<>
 							<li>
-								<NavLink to='/loginreg' className='nav-link'>
+								<NavLink to='/loginreg' className='nav-link'  onClick={() => loginTab(1)}>
 									Iniciar Sesión
 								</NavLink>
 							</li>
 							<li>
-								<NavLink to='/loginreg' className='getstarted m-0 ms-1'>
+								<NavLink to='/loginreg' className='getstarted m-0 ms-1' onClick={() => loginTab(2)}>
 									Registrarse
 								</NavLink>
 							</li>

@@ -27,3 +27,10 @@ export const setIdFolder = (val) =>{
 		payload: val,
 	};
 }
+
+export const setLoginTab = (val) =>{
+	return {
+		type: ActionTypes.UI_LOGIN_TAB,
+		payload: val,
+	};
+}

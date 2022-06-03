@@ -38,4 +38,5 @@ export const ActionTypes = {
 	UI_EDIT_SAVED: 'UI_EDIT_SAVED',
 	UI_ID_WORK: 'UI_ID_WORK',
 	UI_ID_FOLDER: 'UI_ID_FOLDER',
+	UI_LOGIN_TAB: 'UI_LOGIN_TAB'
 };

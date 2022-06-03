@@ -1,11 +1,13 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import AlertGeneral from '../Componentes Generales/AlertGeneral';
 import Login from './Login';
 import Registro from './Registro';
 import './stilos.css';
 
 function LoginRegistro() {
-	const [view, setView] = useState(1);
+	const tab = useSelector((state) => state.getUIProgress.login_tab)
+	const [view, setView] = useState(tab ? tab : 1);
 
 	const [showAlert, setShowAlert] = useState(false);
 
