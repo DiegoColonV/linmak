@@ -80,9 +80,7 @@
 /* Filas de la tabla */
 .table-row{
     font-size: 18px;
-    padding-left: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 5px 0px 
 }
 
 .table-row:hover{
@@ -95,6 +93,20 @@
 .table-row.active{
     background-color: rgb(224, 224, 224);
 }
+
+.roww.active{
+    border: 1px solid #3535e9;
+    color: #3535e9;
+    border-radius: 6px;
+}
+
+.change-name{
+    font-size: 10;
+    text-decoration: underline;
+    color: #3535e9;
+    cursor: pointer;
+}
+
 
 /* Tabla */
 .tabla-carpetas table{
@@ -203,5 +215,26 @@
 .icon-delete-folder i{
     font-size: 20px;
     color: darkred;
+}
+
+.icon-edit-folder{
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.icon-edit-folder:hover{
+    background-color: #d0d0d0;
+    transition: all 0.5s;
+}
+
+.icon-edit-folder i{
+    font-size: 20px;
+    color: #3535e9;
 }
 

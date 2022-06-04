@@ -66,9 +66,9 @@ function HomePage() {
 											data-aos-delay={400}
 										>
 											<i className='bx bx-folder-open' />
-											<h4>5. Guarda tu interfaz en una colección</h4>
+											<h4>5. Guarda tu interfaz en una carpeta</h4>
 											<p>
-												Guarda tus interfaces favoritas en una colección y
+												Guarda tus interfaces favoritas en una carpeta y
 												organíazalas
 											</p>
 										</div>
@@ -212,7 +212,7 @@ function HomePage() {
 										<i className='bx bx-check' /> Guarda hasta 3 interfaces
 									</li>
 									<li className='na'>
-										<i className='bx bx-x' /> Crea colecciones ilimitadas
+										<i className='bx bx-x' /> Crea carpetas ilimitadas
 									</li>
 									<li className='na'>
 										<i className='bx bx-x' /> Descarga el código creado
@@ -238,7 +238,7 @@ function HomePage() {
 										<i className='bx bx-check' /> Guarda hasta 10 interfaces
 									</li>
 									<li>
-										<i className='bx bx-check' /> Crea colecciones ilimitadas
+										<i className='bx bx-check' /> Crea carpetas ilimitadas
 									</li>
 									<li className='na'>
 										<i className='bx bx-x' /> Descarga el código creado
@@ -264,7 +264,7 @@ function HomePage() {
 										<i className='bx bx-check' /> Guarda interfaces ilimitadas
 									</li>
 									<li>
-										<i className='bx bx-check' /> Crea colecciones ilimitadas
+										<i className='bx bx-check' /> Crea carpetas ilimitadas
 									</li>
 									<li>
 										<i className='bx bx-check' /> Descarga el código creado

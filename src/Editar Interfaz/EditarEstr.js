@@ -16,15 +16,15 @@ const EditarEstr = ({onReload}) => {
 		<div className='edit-estr-container position-relative h-100'>
 			<div className='row top-part'>
 				<OptionButton text={'Categoría'} id={'categoria'} selected={selected} handleSelected={handleSelected} />
-				<OptionButton text={'Ámbito'} id={'ambito'} selected={selected} handleSelected={handleSelected} />
-				<OptionButton text={'Estilo'} id={'estilo'} selected={selected} handleSelected={handleSelected} />
+				{/* <OptionButton text={'Ámbito'} id={'ambito'} selected={selected} handleSelected={handleSelected} />
+				<OptionButton text={'Estilo'} id={'estilo'} selected={selected} handleSelected={handleSelected} /> */}
 			</div>
 			<hr style={{color: '#8080ff'}} />
 			{
 				{
 					'categoria': <EditCat onReload={onReload} />,
-					'ambito': <EditAmbit onReload={onReload} />,
-					'estilo': <EditStyle onReload={onReload} />,
+					// 'ambito': <EditAmbit onReload={onReload} />,
+					// 'estilo': <EditStyle onReload={onReload} />,
 				}[selected]
 			}
 		</div>

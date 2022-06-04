@@ -63,8 +63,12 @@ const ElegirEstilo = () => {
 		navigate('/crear/elegir');
 	};
 
+	const removeAccents = (str) => {
+		return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+	} 
+
 	const sendObj = async () => {
-		const data_send = { font_object: obj.fuente, text_color: obj.color, text_style: obj.estilo, ambit: obj.ambito, category: obj.categoria + 1 };
+		const data_send = { font_object: obj.fuente, text_color: removeAccents(obj.color), text_style: removeAccents(obj.estilo), ambit: removeAccents(obj.ambito), category: obj.categoria + 1 };
 		console.log(data_send);
 
 		const requestOptions = {

@@ -144,9 +144,9 @@ const Carpetas = () => {
 
 		console.log(dataJson);
 
-		await consultarCarpetas();
-
 		onSelect(idSelected);
+
+		await consultarCarpetas();
 	};
 
 	const editSaved = async (work) => {
@@ -186,7 +186,7 @@ const Carpetas = () => {
 		<>
 			<div className='row p-4'>
 				<div className='col-4'>
-					<div className='row'>
+					<div className='row p-0'>
 						<h4>Carpetas:</h4>
 					</div>
 					{carpetas.map((carp, i) => (
@@ -215,7 +215,7 @@ const Carpetas = () => {
 					</div>
 				</div>
 				<div className='col-8'>
-					<PreviewPag userData={userData} loading={loading} editSaved={editSaved} downloadSaved={downloadSaved} pages={pages} openSaved={openSaved} onDeleteWork={onDeleteWork} />
+					<PreviewPag idFolder={idSelected} onUpdate={consultarCarpetas} userData={userData} loading={loading} editSaved={editSaved} downloadSaved={downloadSaved} pages={pages} openSaved={openSaved} onDeleteWork={onDeleteWork} />
 				</div>
 			</div>
 		</>
