@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 
-const SaveModal = ({ open, onClose, onSave }) => {
+const SaveModal = ({ open, onClose, onSave, onShowAlert }) => {
 	const [selected, setSelected] = useState(null);
 	const [carpetas, setCarpetas] = useState([]);
 	const [txtFolder, setTxtFolder] = useState('');
 	const [txtPage, setTxtPage] = useState('');
+
+	const userData = useSelector((state) => state.usrData) 
 
 	useEffect(() => {
 		consultarCarpetas();
@@ -25,6 +28,13 @@ const SaveModal = ({ open, onClose, onSave }) => {
 	};
 
 	const crearCarpeta = async () => {
+
+		if(userData.plan === 'I' && carpetas.length >= 1){
+			onShowAlert('danger', 'Solo puedes crear 1 carpeta con tu tipo de plan')
+			onClose()
+			return
+		}
+
 		if (txtFolder.trim() !== '') {
 			const requestOptions = {
 				method: 'POST',

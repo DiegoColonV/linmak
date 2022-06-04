@@ -9,7 +9,7 @@
 /* Card con los datos del perfil*/
 .profile-card{
     width: 85%;
-    padding : 1vh 2vh;
+    padding-top: 50px;
 }
 
 /* Contenedor del botón de modificar datos */
@@ -166,7 +166,16 @@
 
 .icon-crear{
     margin-top: 38px;
-    height: 37px;
+    height: 35px;
+
+    border: 1px solid #3535e9;
+    color: #3535e9;
+}
+
+.icon-crear:hover{
+    border: 1px solid #3535e9;
+    background-color: #3535e9;
+    color: 'white'
 }
 
 .icon-crear box-icon {

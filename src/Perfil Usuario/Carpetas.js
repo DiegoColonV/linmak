@@ -28,6 +28,8 @@ const Carpetas = () => {
 	const [carpetas, setCarpetas] = useState([]);
 	const [loading, setLoading] = useState(false);
 
+	const userData = useSelector((state) => state.usrData)
+
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
@@ -45,6 +47,7 @@ const Carpetas = () => {
 		const dataJson = await data.json();
 
 		console.log(dataJson.data);
+
 		setCarpetas(dataJson.data);
 	};
 
@@ -57,6 +60,13 @@ const Carpetas = () => {
 	};
 
 	const crearCarpeta = async (e) => {
+
+		if(userData.plan === 'I' && carpetas.length >= 1){
+			setErrorText('Solo puedes crear 1 carpeta con tu plan actual')
+			setShowError(true)
+			return
+		}
+
 		setShowError(false);
 		setShowSuccess(false);
 		e.preventDefault();
@@ -205,7 +215,7 @@ const Carpetas = () => {
 					</div>
 				</div>
 				<div className='col-8'>
-					<PreviewPag loading={loading} editSaved={editSaved} downloadSaved={downloadSaved} pages={pages} openSaved={openSaved} onDeleteWork={onDeleteWork} />
+					<PreviewPag userData={userData} loading={loading} editSaved={editSaved} downloadSaved={downloadSaved} pages={pages} openSaved={openSaved} onDeleteWork={onDeleteWork} />
 				</div>
 			</div>
 		</>

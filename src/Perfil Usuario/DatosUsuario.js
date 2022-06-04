@@ -29,7 +29,7 @@ const DatosUsuario = () => {
 			</div>
 			<div className='profile-card-body'>
 				<p>Correo electrónico: {user.mail} </p>
-				<p>Tipo de plan: {_plan} </p>
+				<p>Tipo de plan:<b style={{color: '#8080ff'}}> {_plan} </b></p>
 				<hr></hr>
 			</div>
 		</div>

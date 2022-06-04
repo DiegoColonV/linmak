@@ -5,7 +5,7 @@
         * pages: arreglo con las páginas
 */
 
-const PreviewCard = ({ loading, item, openSaved, onDeleteWork, editSaved, downloadSaved }) => {
+const PreviewCard = ({ loading, item, openSaved, onDeleteWork, editSaved, downloadSaved, userData }) => {
 	return (
 		<div className='preview-card'>
 			<div className='icon-delete-folder' onClick={() => onDeleteWork(item.id_trabajo)}>
@@ -17,9 +17,11 @@ const PreviewCard = ({ loading, item, openSaved, onDeleteWork, editSaved, downlo
 			<div className='icon-delete-folder edit' onClick={() => editSaved(item)}>
 				<i className='bx bx-edit'></i>
 			</div>
-			<div className='icon-delete-folder download' onClick={() => downloadSaved(item)}>
-				{loading ? <i className='bx bx-loader-alt bx-spin'></i> : <i className='bx bx-download'></i>}
-			</div>
+			{userData.plan === 'LM' && (
+				<div className='icon-delete-folder download' onClick={() => downloadSaved(item)}>
+					{loading ? <i className='bx bx-loader-alt bx-spin'></i> : <i className='bx bx-download'></i>}
+				</div>
+			)}
 			<div className='preview-title'>
 				<p>{item.titulo_trabajo}</p>
 			</div>
@@ -28,9 +30,9 @@ const PreviewCard = ({ loading, item, openSaved, onDeleteWork, editSaved, downlo
 	);
 };
 
-const PreviewPag = ({ loading, pages, openSaved, onDeleteWork, editSaved, downloadSaved }) => {
-	const comps = pages.map((pag, i) => {
-		return <PreviewCard item={pag} loading={loading} key={i} editSaved={editSaved} downloadSaved={downloadSaved} openSaved={openSaved} onDeleteWork={onDeleteWork} />;
+const PreviewPag = (props) => {
+	const comps = props.pages.map((pag, i) => {
+		return <PreviewCard key={i} item={pag} {...props} />;
 	});
 
 	return <div className='preview-cont'>{comps}</div>;
