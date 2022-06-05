@@ -86,7 +86,7 @@ const ElegirInt = () => {
 
 		setLoading(true);
 
-		const data = await fetch('http://25.59.209.228:5000/edit/mock', requestOptions);
+		const data = await fetch(`${process.env.REACT_APP_API_URL}/edit/mock`, requestOptions);
 		const dataJson = await data.json();
 		console.log(dataJson);
 		dispatch(addLink(dataJson.url))

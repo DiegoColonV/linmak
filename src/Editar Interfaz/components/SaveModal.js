@@ -20,7 +20,7 @@ const SaveModal = ({ open, onClose, onSave, onShowAlert }) => {
 			headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
 			body: JSON.stringify({}),
 		};
-		const data = await fetch('http://25.59.209.228:5000/view/carpeta', requestOptions);
+		const data = await fetch(`${process.env.REACT_APP_API_URL}/view/carpeta`, requestOptions);
 		const dataJson = await data.json();
 
 		console.log(dataJson.data);
@@ -41,7 +41,7 @@ const SaveModal = ({ open, onClose, onSave, onShowAlert }) => {
 				headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
 				body: JSON.stringify({ nombre: txtFolder.trim() }),
 			};
-			const data = await fetch('http://25.59.209.228:5000/insert/carpeta', requestOptions);
+			const data = await fetch(`${process.env.REACT_APP_API_URL}/insert/carpeta`, requestOptions);
 			const dataJson = await data.json();
             console.log(dataJson)
             setTxtFolder('')

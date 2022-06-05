@@ -19,7 +19,7 @@ const FilaProyecto = ({ item, current_selected, onSelect, onUpdate }) => {
 			headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
 			body: JSON.stringify({ id_folder: item.id_carpeta }),
 		};
-		const data = await fetch('http://25.59.209.228:5000/delete/carpeta', requestOptions);
+		const data = await fetch(`${process.env.REACT_APP_API_URL}/delete/carpeta`, requestOptions);
 		const dataJson = await data.json();
 		console.log(dataJson);
 		onUpdate();
@@ -37,7 +37,7 @@ const FilaProyecto = ({ item, current_selected, onSelect, onUpdate }) => {
 			headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
 			body: JSON.stringify({ id_carpeta: item.id_carpeta, new_name: textEdit.trim() }),
 		};
-		const data = await fetch('http://25.59.209.228:5000/update/carpeta', requestOptions);
+		const data = await fetch(`${process.env.REACT_APP_API_URL}/update/carpeta`, requestOptions);
 		const dataJson = await data.json();
 		console.log(dataJson);
         setEdit(false)

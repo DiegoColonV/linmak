@@ -43,12 +43,13 @@ const Carpetas = () => {
 			headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
 			body: JSON.stringify({}),
 		};
-		const data = await fetch('http://25.59.209.228:5000/view/carpeta', requestOptions);
+		const data = await fetch(`${process.env.REACT_APP_API_URL}/view/carpeta`, requestOptions);
 		const dataJson = await data.json();
 
 		console.log(dataJson.data);
-
+		setPages([])
 		setCarpetas(dataJson.data);
+		if(idSelected) onSelect(idSelected)
 	};
 
 	const handleNombre = (e) => {
@@ -76,7 +77,7 @@ const Carpetas = () => {
 			headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
 			body: JSON.stringify({ nombre: nombre }),
 		};
-		const data = await fetch('http://25.59.209.228:5000/insert/carpeta', requestOptions);
+		const data = await fetch(`${process.env.REACT_APP_API_URL}/insert/carpeta`, requestOptions);
 		const dataJson = await data.json();
 
 		if (dataJson.status === 200) {
@@ -118,10 +119,10 @@ const Carpetas = () => {
 			headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
 			body: JSON.stringify(data2send),
 		};
-		const data = await fetch('http://25.59.209.228:5000/view/work', requestOptions);
+		const data = await fetch(`${process.env.REACT_APP_API_URL}/view/work`, requestOptions);
 		const dataJson = await data.json();
 		console.log(dataJson);
-		if (open) window.open(`http://25.59.209.228:5000/${dataJson.url}`);
+		if (open) window.open(`${process.env.REACT_APP_API_URL}/${dataJson.url}`);
 
 		return dataJson.url;
 	};
@@ -139,12 +140,10 @@ const Carpetas = () => {
 			headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
 			body: JSON.stringify(data2send),
 		};
-		const data = await fetch('http://25.59.209.228:5000/delete/work', requestOptions);
+		const data = await fetch(`${process.env.REACT_APP_API_URL}/delete/work`, requestOptions);
 		const dataJson = await data.json();
 
 		console.log(dataJson);
-
-		onSelect(idSelected);
 
 		await consultarCarpetas();
 	};
@@ -168,12 +167,12 @@ const Carpetas = () => {
 				headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
 				body: JSON.stringify({ id_work: work.id_trabajo, id_folder: idSelected }),
 			};
-			const data = await fetch('http://25.59.209.228:5000/download/saved', requestOptions);
+			const data = await fetch(`${process.env.REACT_APP_API_URL}/download/saved`, requestOptions);
 
 			const dataJson = await data.json();
 			setLoading(false);
 
-			window.open(`http://25.59.209.228:5000${dataJson.url}`, '_blank');
+			window.open(`${process.env.REACT_APP_API_URL}${dataJson.url}`, '_blank');
 
 			console.log(dataJson);
 		} catch (e) {

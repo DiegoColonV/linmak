@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import BottomButtons from '../components/BottomButtons';
 
-const EditColor = ({selected, onReload}) => {
+const EditColor = ({selected, onReload, changeTab}) => {
 	const [text, setText] = useState('');
-	const baseObject = { id: selected[0], first: selected[1], second: selected[2], third: selected[3], fourth: selected[4] };
+	let baseObject = { id: selected[0], first: selected[1], second: selected[2], third: selected[3], fourth: selected[4] };
 
 	const handleInput = (event) => {
 		setText(event.target.value);
@@ -126,7 +126,7 @@ const EditColor = ({selected, onReload}) => {
 					</div>
 				)}
 			</div>
-			<BottomButtons cat_change='color' id_change={switchStatus ? 'elem-color-order' : 'elem-color-text'} text_change={switchStatus ? objOrder : text.trim()} onReload={onReload} />
+			<BottomButtons changeTab={changeTab} cat_change='color' id_change={switchStatus ? 'elem-color-order' : 'elem-color-text'} text_change={switchStatus ? objOrder : text.trim()} onReload={onReload} />
 		</>
 	);
 };

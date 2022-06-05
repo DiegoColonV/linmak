@@ -79,7 +79,7 @@ const ElegirEstilo = () => {
 
 		setLoading(true);
 
-		const data = await fetch('http://25.59.209.228:5000/text/create', requestOptions);
+		const data = await fetch(`${process.env.REACT_APP_API_URL}/text/create`, requestOptions);
 		const dataJson = await data.json();
 		console.log(dataJson);
 

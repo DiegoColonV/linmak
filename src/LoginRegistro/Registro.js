@@ -49,7 +49,7 @@ function Registro({ onSetView, onShowAlert }) {
 				headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
 				body: JSON.stringify({ nombre: user, correo: mail, password: pass, tipo: 'I' }),
 			};
-			const data = await fetch('http://25.59.209.228:5000/insert/user', requestOptions);
+			const data = await fetch(`${process.env.REACT_APP_API_URL}/insert/user`, requestOptions);
 			const dataJson = await data.json();
 
 			console.log(dataJson);

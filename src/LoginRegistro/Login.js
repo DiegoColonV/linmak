@@ -23,7 +23,7 @@ function Login() {
 			headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${obj.token}` },
 			body: JSON.stringify({ correo: email, password: pass }),
 		};
-		const data = await fetch('http://25.59.209.228:5000/login', requestOptions);
+		const data = await fetch(`${process.env.REACT_APP_API_URL}/login`, requestOptions);
 		const dataJson = await data.json();
 
 		console.log(dataJson);

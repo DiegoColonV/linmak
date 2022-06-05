@@ -88,7 +88,7 @@ const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt, re
 			headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
 			body: JSON.stringify({}),
 		};
-		const data = await fetch('http://25.59.209.228:5000/view/carpeta', requestOptions);
+		const data = await fetch(`${process.env.REACT_APP_API_URL}/view/carpeta`, requestOptions);
 		const dataJson = await data.json();
 		console.log(dataJson.data);
 
@@ -147,7 +147,7 @@ const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt, re
 				body: JSON.stringify(data2send),
 			};
 
-			const data = await fetch('http://25.59.209.228:5000/save/newWork', requestOptions);
+			const data = await fetch(`${process.env.REACT_APP_API_URL}/save/newWork`, requestOptions);
 			const dataJson = await data.json();
 			console.log(dataJson);
 

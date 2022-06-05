@@ -21,13 +21,14 @@ import ElegirInt from './Crear Interfaz/ElegirInt';
 
 function App() {
 	const dispatch = useDispatch();
+	console.log(process.env.REACT_APP_API_URL)
 	const getUserData = async () => {
 		let tokenlocal = localStorage.getItem('token');
 		const requestOptions = {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${tokenlocal}` },
 		};
-		const data = await fetch('http://25.59.209.228:5000/getuser', requestOptions);
+		const data = await fetch(`${process.env.REACT_APP_API_URL}/getuser`, requestOptions);
 		const dataJson = await data.json();
 
 		if (dataJson.status == 200) {

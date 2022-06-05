@@ -8,7 +8,7 @@ import EditFooter from './Elementos/EditFooter';
 import EditNavbar from './Elementos/EditNavbar';
 import EditTextfield from './Elementos/EditTextfield';
 
-const EditarElem = ({ onReload }) => {
+const EditarElem = ({ onReload, changeTab }) => {
 	const [selected, setSelected] = useState('colores');
 	const selectedObj = useSelector((state) => state.objSelectInt.selected);
 	const  [infoModal, setInfoModal] = useState(false)
@@ -43,7 +43,7 @@ const EditarElem = ({ onReload }) => {
 			<div className='position-relative'>
 				{
 					{
-						colores: <EditColor selected={selectedObj.color} onReload={onReload}/>,
+						colores: <EditColor selected={selectedObj.color} onReload={onReload} changeTab={changeTab} />,
 						fuente: <EditFont selected={selectedObj.font} onReload={onReload} />,
 						botones: <EditButtons onReload={onReload} openInfo={onOpenInfoModal} />,
 						navbar: <EditNavbar onReload={onReload} openInfo={onOpenInfoModal} />,

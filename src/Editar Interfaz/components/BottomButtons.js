@@ -3,9 +3,12 @@ import { useState, useEffect } from 'react';
 import * as actions from '../../redux/actions/editIntActions';
 import ChangesModal from './ChangesModal';
 import ConfirmChangesModal from './ConfirmChangesModal';
+import { selectColor } from '../../redux/actions/selectedIntActions';
+import { useNavigate } from 'react-router-dom';
 
-const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
+const BottomButtons = ({ cat_change, id_change, text_change, onReload, changeTab }) => {
 	const dispatch = useDispatch();
+	const navigate = useNavigate()
 	const list = useSelector((state) => state.objEditInt);
 	const objCreate = useSelector((state) => state.objTxtInt.txt_int);
 	const objSelect = useSelector((state) => state.objSelectInt);
@@ -165,14 +168,12 @@ const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
 				list[key].map((item) => {
 					if (item.id_change === 'elem-color-order') {
 						temp.push({ type: item.id_change, color: [item.text.first, item.text.second, item.text.third, item.text.fourth] });
-					} else {
-						if (item.id_change === 'elem-font') {
-							temp.push({ type: item.id_change, font: item.text });
-							console.log({ type: item.id_change, font: item.text });
-						} else {
-							temp.push({ type: item.id_change, name: item.text });
-						}
-					}
+					} else if (item.id_change === 'elem-font') {
+						temp.push({ type: item.id_change, font: item.text });
+						console.log({ type: item.id_change, font: item.text });
+					} else if (item.id_change === 'elem-color-text') {
+						temp.push({ type: item.id_change, text: item.text });
+					} else temp.push({ type: item.id_change, name: item.text });
 				});
 			}
 		}
@@ -215,16 +216,23 @@ const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
 
 			// setLoading(true);
 
-			const data = await fetch('http://25.59.209.228:5000/edit/all', requestOptions);
+			const data = await fetch(`${process.env.REACT_APP_API_URL}/edit/all`, requestOptions);
 			const dataJson = await data.json();
 			console.log(dataJson);
+
+			if (dataJson.new_color) dispatch(selectColor(dataJson.new_color));
+
 			dispatch(actions.cleanList());
 			handleCloseConfirm();
 			setAlertText('¡Cambios aplicados!');
 			setShowAlert(true);
+			if (dataJson.new_color){
+				dispatch(selectColor(dataJson.new_color));
+				changeTab()
+			}
+
 			onReload();
-		}
-		else{
+		} else {
 			const data_send = { id_work: idWorkSelected, changes: makeArray(list), id_folder: idFolderSelected };
 			console.log(data_send);
 
@@ -236,13 +244,17 @@ const BottomButtons = ({ cat_change, id_change, text_change, onReload }) => {
 
 			// setLoading(true);
 
-			const data = await fetch('http://25.59.209.228:5000/edit/saved', requestOptions);
+			const data = await fetch(`${process.env.REACT_APP_API_URL}/edit/saved`, requestOptions);
 			const dataJson = await data.json();
 			console.log(dataJson);
 			dispatch(actions.cleanList());
 			handleCloseConfirm();
 			setAlertText('¡Cambios aplicados!');
 			setShowAlert(true);
+			if (dataJson.new_color){
+				dispatch(selectColor(dataJson.new_color));
+				changeTab()
+			}
 			onReload();
 		}
 	};

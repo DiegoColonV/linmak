@@ -50,16 +50,16 @@ function EditarInt() {
 				<div className='row'>
 					<div className='col-5 vista-previa p-0 position-relative' >
 						<button className='btn reload-preview' onClick={onReload}><i className='bx bx-sync'></i></button>
-						<iframe key={reload} src={`http://25.59.209.228:5000${objEdit.link}`} style={{ width: '166.6%', height: '166.6%', transform: 'scale(0.6)', transformOrigin: '0 0' }}></iframe>
+						<iframe key={reload} src={`${process.env.REACT_APP_API_URL}${objEdit.link}`} style={{ width: '166.6%', height: '166.6%', transform: 'scale(0.6)', transformOrigin: '0 0' }}></iframe>
 					</div>
 					<div className='col-7 position-relative'>
 						{
 							{
-								2: <EditarElem onReload={onReload} />,
+								2: <EditarElem onReload={onReload} changeTab={onChangeTab} />,
 								1: <EditarEstr onReload={onReload} />,
 							}[activeTab]
 						}
-						<DoneButtons refIframe={ref} link={`http://25.59.209.228:5000${objEdit.link}`} onShowModal={onShowModal} objEdit={objEdit} objSelected={objSelected} objCreateInt={objCreateInt} />
+						<DoneButtons refIframe={ref} link={`${process.env.REACT_APP_API_URL}${objEdit.link}`} onShowModal={onShowModal} objEdit={objEdit} objSelected={objSelected} objCreateInt={objCreateInt} />
 					</div>
 				</div>
 			</section>

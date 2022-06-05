@@ -18,7 +18,7 @@ const PreviewCard = ({ loading, item, openSaved, onDeleteWork, editSaved, downlo
 			headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
 			body: JSON.stringify({ id_work: item.id_trabajo, new_name: textEdit.trim(), id_folder: idFolder }),
 		};
-		const data = await fetch('http://25.59.209.228:5000/update/work', requestOptions);
+		const data = await fetch(`${process.env.REACT_APP_API_URL}/update/work`, requestOptions);
 		const dataJson = await data.json();
 		console.log(dataJson);
 		setEdit(false);
