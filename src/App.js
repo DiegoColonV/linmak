@@ -18,6 +18,7 @@ import EditarInt from './Editar Interfaz/EditarInt';
 import EditarEstr from './Editar Interfaz/EditarEstr';
 import EditarElem from './Editar Interfaz/EditarElem';
 import ElegirInt from './Crear Interfaz/ElegirInt';
+import Work from './Work/Work';
 
 function App() {
 	const dispatch = useDispatch();
@@ -60,6 +61,7 @@ function App() {
 					<Route path='elegir' element={<ElegirInt />} />
 				</Route>
 				<Route path='/editar' element={<EditarInt />}/>
+				<Route path='/work/:folder/:id_folder/:id_work' element={<Work />}/>
 			</Routes>
 		</>
 	);

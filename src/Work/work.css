@@ -1,0 +1,42 @@
+.work-header{
+    height: 100px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: white;
+    padding: 30px 40px;
+}
+
+.work-header i{
+    font-size: 26px;
+    color: #8080ff;
+    cursor: pointer;
+}
+
+.work-header i:hover{
+    opacity: 0.8;
+}
+
+.work-header .bx-edit-alt{
+    color: grey
+}
+
+.work-header .bxs-trash{
+    color: darkred
+}
+
+.work-header .bx-check-circle{
+    color: green
+}
+
+.work-header .bx-x-circle{
+    color: darkred
+}
+
+.work-prev{
+    width: 100%;
+    height: calc(100vh - 103px);
+    border: 6px solid #8080ff;
+    box-sizing: border-box;
+    background: url('../assets/loading.gif') center center no-repeat;
+}

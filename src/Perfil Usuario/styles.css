@@ -115,65 +115,35 @@
 
 /* Tarjeta de previsualización */
 .preview-card{
-    display: inline-block;
-    margin: 1vh 1vh;
-    width: 33%;
+    width: 90%;
+    margin: 20px 0px;
     transition: all ease-in-out 0.2s;
     background-color: white;
-    padding : 5px 5px;
     border-radius: 10px;
     border: 1px solid #3535e9;
     position: relative;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
 }
 
-.preview-card .icon-delete-folder{
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.preview-card .icon-delete-folder.see{
-    position: absolute;
-    right: 30px;
-    top: 0;
-}
-
-.preview-card .icon-delete-folder.edit{
-    position: absolute;
-    right: 60px;
-    top: 0;
-}
-
-.preview-card .icon-delete-folder.download{
-    position: absolute;
-    right: 90px;
-    top: 0;
-}
-
-.preview-card .icon-delete-folder.see i{
-    color: #3535e9 !important;
-}
-
-.preview-card .icon-delete-folder.edit i{
-    color: #3535e9 !important;
-}
-
-.preview-card .icon-delete-folder.download i{
-    color: #3535e9 !important;
-}
+.preview-card:hover{
+    background-color: #eaeaea;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;}
 
 /* Titulo de la tarjeta */
 .preview-title{
     text-align: center;
     font-weight: bold;
     font-size: 16px;
-    margin-top: 30px;
 }
 
 /* Imagen previsualizada */
 .preview-img{
     width: 100%;
-    height: 150px;
+    height: 200px;
+    object-fit: cover;
+    object-position: top center;
 }
 
 .icon-crear{
