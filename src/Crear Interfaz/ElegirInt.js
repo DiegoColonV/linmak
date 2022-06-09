@@ -101,7 +101,7 @@ const ElegirInt = () => {
 	return (
 		<>
 			<Modal style={{ borderRadius: 50 }} centered show={modalExpand} onHide={() => setModalExpand(false)}>
-				<img src={`/img/previews/${nameExpand.toLowerCase()}.png`} />
+				<img src={`/img/previews/${setFile(objInt.txt_int.categoria).charAt(0).toUpperCase()}${setFile(objInt.txt_int.categoria).slice(1)}/${nameExpand.toLowerCase()}.png`} />
 			</Modal>
 			{!loading ? (
 				<div>
@@ -140,7 +140,7 @@ const ElegirInt = () => {
 							</h3>
 							{options.options.ints.map((item, i) => (
 								<div className='row' key={i}>
-									<DisplayInt int={item} selected={item[0] === selected.int} onSelect={onSelectInt} onExpand={onExpand} />
+									<DisplayInt int={item} selected={item[0] === selected.int} onSelect={onSelectInt} onExpand={onExpand} folder={`${setFile(objInt.txt_int.categoria).charAt(0).toUpperCase()}${setFile(objInt.txt_int.categoria).slice(1)}`} />
 								</div>
 							))}
 						</div>

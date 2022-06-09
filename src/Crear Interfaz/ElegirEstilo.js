@@ -5,17 +5,17 @@ import { addEstilo } from '../redux/actions/txtIntActions';
 import { useEffect, useState } from 'react';
 
 const dummyExample = [
-	{ text: 'Original', img: '/img/previews/Compressed/navigator.png' },
-	{ text: 'Urbano', img: '/img/previews/Compressed/constra.png' },
-	{ text: 'Ordenado', img: '/img/previews/Compressed/novena.png' },
-	{ text: 'Colorido', img: '/img/previews/Compressed/kross.png' },
-	{ text: 'Moderno', img: '/img/previews/Compressed/promodise.png' },
-	{ text: 'Profesional', img: '/img/previews/Compressed/educenter.png' },
-	{ text: 'Atractivo', img: '/img/previews/Compressed/eventre.png' },
-	{ text: 'Formal', img: '/img/previews/Compressed/bitbank.png' },
-	{ text: 'Sofisticado', img: '/img/previews/Compressed/aviato.png' },
-	{ text: 'Clásico', img: '/img/previews/Compressed/restaurant.png' },
-	{ text: 'Minimalista', img: '/img/previews/Compressed/timer.png' },
+	{ text: 'Original', img: '/img/previews/Index/navigator.png' },
+	{ text: 'Urbano', img: '/img/previews/Index/constra.png' },
+	{ text: 'Ordenado', img: '/img/previews/Index/novena.png' },
+	{ text: 'Colorido', img: '/img/previews/Index/kross.png' },
+	{ text: 'Moderno', img: '/img/previews/Index/promodise.png' },
+	{ text: 'Profesional', img: '/img/previews/Index/educenter.png' },
+	{ text: 'Atractivo', img: '/img/previews/Index/eventre.png' },
+	{ text: 'Formal', img: '/img/previews/Index/bitbank.png' },
+	{ text: 'Sofisticado', img: '/img/previews/Index/aviato.png' },
+	{ text: 'Clásico', img: '/img/previews/Index/restaurant.png' },
+	{ text: 'Minimalista', img: '/img/previews/Index/timer.png' },
 ];
 
 const ElegirEstilo = () => {

@@ -101,20 +101,6 @@ const ElegirCategoria = () => {
 							<div className='col-md-2 col-sm-5'>
 								<button
 									className={
-										cat === 3
-											? 'btn btn-outline-primary btn-cat-create shadow cat-active'
-											: 'btn btn-outline-primary btn-cat-create shadow'
-									}
-									onClick={() => handleCategoryButton(3)}
-								>
-									<i className='bx bx-cart-alt icon-cat-create'></i>
-									<br />
-									Carrito
-								</button>
-							</div>
-							<div className='col-md-2 col-sm-5'>
-								<button
-									className={
 										cat === 4
 											? 'btn btn-outline-primary btn-cat-create shadow cat-active'
 											: 'btn btn-outline-primary btn-cat-create shadow'

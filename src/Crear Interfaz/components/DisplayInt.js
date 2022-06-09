@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const DisplayInt = ({ selected, onSelect, int, onExpand }) => {
+const DisplayInt = ({ selected, onSelect, int, onExpand, folder }) => {
 	const [isHover, setIsHover] = useState(false);
 
 	return (
@@ -11,7 +11,7 @@ const DisplayInt = ({ selected, onSelect, int, onExpand }) => {
 				onMouseEnter={() => setIsHover(!isHover)}
 				onMouseLeave={() => setIsHover(!isHover)}
 			>
-				<img src={`/img/previews/${int[1].toLowerCase()}.png`} className={'preview-fix'} />
+				<img src={`/img/previews/${folder}/${int[1].toLowerCase()}.png`} className={'preview-fix'} />
 			</div>
 			<div className='expand-int' onClick={() => onExpand(int[1])}>
 				<i className='bx bx-expand'></i>

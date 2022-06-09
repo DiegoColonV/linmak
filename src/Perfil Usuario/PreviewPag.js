@@ -8,7 +8,7 @@ const PreviewPag = ({pages, onSelect}) => {
 						<p className='m-0'>{pag.titulo_trabajo}</p>
 					</div>
 					<div className='preview-body row'>
-						<img className='preview-img' src={`/img/previews/Compressed/${pag.nombre_plantilla.toLowerCase()}.png`}/>
+						<img className='preview-img' src={`/img/previews/${pag.pagetype}/${pag.nombre_plantilla.toLowerCase()}.png`}/>
 					</div>
 				</div>
 			</div>

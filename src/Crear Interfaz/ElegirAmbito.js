@@ -30,17 +30,17 @@ const dummyAmbitos = [
 ];
 
 const dummyExample = [
-	{ text: 'Negocios', img: '/img/previews/Compressed/navigator.png' },
-	{ text: 'Construcción', img: '/img/previews/Compressed/constra.png' },
-	{ text: 'Salud', img: '/img/previews/Compressed/novena.png' },
-	{ text: 'Portafolio', img: '/img/previews/Compressed/kross.png' },
-	{ text: 'Publicidad', img: '/img/previews/Compressed/promodise.png' },
-	{ text: 'Educación', img: '/img/previews/Compressed/educenter.png' },
-	{ text: 'Eventos', img: '/img/previews/Compressed/eventre.png' },
-	{ text: 'Economía', img: '/img/previews/Compressed/bitbank.png' },
-	{ text: 'Comercio', img: '/img/previews/Compressed/aviato.png' },
-	{ text: 'Comida', img: '/img/previews/Compressed/restaurant.png' },
-	{ text: 'Tecnología', img: '/img/previews/Compressed/timer.png' },
+	{ text: 'Negocios', img: '/img/previews/Index/navigator.png' },
+	{ text: 'Construcción', img: '/img/previews/Index/constra.png' },
+	{ text: 'Salud', img: '/img/previews/Index/novena.png' },
+	{ text: 'Portafolio', img: '/img/previews/Index/kross.png' },
+	{ text: 'Publicidad', img: '/img/previews/Index/promodise.png' },
+	{ text: 'Educación', img: '/img/previews/Index/educenter.png' },
+	{ text: 'Eventos', img: '/img/previews/Index/eventre.png' },
+	{ text: 'Economía', img: '/img/previews/Index/bitbank.png' },
+	{ text: 'Comercio', img: '/img/previews/Index/aviato.png' },
+	{ text: 'Comida', img: '/img/previews/Index/restaurant.png' },
+	{ text: 'Tecnología', img: '/img/previews/Index/timer.png' },
 ];
 
 dummyAmbitos.sort((a, b) => {
