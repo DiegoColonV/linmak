@@ -1,11 +1,117 @@
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addLink } from '../../redux/actions/editIntActions';
+import { addCategoria } from '../../redux/actions/txtIntActions';
 import BottomButtons from '../components/BottomButtons';
 
 const EditCat = ({onReload}) => {
 	const [textChange, setTextChange] = useState('');
 
-	const handleCategoryButton = (value) => {
-		setTextChange(value.toString());
+	const objEdit = useSelector((state) => state.objEditInt);
+	const objCreate = useSelector((state) => state.objTxtInt.txt_int);
+	const objSelected = useSelector((state) => state.objSelectInt.selected);
+
+	const editingSaved = useSelector((state) => state.getUIProgress.edit_saved);
+	const idWorkSelected = useSelector((state) => state.getUIProgress.id_work);
+	const idFolderSelected = useSelector((state) => state.getUIProgress.id_folder);
+
+	const dispatch = useDispatch()
+
+	const setFile = (cat) => {
+		switch (cat) {
+			case 0:
+				return 'index';
+
+			case 1:
+				return 'contact';
+
+			case 2:
+				return 'about';
+
+			case 3:
+				return 'cart';
+
+			case 4:
+				return 'login';
+
+			default:
+				break;
+		}
+	};
+
+	const setPTindex = (val) =>{
+		switch (val) {
+			case 0:
+				return 1;
+
+			case 1:
+				return 3;
+
+			case 2:
+				return 2;
+
+			case 3:
+				return 4;
+
+			case 4:
+				return 5;
+
+			default:
+				break;
+		}
+	}
+
+	const handleCategoryButton = async(value) => {
+
+		if(editingSaved){
+			const data2send = {
+				id_work: idWorkSelected,
+				id_folder: idFolderSelected,
+				new_pagetype: setPTindex(value)
+			}
+
+			console.log(data2send)
+	
+			const requestOptions = {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
+				body: JSON.stringify(data2send),
+			};
+			const data = await fetch(`${process.env.REACT_APP_API_URL}/edit/pagetypeSaved`, requestOptions);
+			const dataJson = await data.json();
+			console.log(dataJson);
+	
+			dispatch(addLink(dataJson.url))
+			//dispatch(addCategoria(value))
+	
+			onReload()
+		}
+		else{
+			const data2send = {
+				folder: objEdit.folder,
+				pagetype: setFile(objCreate.categoria).toLowerCase(),
+				mock: objSelected.int[1],
+				new_pagetype: setFile(value).toLowerCase()
+			}
+
+			console.log(data2send)
+	
+			const requestOptions = {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
+				body: JSON.stringify(data2send),
+			};
+			const data = await fetch(`${process.env.REACT_APP_API_URL}/edit/pagetypeTemp`, requestOptions);
+			const dataJson = await data.json();
+			console.log(dataJson);
+	
+			dispatch(addLink(dataJson.url))
+			dispatch(addCategoria(value))
+	
+			onReload()
+		}
+
+		
 	};
 
 	return (
@@ -65,7 +171,7 @@ const EditCat = ({onReload}) => {
 					</div>
 				</div>
 			</div>
-			<BottomButtons cat_change='category' id_change='estr_category' text_change={textChange} onReload={onReload} />
+			{/* <BottomButtons cat_change='category' id_change='estr_category' text_change={textChange} onReload={onReload} /> */}
 		</>
 	);
 };

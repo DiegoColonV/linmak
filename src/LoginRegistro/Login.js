@@ -9,6 +9,8 @@ function Login() {
 	const [email, setEmail] = useState('');
 	const [pass, setPass] = useState('');
 
+	const[error, setError] = useState('')
+
 	const handleEmail = (e) => {
 		setEmail(e.target.value);
 	};
@@ -37,6 +39,9 @@ function Login() {
 			localStorage.setItem('token', dataJson.token);
 			navigate('/');
 		}
+		else{
+			setError(dataJson.message)
+		}
 	};
 	return (
 		<div id='formLogin' className='row d-flex align-items-center justify-content-center'>
@@ -51,7 +56,8 @@ function Login() {
 						<label htmlFor='contraseña'>Contraseña</label>
 						<input type='password' className='form-control' id='lcontrasena' name='lcontrasena' placeholder='Contraseña' onChange={handlePass} />
 					</div>
-					<button type='submit' onClick={loginn} className='btn btn-primary col-md-12 col-xs-18 mt-5 btn-color-change'>
+					{error && <p className='mt-3' style={{color: 'darkred'}}>{error}</p>}
+					<button type='submit' onClick={loginn} className='btn btn-primary col-md-12 col-xs-18 mt-3 btn-color-change'>
 						Ingresar
 					</button>
 				</form>

@@ -172,7 +172,7 @@ const DoneButtons = ({ link, onShowModal, objEdit, objSelected, objCreateInt, re
 					<i className='bx bx-expand'></i>
 				</Button>
 				<br />
-				<Button variant='success' onClick={onShowModalSave}>
+				<Button variant='success' onClick={userData.autenticado ? onShowModalSave : onShowModal}>
 					<i className='bx bxs-save'></i>
 				</Button>
 			</div>
