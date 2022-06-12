@@ -62,7 +62,7 @@ const ElegirAmbito = () => {
 	const amb = useSelector((state) => state.objTxtInt.txt_int.ambito);
 	const [selectedAmb, setSelectedAmb] = useState(dummyAmbitos[0]);
 	const [otroDisabled, setOtroDisabled] = useState(true);
-	const [textOtro, setTextOtro] = useState('');
+	const [textOtro, setTextOtro] = useState(amb);
 	const [indexImg, setIndexImg] = useState([0, 1, 2]);
 
 	useEffect(() => { get3rands() }, [])
@@ -74,13 +74,13 @@ const ElegirAmbito = () => {
 
 	const handleAmbitSave = () => {
 		handleStep(2, '/crear/estilo');
-		if (selectedAmb.id !== -1) {
-			if (selectedAmb.id === -2) {
+		//if (selectedAmb.id !== -1) {
+		//	if (selectedAmb.id === -2) {
 				if (textOtro !== '') {
 					dispatch(addAmbito(textOtro.trim()));
 				}
-			} else dispatch(addAmbito(selectedAmb.text));
-		}
+		//	} else dispatch(addAmbito(selectedAmb.text));
+		//}
 	};
 
 	const handleInputOtro = (event) => {
@@ -146,7 +146,8 @@ const ElegirAmbito = () => {
 				<div className='col-10'>
 					<div className='row d-flex justify-content-center mb-5'>
 						<div className='col-md-8 col-xs-12'>
-							<div className='row'>
+							{/*<div className='row'>
+								
 								<div className='col-md-10 col-xs-12'>
 									<select
 										defaultValue={-1}
@@ -162,29 +163,30 @@ const ElegirAmbito = () => {
 										<option value={-2}>OTRO</option>
 									</select>
 								</div>
+										
 								{otroDisabled && (
 									<div className='card col-2 rounded shadow-sm border-0  d-flex justify-content-center' hidden={otroDisabled}>
 										<div className='card-body mx-auto card-ambit'>{selectedAmb.icon}</div>
 									</div>
-								)}
+								{/*)}
 								<small id='txtHelp' className='form-text text-muted'>
 									{amb !== '' ? `Guardado: ${amb}` : ''}
 								</small>
-							</div>
-							{!otroDisabled && (
-								<div className='row mb-5 mt-5'>
+							</div>*/}
+							{/*{!otroDisabled && (*/}
+								<div className='row mb-5 justify-content-center align-items-center'>
 									<div className='col-10'>
 										<input
 											type='text'
 											className='form-control-lg border-0 shadow-sm w-100'
-											placeholder='Otro...'
-											disabled={otroDisabled}
+											placeholder='Ámbito'
+											//disabled={otroDisabled}
 											value={textOtro}
 											onChange={handleInputOtro}
 										></input>
 									</div>
 								</div>
-							)}
+							{/*)}*/}
 						</div>
 					</div>
 					<div className='row mt-5'>
