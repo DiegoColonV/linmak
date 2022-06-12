@@ -30,17 +30,17 @@ const dummyAmbitos = [
 ];
 
 const dummyExample = [
-	{ text: 'Negocios', img: '/img/previews/Index/navigator.png' },
-	{ text: 'Construcción', img: '/img/previews/Index/constra.png' },
-	{ text: 'Salud', img: '/img/previews/Index/novena.png' },
-	{ text: 'Portafolio', img: '/img/previews/Index/kross.png' },
-	{ text: 'Publicidad', img: '/img/previews/Index/promodise.png' },
-	{ text: 'Educación', img: '/img/previews/Index/educenter.png' },
-	{ text: 'Eventos', img: '/img/previews/Index/eventre.png' },
-	{ text: 'Economía', img: '/img/previews/Index/bitbank.png' },
-	{ text: 'Comercio', img: '/img/previews/Index/aviato.png' },
-	{ text: 'Comida', img: '/img/previews/Index/restaurant.png' },
-	{ text: 'Tecnología', img: '/img/previews/Index/timer.png' },
+	{ text: 'Negocios de todo tipo', img: '/img/previews/Index/navigator.png' },
+	{ text: 'Construcción de obras públicas', img: '/img/previews/Index/constra.png' },
+	{ text: 'Consultorio médico y especialistas', img: '/img/previews/Index/novena.png' },
+	{ text: 'Diseñador web freelance', img: '/img/previews/Index/kross.png' },
+	{ text: 'Empresa de marketing y publicidad', img: '/img/previews/Index/promodise.png' },
+	{ text: 'Educación básica', img: '/img/previews/Index/educenter.png' },
+	{ text: 'Salón para conferencias y eventos', img: '/img/previews/Index/eventre.png' },
+	{ text: 'Economía y seguimiento de bolsa de valores', img: '/img/previews/Index/bitbank.png' },
+	{ text: 'Comercio de venta de ropa', img: '/img/previews/Index/aviato.png' },
+	{ text: 'Restaurante de comida mexicana', img: '/img/previews/Index/restaurant.png' },
+	{ text: 'Tecnología y desarrollo de aplicaciones', img: '/img/previews/Index/timer.png' },
 ];
 
 dummyAmbitos.sort((a, b) => {
@@ -179,7 +179,7 @@ const ElegirAmbito = () => {
 										<input
 											type='text'
 											className='form-control-lg border-0 shadow-sm w-100'
-											placeholder='Ámbito'
+											placeholder='Describe el ámbito de tu empresa'
 											//disabled={otroDisabled}
 											value={textOtro}
 											onChange={handleInputOtro}
@@ -207,7 +207,7 @@ const ElegirAmbito = () => {
 										<img className='card-img-top preview-fix' src={dummyExample[indexImg[0]].img} alt='Card image cap' />
 									</div>
 									<div className='card-body pt-0'>
-										<h5 className='card-title'>
+										<h5 className='card-title text-center'>
 											<i>"{dummyExample[indexImg[0]].text}"</i>
 										</h5>
 									</div>
@@ -219,7 +219,7 @@ const ElegirAmbito = () => {
 										<img className='card-img-top preview-fix' src={dummyExample[indexImg[1]].img} alt='Card image cap' />
 									</div>
 									<div className='card-body pt-0'>
-										<h5 className='card-title'>
+										<h5 className='card-title  text-center'>
 											<i>"{dummyExample[indexImg[1]].text}"</i>
 										</h5>
 									</div>
@@ -231,7 +231,7 @@ const ElegirAmbito = () => {
 										<img className='card-img-top preview-fix' src={dummyExample[indexImg[2]].img} alt='Card image cap' />
 									</div>
 									<div className='card-body pt-0'>
-										<h5 className='card-title'>
+										<h5 className='card-title text-center'>
 											<i>"{dummyExample[indexImg[2]].text}"</i>
 										</h5>
 									</div>

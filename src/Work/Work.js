@@ -136,6 +136,9 @@ const Work = () => {
 					<ConfirmModal title='¿Eliminar interfaz?' body='La interfaz se borrará permanentemente' onSave={onDelete} open={modalDelete} onClose={() => setModalDelete(false)} />
 					<div className='work-header d-flex align-items-center m-0'>
 						<div className='col-1'>
+							<i class='bx bx-left-arrow-alt' onClick={() => navigate('/perfil')}></i>
+						</div>
+						<div className='col-1'>
 							<img src='/img/logo.png' style={{width: 100, cursor: 'pointer'}} onClick={() => navigate('/')}></img>
 						</div>
 						<div className='col-3 ms-4 d-flex align-items-center'>
