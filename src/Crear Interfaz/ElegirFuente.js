@@ -64,7 +64,7 @@ const ElegirEstilo = () => {
 	};
 
 	const removeAccents = (str) => {
-		return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+		return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-zA-Z ]/g, "");
 	} 
 
 	const sendObj = async () => {

@@ -20,6 +20,18 @@ const ElegirInt = () => {
 	const [modalExpand, setModalExpand] = useState(false);
 	const [nameExpand, setNameExpand] = useState('');
 
+	let helperTextInt = ''
+	let helperTextCol = ''
+
+	if(options.options.ints[0][0] === 1 && options.options.ints[1][0] === 2 || options.options.ints[0][0] === 2 && options.options.ints[1][0] === 3 || options.options.ints[1][0] === 1 && options.options.ints[2][0] === 2 || options.options.ints[0][0] === 2 && options.options.ints[1][0] === 3)
+	{
+		helperTextInt = 'Agregar más palabras a la descripción del ámbito o estilo puede ayudar a mejorar los resultados'
+	}
+	if(options.options.colors[0][0] === 1 && options.options.colors[1][0] === 2 || options.options.colors[0][0] === 2 && options.options.colors[1][0] === 3 || options.options.colors[1][0] === 1 && options.options.colors[2][0] === 2 || options.options.colors[0][0] === 2 && options.options.colors[1][0] === 3)
+	{
+		helperTextCol = 'Agregar más palabras a la descripción de los colores puede ayudar a mejorar los resultados'
+	}
+
 	const onSelectColor = (item) => {
 		dispatch(selectColor(item));
 		setSelected({ ...selected, color: item[0] });
@@ -108,6 +120,10 @@ const ElegirInt = () => {
 					<div className='row mb-3 mt-3'>
 						<h1 className='section-title'>Elige los valores que deseas</h1>
 					</div>
+					{helperTextInt.length > 0 &&
+					<h5 style={{color: 'darkred'}}><i className='bx bx-error me-3 mb-4' ></i>{helperTextInt}</h5>}
+					{helperTextCol.length > 0 &&
+					<h5 style={{color: 'darkred'}}><i className='bx bx-error me-3 mb-4' ></i>{helperTextCol}</h5>}
 					<div className='row'>
 						<div className='col-md-1 col-xs-12 d-flex justify-content-center me-5'>
 							<button type='button' className='btn btn-lg left-button-create' onClick={() => handleStep(4, '/crear/fuente')}>
