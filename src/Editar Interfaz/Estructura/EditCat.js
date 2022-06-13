@@ -15,6 +15,15 @@ const EditCat = ({onReload}) => {
 	const idWorkSelected = useSelector((state) => state.getUIProgress.id_work);
 	const idFolderSelected = useSelector((state) => state.getUIProgress.id_folder);
 
+	const possible_pages = objEdit.possible_pages.map((item) => {return item[0]})
+	console.log('Possible pages: '+possible_pages)
+
+	const val1 = elem => elem === 1
+	const val2 = elem => elem === 2
+	const val3 = elem => elem === 3
+	const val4 = elem => elem === 4
+	const val5 = elem => elem === 5
+
 	const dispatch = useDispatch()
 
 	const setFile = (cat) => {
@@ -119,6 +128,7 @@ const EditCat = ({onReload}) => {
 			<h1 className='section-title-edit mt-5'>CATEGORÍA</h1>
 			<div className='row mt-5'>
 				<div className='row col-10 offset-1 mt-5 d-flex justify-content-center'>
+					{possible_pages.some(val1) &&
 					<div className='col-md-2'>
 						<button
 							className={textChange === '0' ? 'btn btn-outline-primary btn-cat-create shadow cat-active' : 'btn btn-outline-primary btn-cat-create shadow'}
@@ -128,7 +138,8 @@ const EditCat = ({onReload}) => {
 							<br />
 							Página principal
 						</button>
-					</div>
+					</div>}
+					{possible_pages.some(val3) &&
 					<div className='col-md-2'>
 						<button
 							className={textChange === '1' ? 'btn btn-outline-primary btn-cat-create shadow cat-active' : 'btn btn-outline-primary btn-cat-create shadow'}
@@ -138,7 +149,8 @@ const EditCat = ({onReload}) => {
 							<br />
 							Contacto
 						</button>
-					</div>
+					</div>}
+					{possible_pages.some(val2) &&
 					<div className='col-md-2'>
 						<button
 							className={textChange === '2' ? 'btn btn-outline-primary btn-cat-create shadow cat-active' : 'btn btn-outline-primary btn-cat-create shadow'}
@@ -148,7 +160,8 @@ const EditCat = ({onReload}) => {
 							<br />
 							Conócenos
 						</button>
-					</div>
+					</div>}
+					{possible_pages.some(val4) &&
 					<div className='col-md-2'>
 						<button
 							className={textChange === '3' ? 'btn btn-outline-primary btn-cat-create shadow cat-active' : 'btn btn-outline-primary btn-cat-create shadow'}
@@ -158,7 +171,8 @@ const EditCat = ({onReload}) => {
 							<br />
 							Carrito
 						</button>
-					</div>
+					</div>}
+					{possible_pages.some(val5) &&
 					<div className='col-md-2'>
 						<button
 							className={textChange === '4' ? 'btn btn-outline-primary btn-cat-create shadow cat-active' : 'btn btn-outline-primary btn-cat-create shadow'}
@@ -168,7 +182,7 @@ const EditCat = ({onReload}) => {
 							<br />
 							Iniciar sesión
 						</button>
-					</div>
+					</div>}
 				</div>
 			</div>
 			{/* <BottomButtons cat_change='category' id_change='estr_category' text_change={textChange} onReload={onReload} /> */}

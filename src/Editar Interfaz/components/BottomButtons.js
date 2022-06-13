@@ -204,6 +204,7 @@ const BottomButtons = ({ cat_change, id_change, text_change, onReload, changeTab
 	};
 
 	const handleApply = async () => {
+		console.log(list)
 		if (!editingSaved) {
 			const data_send = { folder: list.folder, changes: makeArray(list), pagetype: setIdPagetype(), mock: objSelect.selected.int[1].toLowerCase() };
 			console.log(data_send);

@@ -91,7 +91,7 @@ const ElegirInt = () => {
 		console.log(dataJson);
 		dispatch(addLink(dataJson.url))
 		dispatch(addFolder(dataJson.folder))
-		dispatch(addPosiblePages(dataJson.categories))
+		dispatch(addPosiblePages(dataJson.categories ? dataJson.categories : []))
 		dispatch(setEditSaved(false))
 		setLoading(false);
 

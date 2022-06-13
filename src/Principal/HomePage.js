@@ -96,6 +96,7 @@ function HomePage() {
 									src='\img\general\User-Interface-User-Experience.gif'
 									className='img-fluid'
 									alt=''
+									style={{width: '100%', objectFit: 'cover'}}
 								/>
 							</div>
 						</div>
@@ -158,7 +159,7 @@ function HomePage() {
 								<input
 									className='form-control'
 									type='text'
-									placeholder='Minimalista'
+									placeholder='Botones rellenos'
 									readOnly
 								/>
 							</div>
@@ -170,7 +171,7 @@ function HomePage() {
 								<input
 									className='form-control'
 									type='text'
-									placeholder='Colores azules'
+									placeholder='Bordes redondeados'
 									readOnly
 								/>
 							</div>
@@ -182,7 +183,7 @@ function HomePage() {
 								<input
 									className='form-control'
 									type='text'
-									placeholder='Letra más grande'
+									placeholder='Con elevación'
 									readOnly
 								/>
 							</div>

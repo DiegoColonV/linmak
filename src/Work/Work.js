@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import ConfirmModal from '../Componentes Generales/ConfirmModal';
-import { addLink } from '../redux/actions/editIntActions';
+import { addLink, addPosiblePages } from '../redux/actions/editIntActions';
 import { selectColor, selectFont } from '../redux/actions/selectedIntActions';
 import { setEditSaved, setIdFolder, setIdWork } from '../redux/actions/uiActions';
 import './work.css';
@@ -90,6 +90,7 @@ const Work = () => {
 		dispatch(addLink(link));
 		dispatch(setIdWork(params.id_work));
 		dispatch(setIdFolder(params.id_folder));
+		dispatch(addPosiblePages([[1],[2],[3],[5]]))
 		navigate('/editar');
 	};
 
