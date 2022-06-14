@@ -34,6 +34,21 @@ const ModificarDatosModal = ({ open, onClose, onShowAlert }) => {
         onShowAlert()
     }
 
+	const onSelectPlan = async(e)=>{
+
+		const requestOptions = {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
+			body: JSON.stringify({ new_plan: e.target.value }),
+		};
+		const data = await fetch(`${process.env.REACT_APP_API_URL}/update/plan`, requestOptions);
+		const dataJson = await data.json();
+
+        console.log(dataJson)
+
+        onClose()
+	}
+
 	return (
 		<Modal show={open} onHide={onClose}>
 			<Modal.Header closeButton>
@@ -47,13 +62,19 @@ const ModificarDatosModal = ({ open, onClose, onShowAlert }) => {
                 <Form.Control type="text" placeholder="Nombre de usuario" /> */}
 					<h4 className='mt-2'>Cambiar contraseña</h4>
 					<Form.Label className='mt-2'>Contraseña anterior</Form.Label>
-					<Form.Control value={prevpsw} onChange={(e) => setPrevPsw(e.target.value)} type='password' placeholder='Contraseña' id='prev'/>
+					<Form.Control value={prevpsw} onChange={(e) => setPrevPsw(e.target.value)} type='password' placeholder='Contraseña' id='prev' />
 					<Form.Label className='mt-3'>Nueva contraseña</Form.Label>
-					<Form.Control value={psw1} onChange={(e) => setPsw1(e.target.value)} type='password' placeholder='Nueva contraseña' id='new1'/>
+					<Form.Control value={psw1} onChange={(e) => setPsw1(e.target.value)} type='password' placeholder='Nueva contraseña' id='new1' />
 					<Form.Label className='mt-3'>Confirmar nueva contraseña</Form.Label>
 					<Form.Control value={psw2} onChange={(e) => setPsw2(e.target.value)} type='password' placeholder='Cornfirmar nueva contraseña' id='new2' />
 				</Form.Group>
-                {error && <p style={{color: 'darkred'}}>{error}</p>}
+				{error && <p style={{ color: 'darkred' }}>{error}</p>}
+				<Form.Label className='mt-4'>Tipo de plan</Form.Label>
+				<Form.Select onChange={onSelectPlan}>
+					<option value={'I'}>Inicial</option>
+					<option value={'A'}>Avanzado</option>
+					<option value={'LM'}>Linmak</option>
+				</Form.Select>
 			</Modal.Body>
 
 			<Modal.Footer>

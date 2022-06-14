@@ -44,7 +44,7 @@ function Hero() {
 										<option value='0'>Página principal</option>
 										<option value='1'>Contacto</option>
 										<option value='2'>Conócenos</option>
-										<option value='3'>Carrito</option>
+										{/* <option value='3'>Carrito</option> */}
 										<option value='4'>Iniciar sesión</option>
 									</select>
 								</div>
